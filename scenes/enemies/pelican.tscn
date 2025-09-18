@@ -38,8 +38,8 @@ animations = [{
 "texture": ExtResource("7_2vqsf")
 }],
 "loop": true,
-"name": &"fly",
-"speed": 5.0
+"name": &"walk",
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2u7p3"]
@@ -50,8 +50,9 @@ height = 40.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dipdu")
-animation = &"attack"
-autoplay = "fly"
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.634472
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -3)

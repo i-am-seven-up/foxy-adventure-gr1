@@ -34,8 +34,16 @@ animations = [{
 "texture": ExtResource("6_tvsr8")
 }],
 "loop": false,
-"name": &"attack",
-"speed": 5.0
+"name": &"atk",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tvsr8")
+}],
+"loop": true,
+"name": &"end_roll",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -47,6 +55,31 @@ animations = [{
 "loop": false,
 "name": &"hit",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2d346")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_skids")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t2fbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8vh65")
+}],
+"loop": true,
+"name": &"roll_atk",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iapmj")
+}],
+"loop": true,
+"name": &"start_roll",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -74,7 +107,7 @@ height = 34.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ogm1e")
-animation = &"attack"
+animation = &"end_roll"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
