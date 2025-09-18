@@ -1,0 +1,133 @@
+[gd_scene load_steps=23 format=3 uid="uid://dqawcb458fxlf"]
+
+[ext_resource type="Texture2D" uid="uid://cxgrnhjcelaod" path="res://asset/war_lord/war_lord_turtle1.png" id="1_k7whc"]
+[ext_resource type="Texture2D" uid="uid://difq4hcwnikcs" path="res://asset/war_lord/war_lord_turtle2.png" id="2_ee8b6"]
+[ext_resource type="Texture2D" uid="uid://c66q7vmjc2avd" path="res://asset/war_lord/war_lord_turtle3.png" id="3_bmb7i"]
+[ext_resource type="Texture2D" uid="uid://cj6npy4dt0yva" path="res://asset/war_lord/war_lord_turtle4.png" id="4_2vinv"]
+[ext_resource type="Texture2D" uid="uid://b4tk88p3dgufr" path="res://asset/war_lord/war_lord_turtle5.png" id="5_uky5t"]
+[ext_resource type="Texture2D" uid="uid://3wrkn0lnsh72" path="res://asset/war_lord/war_lord_turtle6.png" id="6_mqo3x"]
+[ext_resource type="Texture2D" uid="uid://bua3xf2o4f7xx" path="res://asset/war_lord/war_lord_turtle11.png" id="7_eutxb"]
+[ext_resource type="Texture2D" uid="uid://dvj78awilo0ng" path="res://asset/war_lord/war_lord_turtle12.png" id="8_s06ek"]
+[ext_resource type="Texture2D" uid="uid://ba5h7am6qky5h" path="res://asset/war_lord/war_lord_turtle13.png" id="9_tn0op"]
+[ext_resource type="Texture2D" uid="uid://7c76aihswb45" path="res://asset/war_lord/war_lord_turtle14.png" id="10_yg2v4"]
+[ext_resource type="Texture2D" uid="uid://bwvaceiepbqp4" path="res://asset/war_lord/war_lord_turtle15.png" id="11_lvaix"]
+[ext_resource type="Texture2D" uid="uid://c83oawvrsnyw6" path="res://asset/war_lord/war_lord_turtle16.png" id="12_30jtp"]
+[ext_resource type="Texture2D" uid="uid://bnregom3whkjh" path="res://asset/war_lord/war_lord_turtle17.png" id="13_jp4lg"]
+[ext_resource type="Texture2D" uid="uid://wmpdp6lj78vb" path="res://asset/war_lord/war_lord_turtle18.png" id="14_kppbu"]
+[ext_resource type="Texture2D" uid="uid://ftsroilxomko" path="res://asset/war_lord/war_lord_turtle19.png" id="15_k7o0c"]
+[ext_resource type="Texture2D" uid="uid://df2f3w73w3i2x" path="res://asset/war_lord/war_lord_turtle20.png" id="16_gsjat"]
+[ext_resource type="Texture2D" uid="uid://bb8w53soojged" path="res://asset/war_lord/war_lord_turtle7.png" id="17_8jj4m"]
+[ext_resource type="Texture2D" uid="uid://dbqssqlvc2r5v" path="res://asset/war_lord/war_lord_turtle8.png" id="18_8csm5"]
+[ext_resource type="Texture2D" uid="uid://b1j6gkstlao88" path="res://asset/war_lord/war_lord_turtle9.png" id="19_tnylf"]
+[ext_resource type="Texture2D" uid="uid://cfffule4j1cl7" path="res://asset/war_lord/war_lord_turtle10.png" id="20_82w4j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g47qh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_k7whc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ee8b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bmb7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2vinv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uky5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mqo3x")
+}],
+"loop": false,
+"name": &"atk_1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_eutxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s06ek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tn0op")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yg2v4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lvaix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_30jtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yg2v4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lvaix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_30jtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jp4lg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kppbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s06ek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eutxb")
+}],
+"loop": false,
+"name": &"atk_2",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_k7o0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_gsjat")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_8jj4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8csm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_tnylf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_82w4j")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7whc"]
+size = Vector2(78, 69)
+
+[node name="WarLordTurtle" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g47qh")
+animation = &"hit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_k7whc")
