@@ -1,0 +1,82 @@
+[gd_scene load_steps=14 format=3 uid="uid://dmngvbkuj5adl"]
+
+[ext_resource type="Texture2D" uid="uid://d355p6q01qfbd" path="res://asset/enemy/starfish/starfish_atk_01.png" id="1_iapmj"]
+[ext_resource type="Texture2D" uid="uid://pt00h0kyaa6n" path="res://asset/enemy/starfish/starfish_atk_02.png" id="2_2d346"]
+[ext_resource type="Texture2D" uid="uid://c47t2sk1fm2f" path="res://asset/enemy/starfish/starfish_atk_03.png" id="3_skids"]
+[ext_resource type="Texture2D" uid="uid://x1tdhnmj8w1t" path="res://asset/enemy/starfish/starfish_atk_04.png" id="4_t2fbi"]
+[ext_resource type="Texture2D" uid="uid://di0l1oo5pri6v" path="res://asset/enemy/starfish/starfish_atk_05.png" id="5_8vh65"]
+[ext_resource type="Texture2D" uid="uid://d0xlxvm8okahv" path="res://asset/enemy/starfish/starfish_atk_06.png" id="6_tvsr8"]
+[ext_resource type="Texture2D" uid="uid://dvglcsib2viyh" path="res://asset/enemy/starfish/starfish_hit_01.png" id="7_b0cij"]
+[ext_resource type="Texture2D" uid="uid://c1wkpc0cghhm" path="res://asset/enemy/starfish/starfish_hit_02.png" id="8_8of4m"]
+[ext_resource type="Texture2D" uid="uid://61uc0t0r5il1" path="res://asset/enemy/starfish/starfish_01.png" id="9_fkg2x"]
+[ext_resource type="Texture2D" uid="uid://c6bv0wnp7rcrp" path="res://asset/enemy/starfish/starfish_02.png" id="10_deour"]
+[ext_resource type="Texture2D" uid="uid://ddty2ho1bvtsq" path="res://asset/enemy/starfish/starfish_03.png" id="11_fr1my"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogm1e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iapmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2d346")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_skids")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t2fbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8vh65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tvsr8")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_b0cij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8of4m")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_fkg2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_deour")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fkg2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fr1my")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iapmj"]
+radius = 17.0
+height = 34.0
+
+[node name="Starfish" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ogm1e")
+animation = &"attack"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_iapmj")

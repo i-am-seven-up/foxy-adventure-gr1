@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://c53heorkor0e7"]
+
+[ext_resource type="Texture2D" uid="uid://swocvvu2va5l" path="res://asset/enemy/turtle/turtle_green_01.png" id="1_2uh60"]
+[ext_resource type="Texture2D" uid="uid://d07eivhg0womt" path="res://asset/enemy/turtle/turtle_green_02.png" id="2_1133g"]
+[ext_resource type="Texture2D" uid="uid://bx7cm15r4ke8s" path="res://asset/enemy/turtle/turtle_green_03.png" id="3_8ecl3"]
+[ext_resource type="Texture2D" uid="uid://sgrne11rfe5j" path="res://asset/enemy/turtle/turtle_green_04.png" id="4_wcnqx"]
+[ext_resource type="Texture2D" uid="uid://dq5euuksvaev" path="res://asset/enemy/turtle/turtle_green_05.png" id="5_fh01a"]
+[ext_resource type="Texture2D" uid="uid://16o26pipvd85" path="res://asset/enemy/turtle/turtle_green_walk_1.png" id="6_2n7dm"]
+[ext_resource type="Texture2D" uid="uid://idi3rp07y6q6" path="res://asset/enemy/turtle/turtle_green_walk_2.png" id="7_2a5c3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yyjq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2uh60")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fh01a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wcnqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1133g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_2uh60")
+}],
+"loop": true,
+"name": &"in",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2uh60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1133g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8ecl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wcnqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fh01a")
+}],
+"loop": true,
+"name": &"out",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2n7dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2a5c3")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_1",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2uh60"]
+radius = 16.0
+
+[node name="Turtle" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8yyjq")
+animation = &"out"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_2uh60")

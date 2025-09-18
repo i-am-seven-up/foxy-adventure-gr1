@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://d2ytkfd1sqyhk"]
+
+[ext_resource type="Texture2D" uid="uid://dgo5q3m7jrfic" path="res://asset/enemy/barrel/barrel_atk_01.png" id="1_uonfh"]
+[ext_resource type="Texture2D" uid="uid://b8uoab8ylcgek" path="res://asset/enemy/barrel/barrel_atk_02.png" id="2_vpeff"]
+[ext_resource type="Texture2D" uid="uid://d1jsbp0lhxe3n" path="res://asset/enemy/barrel/barrel_atk_03.png" id="3_qw4yl"]
+[ext_resource type="Texture2D" uid="uid://8sm8ho2xmtya" path="res://asset/enemy/barrel/barrel_atk_04.png" id="4_npf1o"]
+[ext_resource type="Texture2D" uid="uid://bnf3evy82xjhw" path="res://asset/enemy/barrel/barrel_atk_05.png" id="5_8fpti"]
+[ext_resource type="Texture2D" uid="uid://dnidlvjqnjkgp" path="res://asset/enemy/barrel/barrel_hit_01.png" id="6_5wk74"]
+[ext_resource type="Texture2D" uid="uid://y1yfgbb0ilwk" path="res://asset/enemy/barrel/barrel_hit_02.png" id="7_xfaja"]
+[ext_resource type="Texture2D" uid="uid://ccqs3j8siyopg" path="res://asset/enemy/barrel/barrel_01.png" id="8_xwvcx"]
+[ext_resource type="Texture2D" uid="uid://bqmrnfubjm0kj" path="res://asset/enemy/barrel/barrel_02.png" id="9_0o23e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wsed4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uonfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vpeff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qw4yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_npf1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8fpti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qw4yl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vpeff")
+}],
+"loop": false,
+"name": &"atk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5wk74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xfaja")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xwvcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0o23e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_427xf"]
+height = 32.0
+
+[node name="Barrel" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wsed4")
+animation = &"atk"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_427xf")

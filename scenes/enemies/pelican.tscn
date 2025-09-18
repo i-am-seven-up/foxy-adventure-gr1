@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwss8lnopdq2i"]
+
+[ext_resource type="Texture2D" uid="uid://f76ybo7id6gs" path="res://asset/enemy/pelican/pelican_atk_01.png" id="1_3bgc7"]
+[ext_resource type="Texture2D" uid="uid://7ytnhmca0flh" path="res://asset/enemy/pelican/pelican_atk_02.png" id="2_emo3g"]
+[ext_resource type="Texture2D" uid="uid://c0p31wsi60oyt" path="res://asset/enemy/pelican/pelican_atk_03.png" id="3_vtc3j"]
+[ext_resource type="Texture2D" uid="uid://dwclgx41hbga5" path="res://asset/enemy/pelican/pelican_01.png" id="4_lgxwl"]
+[ext_resource type="Texture2D" uid="uid://4ekjxay5igpw" path="res://asset/enemy/pelican/pelican_02.png" id="5_k5alk"]
+[ext_resource type="Texture2D" uid="uid://b07a616etrw13" path="res://asset/enemy/pelican/pelican_03.png" id="6_wjw3j"]
+[ext_resource type="Texture2D" uid="uid://xscq1r5j2o1c" path="res://asset/enemy/pelican/pelican_04.png" id="7_2vqsf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dipdu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3bgc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_emo3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vtc3j")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lgxwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k5alk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wjw3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2vqsf")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2u7p3"]
+radius = 20.0
+height = 40.0
+
+[node name="Pelican" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dipdu")
+animation = &"attack"
+autoplay = "fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -3)
+shape = SubResource("CapsuleShape2D_2u7p3")

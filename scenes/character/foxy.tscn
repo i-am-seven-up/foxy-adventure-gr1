@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbjqeeobxmqor"]
+
+[ext_resource type="SpriteFrames" uid="uid://cpyd1m1lmtb7o" path="res://scenes/character/foxy_hat.tres" id="1_6jaia"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g3mwx"]
+
+[node name="Foxy" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_6jaia")
+animation = &"hit"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_g3mwx")

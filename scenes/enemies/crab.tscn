@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://tew7lh8j1um5"]
+
+[ext_resource type="Texture2D" uid="uid://ctrcbbe4a8dm" path="res://asset/enemy/crab/crab_hit_01.png" id="1_jwctj"]
+[ext_resource type="Texture2D" uid="uid://hy22m0nck85p" path="res://asset/enemy/crab/crab_hit_02.png" id="2_jgbqf"]
+[ext_resource type="Texture2D" uid="uid://d3dswkeayxgri" path="res://asset/enemy/crab/crab_01.png" id="3_0mleb"]
+[ext_resource type="Texture2D" uid="uid://bmgnhlh503ls" path="res://asset/enemy/crab/crab_02.png" id="4_qokaa"]
+[ext_resource type="Texture2D" uid="uid://d2g1sv81fi7w4" path="res://asset/enemy/crab/crab_03.png" id="5_3jqcw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_86med"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jwctj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jgbqf")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0mleb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qokaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0mleb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3jqcw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ukmd"]
+radius = 20.0
+height = 40.0
+
+[node name="Crab" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_86med")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.785979
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -1)
+shape = SubResource("CapsuleShape2D_8ukmd")

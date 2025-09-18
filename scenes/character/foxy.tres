@@ -1,0 +1,86 @@
+[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://dh2f6po3rm0p7"]
+
+[ext_resource type="Texture2D" uid="uid://dkv1jgifrkt8q" path="res://asset/foxy/foxy/fox/fox_defeat_1.png" id="1_tfxr7"]
+[ext_resource type="Texture2D" uid="uid://dc2m3jf8uguyu" path="res://asset/foxy/foxy/fox/fox_defeat_2.png" id="2_vfsd3"]
+[ext_resource type="Texture2D" uid="uid://cm35jxqst3tye" path="res://asset/foxy/foxy/fox/fox_defeat_3.png" id="3_4fc3p"]
+[ext_resource type="Texture2D" uid="uid://bcpoenc50cm6f" path="res://asset/foxy/foxy/fox/fox_hit_1.png" id="4_rvlm7"]
+[ext_resource type="Texture2D" uid="uid://cpnrjocfgv50m" path="res://asset/foxy/foxy/fox/fox_hit_2.png" id="5_xmjh0"]
+[ext_resource type="Texture2D" uid="uid://bij01i1v7nb15" path="res://asset/foxy/foxy/fox/fox_hit_3.png" id="6_nqd2l"]
+[ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://asset/foxy/foxy/fox/fox_idle_1.png" id="7_lrc1a"]
+[ext_resource type="Texture2D" uid="uid://cdiupfoo5xr6u" path="res://asset/foxy/foxy/fox/fox_idle_2.png" id="8_evsfk"]
+[ext_resource type="Texture2D" uid="uid://bunb4hruykt3x" path="res://asset/foxy/foxy/fox/fox_jump_1.png" id="9_338vx"]
+[ext_resource type="Texture2D" uid="uid://dowo3wvh7rdu1" path="res://asset/foxy/foxy/fox/fox_jump_2.png" id="10_nakkr"]
+[ext_resource type="Texture2D" uid="uid://ddf11anrulx6e" path="res://asset/foxy/foxy/fox/fox_walk_1.png" id="11_qlnx3"]
+[ext_resource type="Texture2D" uid="uid://bsfb723jv8ohi" path="res://asset/foxy/foxy/fox/fox_walk_2.png" id="12_4qvgp"]
+[ext_resource type="Texture2D" uid="uid://bj3ls24dmb1u0" path="res://asset/foxy/foxy/fox/fox_walk_3.png" id="13_6s4o3"]
+[ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://asset/foxy/foxy/fox/fox_walk_4.png" id="14_ckh64"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tfxr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vfsd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4fc3p")
+}],
+"loop": false,
+"name": &"defeat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rvlm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xmjh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nqd2l")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_lrc1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_evsfk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_338vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nakkr")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_qlnx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4qvgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6s4o3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ckh64")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

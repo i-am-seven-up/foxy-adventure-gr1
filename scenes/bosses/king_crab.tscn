@@ -1,0 +1,191 @@
+[gd_scene load_steps=32 format=3 uid="uid://dawiq32jjuuf4"]
+
+[ext_resource type="Texture2D" uid="uid://c4n3w70g7r0tu" path="res://asset/King_Crab/King_Crab_14.png" id="1_ib0c1"]
+[ext_resource type="Texture2D" uid="uid://008wd36dvtc7" path="res://asset/King_Crab/King_Crab_15.png" id="2_6pgn2"]
+[ext_resource type="Texture2D" uid="uid://ss4fejx02hnc" path="res://asset/King_Crab/King_Crab_19.png" id="3_7dxoo"]
+[ext_resource type="Texture2D" uid="uid://b1025qsl7bvwi" path="res://asset/King_Crab/King_Crab_20.png" id="4_1udw6"]
+[ext_resource type="Texture2D" uid="uid://d1sbdba53mx2l" path="res://asset/King_Crab/King_Crab_21.png" id="5_4ntxp"]
+[ext_resource type="Texture2D" uid="uid://bwtwoimhi7vsp" path="res://asset/King_Crab/King_Crab_22.png" id="6_7b8i6"]
+[ext_resource type="Texture2D" uid="uid://bvrbcoyatcmxm" path="res://asset/King_Crab/King_Crab_5.png" id="7_gufm1"]
+[ext_resource type="Texture2D" uid="uid://dyh2kwnhodwoo" path="res://asset/King_Crab/King_Crab_6.png" id="8_v2sx1"]
+[ext_resource type="Texture2D" uid="uid://cbal17qwfabau" path="res://asset/King_Crab/King_Crab_7.png" id="9_bnm5s"]
+[ext_resource type="Texture2D" uid="uid://3poxclvcy51" path="res://asset/King_Crab/King_Crab_8.png" id="10_yao3u"]
+[ext_resource type="Texture2D" uid="uid://dqdwx4bxjxqga" path="res://asset/King_Crab/King_Crab_9.png" id="11_cgnvx"]
+[ext_resource type="Texture2D" uid="uid://bojsubpgp5mwi" path="res://asset/King_Crab/King_Crab_10.png" id="12_3o8h4"]
+[ext_resource type="Texture2D" uid="uid://dywgqnasaq2rg" path="res://asset/King_Crab/King_Crab_11.png" id="13_lo3x5"]
+[ext_resource type="Texture2D" uid="uid://c66tpyb3xyuas" path="res://asset/King_Crab/King_Crab_12.png" id="14_1ne75"]
+[ext_resource type="Texture2D" uid="uid://bdmth88m8mgxj" path="res://asset/King_Crab/King_Crab_13.png" id="15_2e50a"]
+[ext_resource type="Texture2D" uid="uid://bbb6e816gwfiq" path="res://asset/King_Crab/King_Crab_29.png" id="16_koxhm"]
+[ext_resource type="Texture2D" uid="uid://b74bb6orpxina" path="res://asset/King_Crab/King_Crab_30.png" id="17_5n2xv"]
+[ext_resource type="Texture2D" uid="uid://cy2q5bnp3vgaa" path="res://asset/King_Crab/King_Crab_17.png" id="18_dblo7"]
+[ext_resource type="Texture2D" uid="uid://b6xoilua06cql" path="res://asset/King_Crab/King_Crab_18.png" id="19_l08n3"]
+[ext_resource type="Texture2D" uid="uid://4dreojahella" path="res://asset/King_Crab/King_Crab_23.png" id="20_fjvud"]
+[ext_resource type="Texture2D" uid="uid://bqdlq6j7saohj" path="res://asset/King_Crab/King_Crab_24.png" id="21_ckkm0"]
+[ext_resource type="Texture2D" uid="uid://dn76lj7su8gbp" path="res://asset/King_Crab/King_Crab_25.png" id="22_xkhap"]
+[ext_resource type="Texture2D" uid="uid://b28ancs1pe1ht" path="res://asset/King_Crab/King_Crab_26.png" id="23_7c5d7"]
+[ext_resource type="Texture2D" uid="uid://bf8kvj2al6xut" path="res://asset/King_Crab/King_Crab_27.png" id="24_b4ygm"]
+[ext_resource type="Texture2D" uid="uid://d0iklpjwn55y0" path="res://asset/King_Crab/King_Crab_28.png" id="25_x6lfv"]
+[ext_resource type="Texture2D" uid="uid://bokp2y2qnbjoc" path="res://asset/King_Crab/King_Crab_1.png" id="26_ety6v"]
+[ext_resource type="Texture2D" uid="uid://c84tm4lbmgfa6" path="res://asset/King_Crab/King_Crab_2.png" id="27_hu2s3"]
+[ext_resource type="Texture2D" uid="uid://dw4csk1jyde6" path="res://asset/King_Crab/King_Crab_3.png" id="28_wxgkj"]
+[ext_resource type="Texture2D" uid="uid://d1x7rouc7jmea" path="res://asset/King_Crab/King_Crab_4.png" id="29_l6xjw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flumb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ib0c1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6pgn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7dxoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1udw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4ntxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7b8i6")
+}],
+"loop": false,
+"name": &"atk_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_gufm1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v2sx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bnm5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yao3u")
+}],
+"loop": true,
+"name": &"atk_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_cgnvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3o8h4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lo3x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1ne75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2e50a")
+}],
+"loop": false,
+"name": &"atk_2_recover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_koxhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5n2xv")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_dblo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_l08n3")
+}],
+"loop": true,
+"name": &"idle_atk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_fjvud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ckkm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xkhap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_7c5d7")
+}],
+"loop": true,
+"name": &"idle_stun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1udw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4ntxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7b8i6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7dxoo")
+}],
+"loop": false,
+"name": &"recover",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_b4ygm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_x6lfv")
+}],
+"loop": false,
+"name": &"stand_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_ety6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hu2s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_wxgkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_l6xjw")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_jvskc"]
+a = Vector2(17, -82)
+b = Vector2(16, 38)
+
+[node name="KingCrab" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_flumb")
+animation = &"walk"
+
+[node name="CollisionShape2D_CheckCutRoll" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_jvskc")

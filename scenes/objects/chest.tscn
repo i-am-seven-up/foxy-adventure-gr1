@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://dcyxh7eep8web"]
+
+[ext_resource type="Texture2D" uid="uid://btnwd6wmuxmda" path="res://asset/island/objects/chest/chest_open_01.png" id="1_or75c"]
+[ext_resource type="Texture2D" uid="uid://dkn0i1fahffwr" path="res://asset/island/objects/chest/chest_open_02.png" id="2_so5va"]
+[ext_resource type="Texture2D" uid="uid://bidl5brkimhxo" path="res://asset/island/objects/chest/chest_close_01.png" id="3_ekffs"]
+[ext_resource type="Texture2D" uid="uid://bjcqjfm23puad" path="res://asset/island/objects/chest/chest_close_02.png" id="4_mhowy"]
+[ext_resource type="Texture2D" uid="uid://dqrogefu4p788" path="res://asset/island/objects/chest/chest_close_03.png" id="5_cu4jo"]
+[ext_resource type="Texture2D" uid="uid://br8hwwry0gxvd" path="res://asset/island/objects/chest/chest_open_03.png" id="6_ffcdb"]
+[ext_resource type="Texture2D" uid="uid://b67b2vn864ieo" path="res://asset/island/objects/chest/chest_open_04.png" id="7_copr4"]
+[ext_resource type="Texture2D" uid="uid://bwcclik4ny1ry" path="res://asset/island/objects/chest/chest_open_05.png" id="8_f0raw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pybmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_or75c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_so5va")
+}],
+"loop": true,
+"name": &"close_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ekffs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mhowy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cu4jo")
+}],
+"loop": true,
+"name": &"close_no_key",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_or75c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_so5va")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ffcdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_copr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f0raw")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_f0raw")
+}],
+"loop": true,
+"name": &"open_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ge7e3"]
+size = Vector2(34, 29)
+
+[node name="Chest" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pybmd")
+animation = &"open_idle"
+autoplay = "close_idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_ge7e3")
