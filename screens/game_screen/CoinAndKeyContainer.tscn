@@ -5,11 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://b5cij2cyi3jah" path="res://asset/chest_key/key/key_1.png" id="3_rbm8k"]
 
 [node name="CoinAndKeyContainer" type="HBoxContainer"]
+custom_minimum_size = Vector2(200, 30)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_right = 94.0
-offset_bottom = 23.0
+offset_left = -53.0
+offset_top = 10.0
+offset_right = 147.0
+offset_bottom = 60.0
 grow_horizontal = 2
 theme_override_constants/separation = 50
 script = ExtResource("1_uy4ab")
@@ -19,6 +22,7 @@ layout_mode = 2
 
 [node name="CoinIcon" type="TextureRect" parent="CoinContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 texture = ExtResource("2_c8ou4")
 expand_mode = 2
 
