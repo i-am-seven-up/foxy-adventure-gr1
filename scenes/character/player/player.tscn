@@ -62,7 +62,6 @@ size = Vector2(30, 43)
 
 [node name="Player" type="CharacterBody2D" groups=["Player", "player"]]
 z_index = 10
-scale = Vector2(1.2, 1.2)
 collision_layer = 2
 script = ExtResource("1_puv7k")
 has_fire_gem = true

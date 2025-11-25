@@ -164,7 +164,7 @@ metadata/_custom_type_script = "uid://b5vlq5e21dx67"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HurtArea2D"]
 position = Vector2(-11.5, 3)
 shape = SubResource("RectangleShape2D_wnokk")
-debug_color = Color(0.14461216, 0.5576062, 0.8703318, 0.41960785)
+debug_color = Color(0.144612, 0.557606, 0.870332, 0.419608)
 
 [node name="HitArea2D" type="Area2D" parent="Direction"]
 collision_layer = 0
@@ -185,12 +185,12 @@ metadata/_custom_type_script = "uid://bss631ltk5rcm"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/SpikeHitArea2D"]
 position = Vector2(-3.5, 2.5)
 shape = SubResource("RectangleShape2D_eiosc")
-debug_color = Color(0.6963841, 0.494107, 0.055398293, 0.41960785)
+debug_color = Color(0.696384, 0.494107, 0.0553983, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, 4)
 shape = SubResource("RectangleShape2D_ber8n")
-debug_color = Color(0.9550579, 0.056059465, 0.51702577, 0.41960785)
+debug_color = Color(0.955058, 0.0560595, 0.517026, 0.419608)
 
 [node name="States" type="Node" parent="."]
 
