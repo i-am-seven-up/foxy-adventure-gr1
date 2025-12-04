@@ -71,12 +71,6 @@ func _spawn_chest() -> void:
 		1.0
 	).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 	
-	# Tự động mở chest sau khi rơi xuống
-	tw.tween_callback(func(): 
-		if chest and chest.has_method("open_chest"):
-			chest.open_chest()
-	)
-	
 func _set_chest_collision(root: Node, enabled: bool) -> void:
 	if root == null:
 		return
