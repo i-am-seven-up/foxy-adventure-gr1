@@ -110,7 +110,7 @@ func _process(delta: float) -> void:
 # NHẶT COIN
 # ----------------------------------------------------
 func collect_coin() -> void:
-	if is_flying or is_collected:
+	if is_flying or just_landed or is_collected:
 		return
 
 	is_collected = true   # <<-- CHỐT QUAN TRỌNG (chỉ nhặt 1 lần)
