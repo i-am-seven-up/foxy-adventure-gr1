@@ -199,7 +199,7 @@ position = Vector2(540, -183)
 scale = Vector2(1.3, 1.3)
 
 [node name="Player" parent="." instance=ExtResource("6_44ejs")]
-position = Vector2(-219, 49)
+position = Vector2(-218, 58)
 max_health = 100
 
 [node name="Npcs" type="Node2D" parent="."]
@@ -666,7 +666,7 @@ popup_keys = Array[String]([">"])
 popup_video_path = "res://asset/videos/hover_tutorial.ogv"
 
 [node name="Area2D4" parent="." instance=ExtResource("45_m12hn")]
-position = Vector2(10316, -196)
+position = Vector2(10496, -36)
 popup_scene = ExtResource("46_ncpwn")
 popup_text_lines = Array[String](["Press \"Space\" when run fast to dash diagonal"])
 popup_video_path = "res://asset/videos/dash_diagonal_tutorial.ogv"

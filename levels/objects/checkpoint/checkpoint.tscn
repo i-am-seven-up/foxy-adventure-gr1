@@ -68,7 +68,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmguo"]
-size = Vector2(24, 642)
+size = Vector2(24, 1180)
 
 [node name="Checkpoint" type="Area2D"]
 collision_mask = 2
@@ -79,7 +79,7 @@ sprite_frames = SubResource("SpriteFrames_hr5eo")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -305)
+position = Vector2(0, -36)
 shape = SubResource("RectangleShape2D_hmguo")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
