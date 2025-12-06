@@ -61,6 +61,12 @@ func show_popup() -> void:
 		to.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 		to.tween_property(_overlay, "modulate:a", 0.35, 0.2)
 
+func _input(event: InputEvent) -> void:
+	# Đóng popup khi bấm phím bất kỳ hoặc click chuột
+	if visible and (event is InputEventKey and event.pressed and not event.echo):
+		close_popup()
+		get_viewport().set_input_as_handled()
+
 func _on_overlay_color_rect_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		close_popup()

@@ -452,7 +452,7 @@ texture_scale = 0.5
 
 [node name="RainParticles" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_wkgak")
-position = Vector2(7420, -173)
+position = Vector2(7427, -361)
 amount = 1000
 sub_emitter = NodePath("../SplashRainParticles")
 preprocess = 0.5
@@ -461,11 +461,11 @@ visibility_rect = Rect2(-350, -200, 7705.75, 400)
 process_material = SubResource("ParticleProcessMaterial_fe7x3")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(-449, 6)
+position = Vector2(-460, -21)
 occluder = SubResource("OccluderPolygon2D_nd2ra")
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
-position = Vector2(9314, 3)
+position = Vector2(9311, 6)
 occluder = SubResource("OccluderPolygon2D_nd2ra")
 
 [node name="SplashRainParticles" type="GPUParticles2D" parent="."]

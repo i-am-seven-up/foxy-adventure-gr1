@@ -1,5 +1,7 @@
 extends InteractiveArea2D
 
+const PIXEL_FONT = preload("res://asset/fonts/ThaleahFat.ttf")
+
 @export var requires_key: bool = true
 @export var reward_scenes: Array[PackedScene] = []
 @export var reward_counts: Array[int] = []
@@ -61,7 +63,7 @@ func attempt_open_chest() -> void:
 		return
 
 	if requires_key and (GameManager.inventory_system == null or not GameManager.inventory_system.has_key()):
-		# TODO: sound "locked", popup "Cần chìa"
+		show_notification("Cần chìa khóa để mở")
 		return
 
 	open_chest()
@@ -118,3 +120,23 @@ func _spawn_rewards() -> void:
 			)
 			inst.global_position = base_pos + offset
 			world.add_child(inst)
+
+
+func show_notification(message: String) -> void:
+	# Tạo label tạm thời để hiện thông báo
+	var label = Label.new()
+	label.text = message
+	label.global_position = global_position + Vector2(-50, -40)
+	label.z_index = 100
+	label.add_theme_font_override("font", PIXEL_FONT)
+	label.add_theme_font_size_override("font_size", 12)
+	label.add_theme_color_override("font_outline_color", Color.BLACK)
+	label.add_theme_constant_override("outline_size", 2)
+	label.modulate = Color.YELLOW
+	get_tree().current_scene.add_child(label)
+	
+	# Tạo hiệu ứng fade out
+	var tween = create_tween()
+	tween.tween_property(label, "position:y", label.position.y - 20, 1.0)
+	tween.parallel().tween_property(label, "modulate:a", 0.0, 1.0)
+	tween.tween_callback(label.queue_free)

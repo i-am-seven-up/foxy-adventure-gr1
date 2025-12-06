@@ -271,7 +271,7 @@ animations = [{
 size = Vector2(64, 67)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ut7l"]
-size = Vector2(57, 65)
+size = Vector2(27, 29.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_px23k"]
 atlas = ExtResource("38_sr0mj")
@@ -505,7 +505,7 @@ script = ExtResource("22_lsjki")
 metadata/_custom_type_script = "uid://bss631ltk5rcm"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(1.5, 0.5)
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_4ut7l")
 debug_color = Color(0.636043, 0.52511, 0.112223, 0.42)
 

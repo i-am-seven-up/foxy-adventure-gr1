@@ -94,11 +94,19 @@ func handle_input() -> void:
 
 ## Unhandled Input is used for all NON-Mouse based inputs.
 func _unhandled_input(event:InputEvent) -> void:
+	# Chấp nhận bất kỳ phím nào (bao gồm F, C, ...) để tiếp tục dialog
+	if event is InputEventKey and event.pressed and not event.echo:
+		input_was_mouse_input = false
+		handle_input()
+		get_viewport().set_input_as_handled()  # QUAN TRỌNG: Chặn input không lan ra game
+		return
+	
 	if is_input_pressed(event, true):
 		if event is InputEventMouse or event is InputEventScreenTouch:
 			return
 		input_was_mouse_input = false
 		handle_input()
+		get_viewport().set_input_as_handled()  # Chặn input không lan ra game
 
 
 ## Input is used for all mouse based inputs.
