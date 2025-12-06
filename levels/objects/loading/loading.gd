@@ -147,7 +147,27 @@ func _load_target_scene():
 	var packed = ResourceLoader.load(target_scene_path)
 	if packed:
 		print("Loading scene (fallback): ", target_scene_path)
+
+		# Keep loading screen visible during transition
+		loading_dots.text = "Loading scene..."
+		continue_prompt.text = "Please wait..."
+
+		# Change scene - this loading screen will persist as overlay
 		get_tree().change_scene_to_packed(packed)
+
+		# Wait for scene tree to be ready
+		await get_tree().tree_changed
+
+		# Wait a few frames for scene to initialize
+		await get_tree().process_frame
+		await get_tree().process_frame
+		await get_tree().process_frame
+
+		# Wait for the new scene to be ready
+		await get_tree().create_timer(1.0).timeout
+
+		# Hide loading screen when scene is ready
+		_hide_loading_screen()
 	else:
 		push_error("Could not load target scene: " + target_scene_path)
 		_on_loading_error()
@@ -160,10 +180,39 @@ func _load_target_scene_with_resource(loaded_resource: Resource):
 	# Use the pre-loaded resource from background loading
 	if loaded_resource:
 		print("Loading pre-loaded scene: ", target_scene_path)
+
+		# Keep loading screen visible during transition
+		loading_dots.text = "Initializing scene..."
+		continue_prompt.text = "Preparing level..."
+
+		# Change scene - this loading screen will persist as overlay
 		get_tree().change_scene_to_packed(loaded_resource)
+
+		# Wait for scene tree to be ready
+		await get_tree().tree_changed
+
+		# Wait a few frames for scene to initialize
+		await get_tree().process_frame
+		await get_tree().process_frame
+		await get_tree().process_frame
+
+		# Wait for the new scene to be ready and potentially preloading textures
+		await get_tree().create_timer(1.0).timeout
+
+		# Hide loading screen when scene is fully ready
+		_hide_loading_screen()
 	else:
 		# Fallback to the original method if no resource was provided
 		_load_target_scene()
+
+func _hide_loading_screen():
+	# Fade out the loading screen
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, 0.3)
+
+	# Wait for fade to complete, then queue_free
+	await tween.finished
+	queue_free()
 
 func _on_loading_error():
 	loading_dots.text = "Loading Failed!"

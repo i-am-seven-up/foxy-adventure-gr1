@@ -1,7 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bklhkn41sbvwa"]
+[gd_scene load_steps=10 format=3 uid="uid://bklhkn41sbvwa"]
 
 [ext_resource type="Script" uid="uid://b1ppqm3070a5a" path="res://scenes/bosses/war_lord_turtle/laser_beam.gd" id="1_872lr"]
 [ext_resource type="Script" uid="uid://bss631ltk5rcm" path="res://scripts/hit_area_2d.gd" id="2_0oo8a"]
+[ext_resource type="PackedScene" uid="uid://bqxv4en7l4nxj" path="res://scenes/bosses/war_lord_turtle/laser_windup_particles.tscn" id="3_windup_particles"]
+[ext_resource type="Texture2D" uid="uid://dputbn7wt7xd6" path="res://asset/effects/Flash 2.png" id="4_5vord"]
+[ext_resource type="PackedScene" uid="uid://cfn7d4km3p2vb" path="res://scenes/bosses/war_lord_turtle/laser_beam_particles.tscn" id="4_beam_particles"]
+[ext_resource type="PackedScene" uid="uid://dmv5l3raj4rkc" path="res://scenes/bosses/war_lord_turtle/laser_impact_particles.tscn" id="5_impact_particles"]
+[ext_resource type="Texture2D" uid="uid://debt83xoncj2l" path="res://asset/effects/Flash 3.png" id="6_o7b1p"]
+[ext_resource type="Texture2D" uid="uid://fc4aqsdixcub" path="res://asset/effects/Flash 4.png" id="8_fqhhd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_31klp"]
 radius = 5.0
@@ -29,3 +35,14 @@ position = Vector2(25, 0)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_31klp")
 debug_color = Color(0.8399241, 0.32299453, 0.5428815, 0.41960785)
+
+[node name="WindupParticles" parent="." instance=ExtResource("3_windup_particles")]
+texture = ExtResource("4_5vord")
+
+[node name="BeamParticles" parent="." instance=ExtResource("4_beam_particles")]
+visible = false
+texture = ExtResource("6_o7b1p")
+
+[node name="ImpactParticles" parent="." instance=ExtResource("5_impact_particles")]
+visible = false
+texture = ExtResource("8_fqhhd")

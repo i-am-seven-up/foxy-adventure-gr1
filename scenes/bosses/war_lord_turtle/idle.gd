@@ -1,6 +1,6 @@
 extends WarlordTurtleState
 
-var idle_to_skill_delay: float = 2.25
+var idle_to_skill_delay: float = 1.5
 var is_next_attack: bool = false          
 var first_attack: bool = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://dqawcb458fxlf"]
+[gd_scene load_steps=95 format=3 uid="uid://dqawcb458fxlf"]
 
 [ext_resource type="Script" uid="uid://dsog20jheeudr" path="res://scenes/bosses/war_lord_turtle/war_lord_turtle.gd" id="1_lsjki"]
 [ext_resource type="Texture2D" uid="uid://cxgrnhjcelaod" path="res://asset/war_lord/war_lord_turtle1.png" id="1_ufaww"]
@@ -46,6 +46,7 @@
 [ext_resource type="Script" uid="uid://d3fpcbkl548fs" path="res://scenes/bosses/war_lord_turtle/atk_3_windup.gd" id="37_jhib8"]
 [ext_resource type="Script" uid="uid://bkach280vooio" path="res://scenes/bosses/war_lord_turtle/atk_3.gd" id="38_evlw3"]
 [ext_resource type="Texture2D" uid="uid://cxilppvxdfvn1" path="res://asset/effects/target_lock_effect.png" id="38_sr0mj"]
+[ext_resource type="Texture2D" uid="uid://deopfkbw44o02" path="res://asset/effects/spark_effect.png" id="39_uk1um"]
 [ext_resource type="Script" uid="uid://ce8s23uw7x5jy" path="res://scenes/bosses/war_lord_turtle/summon_portal.gd" id="42_2jxqd"]
 [ext_resource type="Script" uid="uid://c2sr34fgiw76d" path="res://scenes/bosses/war_lord_turtle/blow.gd" id="43_6pwq0"]
 [ext_resource type="Script" uid="uid://ck1a3rwk4tj3" path="res://scenes/bosses/war_lord_turtle/summon_water_tornado.gd" id="45_rt4pc"]
@@ -397,6 +398,70 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g14b"]
+atlas = ExtResource("39_uk1um")
+region = Rect2(14, 0, 123, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amvgl"]
+atlas = ExtResource("39_uk1um")
+region = Rect2(137, 0, 123, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjhp0"]
+atlas = ExtResource("39_uk1um")
+region = Rect2(260, 0, 123, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q433t"]
+atlas = ExtResource("39_uk1um")
+region = Rect2(383, 0, 123, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8l66"]
+atlas = ExtResource("39_uk1um")
+region = Rect2(14, 87, 123, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmsib"]
+atlas = ExtResource("39_uk1um")
+region = Rect2(137, 87, 123, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51uul"]
+atlas = ExtResource("39_uk1um")
+region = Rect2(260, 87, 123, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xm6u"]
+atlas = ExtResource("39_uk1um")
+region = Rect2(383, 87, 123, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8l3rf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g14b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amvgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjhp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q433t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8l66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmsib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51uul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xm6u")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="WarLordTurtle" type="CharacterBody2D"]
 collision_layer = 8
 script = ExtResource("1_lsjki")
@@ -419,7 +484,7 @@ shape = SubResource("RectangleShape2D_k7whc")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 material = SubResource("ShaderMaterial_og2oc")
 sprite_frames = SubResource("SpriteFrames_g47qh")
-animation = &"windup"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
@@ -484,6 +549,14 @@ scale = Vector2(0.6519608, 0.5625)
 sprite_frames = SubResource("SpriteFrames_yptko")
 autoplay = "default"
 frame = 26
+frame_progress = 1.0
+
+[node name="SparkleEffect" type="AnimatedSprite2D" parent="Direction"]
+visible = false
+position = Vector2(-13, 0)
+sprite_frames = SubResource("SpriteFrames_8l3rf")
+autoplay = "default"
+frame = 7
 frame_progress = 1.0
 
 [node name="States" type="Node" parent="."]

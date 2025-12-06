@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://8kpmjqhthmel"]
+[gd_scene load_steps=38 format=3 uid="uid://8kpmjqhthmel"]
 
 [ext_resource type="Script" uid="uid://dfdhwj0dqa5je" path="res://scenes/bosses/war_lord_turtle/atomic_bomb.gd" id="1_rctpd"]
 [ext_resource type="Texture2D" uid="uid://dkn7qcm5bvygq" path="res://asset/war_lord_bullet/atomic_bomb.png" id="2_mnc1a"]
 [ext_resource type="Texture2D" uid="uid://c3dmv1j0f2q8e" path="res://asset/effects/explosion_effect_4.png" id="3_70o0l"]
 [ext_resource type="Script" uid="uid://bss631ltk5rcm" path="res://scripts/hit_area_2d.gd" id="4_8y1rt"]
+[ext_resource type="Texture2D" uid="uid://dwrfws74b3olw" path="res://asset/effects/warning_rect.png" id="4_s2d02"]
 [ext_resource type="AudioStream" uid="uid://dljvr8m7he1rc" path="res://asset/sounds/war_lord_turtle_sound/huge_explosion.mp3" id="5_mnc1a"]
 [ext_resource type="AudioStream" uid="uid://duo5o2xixja7v" path="res://asset/sounds/war_lord_turtle_sound/bomb_idle.mp3" id="6_70o0l"]
 
@@ -172,6 +173,42 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y1rt"]
+atlas = ExtResource("4_s2d02")
+region = Rect2(9, 50, 506, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmmhl"]
+atlas = ExtResource("4_s2d02")
+region = Rect2(515, 50, 506, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_807v2"]
+atlas = ExtResource("4_s2d02")
+region = Rect2(9, 510, 506, 460)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sne0d"]
+atlas = ExtResource("4_s2d02")
+region = Rect2(515, 510, 506, 460)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qapvm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y1rt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmmhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_807v2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sne0d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rctpd"]
 
 [node name="AtomicBomb" type="Node2D"]
@@ -188,6 +225,13 @@ position = Vector2(0, 2.3841858e-07)
 scale = Vector2(3.5833333, 2.9895833)
 sprite_frames = SubResource("SpriteFrames_vmmhl")
 autoplay = "default"
+frame = 14
+
+[node name="WarningRect" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qapvm")
+autoplay = "default"
+frame = 2
+frame_progress = 0.8522298
 
 [node name="HitArea2D" type="Area2D" parent="."]
 collision_layer = 0

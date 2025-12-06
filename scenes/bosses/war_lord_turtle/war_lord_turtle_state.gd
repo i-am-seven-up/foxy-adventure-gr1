@@ -5,6 +5,11 @@ var _atk3_locked_pos: Vector2 = Vector2.ZERO
 var _locked_rocket_center: Vector2 = Vector2.ZERO
 var _has_locked_center: bool = false
 
+func do_normal_windup() -> void:
+	obj.sparkle_effect.frame = 0
+	obj.sparkle_effect.visible = true 
+	obj.sparkle_effect.play()
+
 func _spawn_bomb(from_node: Node2D, dir_vec: Vector2) -> void:
 	if from_node == null or obj.bomb_scene == null:
 		return

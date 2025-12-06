@@ -1,0 +1,190 @@
+[gd_scene load_steps=21 format=3 uid="uid://72ullgkrurgm"]
+
+[ext_resource type="Texture2D" uid="uid://b813tsbvdfb81" path="res://asset/level_3_water_palace/background/platform_boss_water_guard_01 (1).png" id="1_1xex7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dksfx"]
+size = Vector2(1938.2979, 44.537247)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kg6h0"]
+size = Vector2(580.695, 16.666687)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6hps"]
+size = Vector2(1276.2128, 11.3333435)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qu06h"]
+size = Vector2(238.2979, 6.4609947)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqnv7"]
+size = Vector2(119.22519, 8.666672)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh2hy"]
+size = Vector2(223.40419, 7.9999924)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffj6l"]
+size = Vector2(186.99289, 1.3333473)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fb84m"]
+size = Vector2(1369.5425, 50.50363)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpg5y"]
+size = Vector2(533.03546, 31.27658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4r65"]
+size = Vector2(225.1915, 32.35994)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_c4r65"]
+a = Vector2(50.666626, -49.333374)
+b = Vector2(-76.59573, 68.08511)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_721lu"]
+a = Vector2(-28, -64)
+b = Vector2(100, 59.574493)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tat1j"]
+b = Vector2(127.65956, 2.127655)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qt8kt"]
+a = Vector2(-50.666626, 9.333313)
+b = Vector2(27.659607, 10.638306)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ib4ck"]
+size = Vector2(248.21277, 30.609924)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvk04"]
+size = Vector2(459.43262, 29.60727)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_721lu"]
+size = Vector2(89.53547, 27.815601)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tat1j"]
+size = Vector2(114.05678, 27.276588)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ib4ck"]
+a = Vector2(30.666687, -28.00003)
+b = Vector2(-80.851074, 72.34042)
+
+[node name="PlatformBossWaterGuard" type="Sprite2D"]
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("1_1xex7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3.191489, -173.33246)
+shape = SubResource("RectangleShape2D_dksfx")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-7.368786, -468.0851)
+shape = SubResource("RectangleShape2D_kg6h0")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2.3191411, -336.17017)
+shape = SubResource("RectangleShape2D_w6hps")
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-814.8936, -320.2518)
+shape = SubResource("RectangleShape2D_qu06h")
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-812.84216, -425.53192)
+shape = SubResource("RectangleShape2D_rqnv7")
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(819.11084, -425.53192)
+shape = SubResource("RectangleShape2D_rqnv7")
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(815.95746, -321.27658)
+shape = SubResource("RectangleShape2D_sh2hy")
+one_way_collision = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-414.77304, 393.61697)
+shape = SubResource("RectangleShape2D_ffj6l")
+one_way_collision = true
+
+[node name="CollisionShape2D23" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(440.42554, 412.76596)
+shape = SubResource("RectangleShape2D_ffj6l")
+one_way_collision = true
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(23.739347, 583.25885)
+shape = SubResource("RectangleShape2D_fb84m")
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(386.6737, 318.40424)
+shape = SubResource("RectangleShape2D_hpg5y")
+one_way_collision = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-206.21278, 251.90515)
+shape = SubResource("RectangleShape2D_c4r65")
+one_way_collision = true
+
+[node name="CollisionShape2D21" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-110.638306, 436.17023)
+shape = SubResource("SegmentShape2D_c4r65")
+one_way_collision = true
+
+[node name="CollisionShape2D22" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(93.61702, 451.06384)
+shape = SubResource("SegmentShape2D_721lu")
+one_way_collision = true
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-61.702126, 385.10638)
+shape = SubResource("SegmentShape2D_tat1j")
+one_way_collision = true
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-253.1915, 461.70215)
+shape = SubResource("SegmentShape2D_qt8kt")
+one_way_collision = true
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-570.21277, 459.57446)
+shape = SubResource("SegmentShape2D_qt8kt")
+one_way_collision = true
+
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(272.34042, 455.31915)
+shape = SubResource("SegmentShape2D_qt8kt")
+one_way_collision = true
+
+[node name="CollisionShape2D25" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(631.9149, 457.4468)
+shape = SubResource("SegmentShape2D_qt8kt")
+one_way_collision = true
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-487.93613, 140.01419)
+shape = SubResource("RectangleShape2D_ib4ck")
+one_way_collision = true
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(23.475176, 44.770832)
+shape = SubResource("RectangleShape2D_qvk04")
+one_way_collision = true
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(16.934391, 181.83687)
+shape = SubResource("RectangleShape2D_721lu")
+one_way_collision = true
+
+[node name="CollisionShape2D26" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(464.2482, 141.68086)
+shape = SubResource("RectangleShape2D_tat1j")
+one_way_collision = true
+
+[node name="CollisionShape2D27" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(374.46808, 157.44681)
+shape = SubResource("SegmentShape2D_ib4ck")
+one_way_collision = true

@@ -585,6 +585,9 @@ position = Vector2(9309, -13)
 [node name="CloudPlatform11" parent="." instance=ExtResource("41_avipa")]
 position = Vector2(9885, -77)
 
+[node name="CloudPlatform12" parent="." instance=ExtResource("41_avipa")]
+position = Vector2(10067, -133)
+
 [node name="HitArea2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2

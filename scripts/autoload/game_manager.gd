@@ -59,23 +59,29 @@ func change_stage_with_loading(path: String):
 		push_error("Invalid scene path: " + path)
 		return
 
-	# Step 1: Change to loading scene
-	get_tree().change_scene_to_file("res://levels/objects/loading/loading.tscn")
-	await get_tree().process_frame  # Wait for scene to load
+	# Start loading as an overlay that persists across scene changes
+	_start_persistent_loading(current_scene_path, path)
 
-	# Step 2: Ensure loading scene is fully loaded
-	await get_tree().process_frame
+func _start_persistent_loading(from_scene: String, to_scene: String):
+	# Create a CanvasLayer to ensure the loading overlay appears on top of everything
+	var canvas_layer = CanvasLayer.new()
+	canvas_layer.layer = 128  # High layer number to be on top
+	get_tree().root.add_child(canvas_layer)
 
-	# Step 3: Start the loading screen with transition context
-	var loading_screen = get_tree().current_scene
-	if loading_screen != null and loading_screen.has_method("start_loading_with_transition"):
-		loading_screen.start_loading_with_transition(current_scene_path, path)
+	# Create persistent loading overlay as a child of the CanvasLayer
+	var loading_overlay = preload("res://levels/objects/loading/loading.tscn").instantiate()
+	canvas_layer.add_child(loading_overlay)
+
+	# Make it fill the entire screen
+	loading_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+
+	# Start the loading process
+	if loading_overlay.has_method("start_loading_with_transition"):
+		loading_overlay.start_loading_with_transition(from_scene, to_scene)
 	else:
-		push_error("Loading scene not found or missing required method")
-		# Fallback: load scene directly without loading screen
-		get_tree().change_scene_to_file(path)
-
-	# The loading screen will handle the actual scene transition when complete
+		push_error("Loading overlay missing required method")
+		loading_overlay.queue_free()
+		get_tree().change_scene_to_file(to_scene)
 
 # Helper function to get current scene path
 func _get_current_stage_path() -> String:

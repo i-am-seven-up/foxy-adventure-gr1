@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://c2wiqxhacoeex"]
+[gd_scene load_steps=4 format=4 uid="uid://c2wiqxhacoeex"]
 
 [ext_resource type="TileSet" uid="uid://swi381ypjdht" path="res://asset/forest/tileset_2.tres" id="1_khba0"]
 [ext_resource type="PackedScene" uid="uid://dqawcb458fxlf" path="res://scenes/bosses/war_lord_turtle/war_lord_turtle.tscn" id="2_5nu06"]
 [ext_resource type="PackedScene" uid="uid://d15uiwk2diixs" path="res://scenes/character/player/player.tscn" id="3_uefka"]
-[ext_resource type="PackedScene" uid="uid://c700eni2s0ngm" path="res://scenes/collectibles/waterpawgem/water_paw_gem.tscn" id="4_sllvf"]
 
 [node name="TestBossWarLordTurtle" type="Node2D"]
 
@@ -27,6 +26,3 @@ position = Vector2(-72, 576)
 
 [node name="PointB" type="Marker2D" parent="."]
 position = Vector2(1326, 307)
-
-[node name="WaterPawGem" parent="." instance=ExtResource("4_sllvf")]
-position = Vector2(337, 367)

@@ -1,7 +1,7 @@
 extends WarlordTurtleState
 
 var has_fired: bool = false
-var wait_time: float = 1.75
+var wait_time: float = 1.25
 var _fire_timer: float = 0.0
 
 func _enter() -> void:

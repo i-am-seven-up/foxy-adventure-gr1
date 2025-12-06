@@ -8,7 +8,7 @@ signal start_fight
 @export var max_health_boss: int = 600
 @export var spike_damage: int = 70             
 @export var stun_time: float = 3.5 
-@export var beam_attack_duration: float = 1.5 
+@export var beam_attack_duration: float = 4.0 
 
 @export var bomb_scene: PackedScene
 @export var missile_scene: PackedScene
@@ -36,6 +36,7 @@ signal start_fight
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $Direction/AnimatedSprite2D
 @onready var target_lock_effect: AnimatedSprite2D = $Direction/TargetLockEffect
+@onready var sparkle_effect: AnimatedSprite2D = $Direction/SparkleEffect
 
 @export var phase2_threshold_ratio: float = 0.7
 

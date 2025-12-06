@@ -120,7 +120,7 @@ max_health = 1000
 
 [node name="KingCrab" parent="World" node_paths=PackedStringArray("bound_point_a", "bound_point_b") instance=ExtResource("2_5yrod")]
 position = Vector2(485, 611)
-king_crab_max_health = 1850
+king_crab_max_health = 1700
 spike_damage = 100
 phase2_threshold_ratio = 0.6
 bound_point_a = NodePath("../BossPlatformController/DiamondPlatform/RoomBoundPointA")

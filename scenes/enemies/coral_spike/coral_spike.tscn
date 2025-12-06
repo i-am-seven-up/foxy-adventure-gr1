@@ -87,6 +87,7 @@ disabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 22)
 shape = SubResource("RectangleShape2D_51wxb")
+one_way_collision = true
 
 [node name="States" type="Node" parent="."]
 

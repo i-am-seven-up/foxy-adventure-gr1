@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqxv4en7l4nxj"]
+
+[ext_resource type="Texture2D" uid="uid://dputbn7wt7xd6" path="res://asset/effects/Flash 2.png" id="1_flash"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_windup"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, -1)
+spread = 15.0
+initial_velocity_min = 2.0
+initial_velocity_max = 8.0
+angular_velocity_min = -30.0
+angular_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.05
+scale_max = 0.15
+color = Color(0.7, 0.7, 0.7, 0.6)
+
+[node name="LaserWindupParticles" type="GPUParticles2D"]
+material = SubResource("ParticleProcessMaterial_windup")
+emitting = false
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_windup")
+texture = ExtResource("1_flash")
+lifetime = 1.0
+one_shot = false
+explosiveness = 0.0
+lifetime_randomness = 0.4
+local_coords = false
+fixed_fps = 30
+interpolate = true
