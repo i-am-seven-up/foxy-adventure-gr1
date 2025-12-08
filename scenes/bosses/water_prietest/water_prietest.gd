@@ -70,6 +70,10 @@ var in_phase2: bool = false
 var _recent_damage_times: PackedFloat32Array = []
 var level_bounds: Rect2
 
+var _phase2_transition_running := false
+var _original_time_scale: float = 1.0
+var phase2_platform_ready: bool = false
+
 func _ready() -> void:
 	movement_speed = 0.0
 	velocity = Vector2.ZERO
@@ -118,15 +122,21 @@ func _init_hurt_area() -> void:
 		hurt_area.hurt.connect(_on_hurt_area_2d_hurt)
 
 func _on_hurt_area_2d_hurt(_dir: Vector2, damage: int) -> void:
+	if _phase2_transition_running:
+		return
+
+	# Check if boss is rolling (invincible)
 	if fsm.current_state == fsm.states.roll:
 		var roll_state = fsm.current_state
 		if roll_state.has_method("has_invincibility") and roll_state.has_invincibility():
 			return
 
+	# Check if boss is defending and should block damage
 	if fsm.current_state == fsm.states.defend:
 		var defend_state = fsm.current_state
 		if defend_state.has_method("should_block_damage") and defend_state.should_block_damage(damage, _dir):
-			flash_hurt(0.1, 1, Color.CYAN)  
+			# Damage blocked - play block effect but don't take damage
+			flash_hurt(0.1, 1, Color.CYAN)  # Flash cyan for blocked hit
 			return
 
 	take_damage(damage)

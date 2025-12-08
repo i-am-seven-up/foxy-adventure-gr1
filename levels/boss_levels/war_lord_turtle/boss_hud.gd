@@ -8,7 +8,7 @@ var _boss: Node = null
 func set_boss(boss: Node) -> void:
 	_boss = boss
 	if not _boss:
-		print("no boss found in level war lord turtle")
+		print("no boss found in level water prietess")
 		return
 
 	if not _boss.health_changed.is_connected(_on_boss_health_changed):
@@ -32,7 +32,7 @@ func _on_boss_died() -> void:
 	visible = false
 	
 func _on_boss_into_phase2() -> void:
-	boss_health_label.text = "GRIMM, ENLIGHTER OF THE SHADOW"
+	boss_health_label.text = "GATEKEEPER OF THE WATER PALACE"
 	
 func reset() -> void:
 	if _boss:

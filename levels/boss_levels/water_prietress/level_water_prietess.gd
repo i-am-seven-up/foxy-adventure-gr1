@@ -26,9 +26,8 @@ func _ready() -> void:
 		_setup_boss_alive_state()
 
 func _on_boss_start_fight() -> void:
-	boss_hud._on_boss_start_fighting()
 	await get_tree().create_timer(0.75).timeout
-	boss_platform_controller.start_boss_intro()
+	boss_platform_controller.start_boss_intro() 
 
 func _on_boss_died() -> void:
 	boss_platform_controller.return_platform_after_boss_dead()
@@ -91,12 +90,16 @@ func _setup_boss_alive_state() -> void:
 		_set_chest_collision(chest, false)
 
 	boss_hud.set_boss(boss)
-
+	
 	if not boss.start_fight.is_connected(_on_boss_start_fight):
 		boss.start_fight.connect(_on_boss_start_fight)
 
 	if not boss.boss_died.is_connected(_on_boss_died):
 		boss.boss_died.connect(_on_boss_died)
+		
+	#if not boss_platform_controller.complete_moving_up.is_connected(_on_complete_moving_up):
+		#boss_platform_controller.complete_moving_up.connect(_on_complete_moving_up)
+
 
 func _setup_boss_defeated_state() -> void:
 	if is_instance_valid(boss):

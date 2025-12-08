@@ -6,14 +6,14 @@ signal complete_moving_up
 @export var rect_platform: Node2D
 @export var platforms: Array[Node2D] = []              # Các floating / phase 2 platforms
 @export var jump_markers: Array[JumpMarker2D] = []     # Marker để boss biết điểm nhảy
-@export var sequence_interval: float = 2.0
+@export var sequence_interval: float = 3.0
 @export var phase_2_start_delay: float = 0.0           # Nếu muốn delay trước khi phase 2 chạy
 @export var rise_height: float = 200.0
 @export var rise_time: float = 3.5
 
 # Main left/right platforms (biên map)
-@export var left_platform: Node2D
-@export var right_platform: Node2D
+@export var left_platform: TileMapLayer
+@export var right_platform: TileMapLayer
 
 # Room bounds for platform constraints
 @export var room_bound_point_a: Marker2D
@@ -278,11 +278,11 @@ func _move_platform_within_bounds(platform: Node2D) -> void:
 	var a := room_bound_point_a.global_position
 	var b := room_bound_point_b.global_position
 
-	# Get room bounds with padding
-	var min_x = min(a.x, b.x) + 80  # Padding from edges
-	var max_x = max(a.x, b.x) - 80
-	var min_y = min(a.y, b.y) + 150  # Higher up in the room
-	var max_y = max(a.y, b.y) - 150
+	# Get room bounds
+	var min_x = min(a.x, b.x) + 50  # Padding from edges
+	var max_x = max(a.x, b.x) - 50
+	var min_y = min(a.y, b.y) + 100  # Higher up in the room
+	var max_y = max(a.y, b.y) - 100
 
 	# Generate random position within bounds
 	var random_x = randf_range(min_x, max_x)
@@ -298,7 +298,7 @@ func _move_platform_within_bounds(platform: Node2D) -> void:
 			# Keep marker relative offset but center it on the platform
 			marker.global_position = Vector2(
 				platform.global_position.x,
-				platform.global_position.y - 40  # Slightly above platform
+				platform.global_position.y - 20  # Slightly above platform
 			)
 
 
