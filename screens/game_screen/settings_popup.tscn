@@ -39,36 +39,6 @@ patch_margin_bottom = 32
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="Label" type="Label" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 97.0
-offset_top = 46.0
-offset_right = 164.0
-offset_bottom = 69.0
-theme_override_fonts/font = ExtResource("3_a4it1")
-text = "MUSIC"
-label_settings = SubResource("LabelSettings_rbs2k")
-
-[node name="Label2" type="Label" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 67.0
-offset_right = 194.0
-offset_bottom = 90.0
-theme_override_fonts/font = ExtResource("3_a4it1")
-text = "SOUND FX"
-label_settings = SubResource("LabelSettings_x0ywr")
-
-[node name="Label3" type="Label" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 95.0
-offset_top = 91.0
-offset_right = 193.0
-offset_bottom = 114.0
-theme_override_fonts/font = ExtResource("3_a4it1")
-text = "MODE HACK"
-label_settings = SubResource("LabelSettings_x0ywr")
-
 [node name="CloseTextureButton" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
 offset_left = 296.0
@@ -83,30 +53,66 @@ texture_hover = ExtResource("3_5ccg2")
 texture_disabled = ExtResource("3_5ccg2")
 texture_focused = ExtResource("3_5ccg2")
 
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 29.0
+offset_right = 101.0
+offset_bottom = 52.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_a4it1")
+text = "MUSIC"
+label_settings = SubResource("LabelSettings_rbs2k")
+
+[node name="Label2" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 73.0
+offset_right = 132.0
+offset_bottom = 96.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_a4it1")
+text = "SOUND FX"
+label_settings = SubResource("LabelSettings_x0ywr")
+
+[node name="Label3" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 117.0
+offset_right = 145.0
+offset_bottom = 140.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_a4it1")
+text = "HACK MODE"
+label_settings = SubResource("LabelSettings_x0ywr")
+
 [node name="MusicCheckButton" type="CheckButton" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 42.0
-offset_right = 240.0
-offset_bottom = 63.0
+offset_left = 265.0
+offset_top = 22.0
+offset_right = 289.0
+offset_bottom = 43.0
+scale = Vector2(2, 2)
 theme_override_icons/checked = ExtResource("4_43ojk")
 theme_override_icons/unchecked = ExtResource("5_ovj3y")
 
 [node name="SoundCheckButton" type="CheckButton" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 63.0
-offset_right = 240.0
-offset_bottom = 84.0
+offset_left = 265.0
+offset_top = 66.0
+offset_right = 289.0
+offset_bottom = 87.0
+scale = Vector2(2, 2)
 theme_override_icons/checked = ExtResource("4_43ojk")
 theme_override_icons/unchecked = ExtResource("5_ovj3y")
 
 [node name="ModeHackCheckButton" type="CheckButton" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 216.0
-offset_top = 86.0
-offset_right = 240.0
-offset_bottom = 107.0
+offset_left = 265.0
+offset_top = 111.0
+offset_right = 289.0
+offset_bottom = 132.0
+scale = Vector2(2, 2)
 theme_override_icons/checked = ExtResource("4_43ojk")
 theme_override_icons/unchecked = ExtResource("5_ovj3y")
 

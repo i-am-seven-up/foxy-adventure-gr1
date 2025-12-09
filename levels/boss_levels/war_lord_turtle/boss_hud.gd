@@ -32,7 +32,7 @@ func _on_boss_died() -> void:
 	visible = false
 	
 func _on_boss_into_phase2() -> void:
-	boss_health_label.text = "GRIMM, MORNINGSTAR OF DESPAIR"
+	boss_health_label.text = "GRIMM, ENLIGHTER OF THE SHADOW"
 	
 func reset() -> void:
 	if _boss:

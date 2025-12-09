@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqrpvlvc54tyk"]
+
+[ext_resource type="Texture2D" uid="uid://cpernpfcpvbaf" path="res://asset/level_3_water_palace/background/water_goddess_platform.png" id="1_vpcc0"]
+[ext_resource type="Script" uid="uid://tqxa0q7sq85g" path="res://scenes/effects/flicker_light_2d.gd" id="2_bybql"]
+[ext_resource type="Texture2D" uid="uid://dtb6i5vvrvijv" path="res://asset/level_3_water_palace/background/water_goddess.png" id="2_p115l"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vpcc0"]
+a = Vector2(-42.500015, -4.9999847)
+b = Vector2(537.49994, -2.4999847)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p115l"]
+a = Vector2(5, 30)
+b = Vector2(97.499954, 29.999985)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bybql"]
+a = Vector2(-344.99997, 2.4999998)
+b = Vector2(347.49997, 7.499999)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_35bhb"]
+a = Vector2(-7.5000153, -2.4999847)
+b = Vector2(72.49997, 7.6293945e-06)
+
+[node name="WaterGoddessPlatform" type="StaticBody2D"]
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.39999998, 0.39999998)
+texture = ExtResource("1_vpcc0")
+
+[node name="FlickerLight2D" type="PointLight2D" parent="Sprite2D"]
+position = Vector2(43.75, 100)
+script = ExtResource("2_bybql")
+energy_base = 0.6
+energy_variation = 0.15
+tex_size = 512
+metadata/_custom_type_script = "uid://tqxa0q7sq85g"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-244.99997, 177.49998)
+shape = SubResource("SegmentShape2D_vpcc0")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-347.5, 72.5)
+shape = SubResource("SegmentShape2D_p115l")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(252.5, 75)
+shape = SubResource("SegmentShape2D_p115l")
+one_way_collision = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-234.99998, -109.99999, -192.49998, -119.999985, -134.99998, -129.99998, -69.99999, -142.49998, 84.99999, -142.49998, 199.99998, -122.499985, 247.49997, -112.49999)
+one_way_collision = true
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-234.99998, -199.99998, -192.49998, -209.99998, -72.49999, -232.49998, 74.99999, -234.99998, 202.49998, -212.49998, 239.99997, -199.99998)
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_bybql")
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-242.49997, 119.999985)
+shape = SubResource("SegmentShape2D_35bhb")
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(182.5, 119.99999)
+shape = SubResource("SegmentShape2D_35bhb")
+one_way_collision = true
+
+[node name="WaterGoddess" type="Sprite2D" parent="."]
+position = Vector2(0, 25)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("2_p115l")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://btj7ilbg28lwi"]
 
-[ext_resource type="Texture2D" uid="uid://cnktdo5kyepe3" path="res://asset/ui/avatar_foxy.png" id="1_rp7d4"]
+[ext_resource type="Texture2D" uid="uid://ddg68xd2v6lbp" path="res://asset/ui/foxy_avatar.png" id="2_kor1e"]
 [ext_resource type="Texture2D" uid="uid://31wwmmc0vdti" path="res://asset/ui/background_bar.png" id="2_rrwxd"]
 [ext_resource type="Texture2D" uid="uid://crp7x1pjmej31" path="res://asset/ui/player/susanoo.png" id="3_l5yv8"]
 [ext_resource type="Texture2D" uid="uid://baelapdxhwubq" path="res://asset/ui/hp_progress_bar.png" id="3_rrwxd"]
@@ -21,7 +21,7 @@ offset_top = 10.0
 offset_right = 1245.0
 offset_bottom = 679.0
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("1_rp7d4")
+texture = ExtResource("2_kor1e")
 stretch_mode = 6
 flip_h = true
 

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://caayffphhg6bw"]
+
+[ext_resource type="Script" uid="uid://vlpp1tega6ti" path="res://scenes/bosses/boss3/column_spike_hazard.gd" id="1_jw46g"]
+[ext_resource type="Texture2D" uid="uid://dknq8fo5oka23" path="res://asset/level_3_water_palace/background/column_gai.png" id="2_lacmw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gfwu"]
+size = Vector2(61, 512)
+
+[node name="ColumnSpike" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_jw46g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-13.249996, 9.407722)
+scale = Vector2(0.42167383, 0.4216738)
+texture = ExtResource("2_lacmw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-21.5, -21)
+shape = SubResource("RectangleShape2D_4gfwu")

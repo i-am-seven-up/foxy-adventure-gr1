@@ -20,5 +20,6 @@ func hit(hurt_area):
 
 # called when area entered
 func _on_area_entered(area):
+	print("[HitArea2D] Area entered: ", area.name, " | Has take_damage: ", area.has_method("take_damage"))
 	hit(area)
 	hitted.emit(area)

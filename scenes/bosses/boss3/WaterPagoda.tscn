@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://bum03fyn8ydr5"]
+
+[ext_resource type="Texture2D" uid="uid://bdar7eweuuade" path="res://asset/level_3_water_palace/water_goddess/skills/ice_pagoda_01.png" id="1_76pwl"]
+[ext_resource type="Script" uid="uid://bmk5x11h8leum" path="res://scenes/bosses/boss3/water_pagoda.gd" id="1_urbwv"]
+[ext_resource type="Texture2D" uid="uid://cktkaemk12hw4" path="res://asset/level_3_water_palace/water_goddess/skills/ice_pagoda_02.png" id="2_4i0j1"]
+[ext_resource type="Texture2D" uid="uid://31wawl2cqfh" path="res://asset/level_3_water_palace/water_goddess/skills/ice_pagoda_03.png" id="3_urbwv"]
+[ext_resource type="Texture2D" uid="uid://dnoxlq46ix8h8" path="res://asset/level_3_water_palace/water_goddess/skills/ice_pagoda_slash_01.png" id="4_b2xuf"]
+[ext_resource type="Texture2D" uid="uid://cyacnhblq786o" path="res://asset/level_3_water_palace/water_goddess/skills/ice_pagoda_slash_02.png" id="5_xsj63"]
+[ext_resource type="Texture2D" uid="uid://bwowou41rl5td" path="res://asset/level_3_water_palace/water_goddess/skills/ice_pagoda_slash_03.png" id="6_8vk1x"]
+[ext_resource type="Script" uid="uid://bss631ltk5rcm" path="res://scripts/hit_area_2d.gd" id="8_b2xuf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uou11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_76pwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4i0j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_urbwv")
+}],
+"loop": true,
+"name": &"appears",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_b2xuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xsj63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8vk1x")
+}],
+"loop": true,
+"name": &"slash",
+"speed": 5.0
+}]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_urbwv"]
+points = PackedVector2Array(20, -66, 45, 58, -47, 58, -19, -65, 0, -87)
+
+[node name="WaterPagoda" type="Node2D"]
+script = ExtResource("1_urbwv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -65)
+scale = Vector2(0.27198753, 0.24403039)
+sprite_frames = SubResource("SpriteFrames_uou11")
+animation = &"appears"
+frame_progress = 0.67785996
+
+[node name="HitArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("8_b2xuf")
+metadata/_custom_type_script = "uid://bss631ltk5rcm"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
+position = Vector2(0, -56)
+shape = SubResource("ConvexPolygonShape2D_urbwv")
+debug_color = Color(0.93744016, 0.2288306, 0.2745176, 0.41960785)

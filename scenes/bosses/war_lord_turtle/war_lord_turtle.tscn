@@ -507,6 +507,7 @@ metadata/_custom_type_script = "uid://bss631ltk5rcm"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_4ut7l")
+disabled = true
 debug_color = Color(0.636043, 0.52511, 0.112223, 0.42)
 
 [node name="Atk1ShootPoint1" type="Marker2D" parent="Direction"]

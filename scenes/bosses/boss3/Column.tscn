@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvavyowgpxn0m"]
+
+[ext_resource type="Texture2D" uid="uid://rc3x1f1x74y0" path="res://asset/level_3_water_palace/background/column.png" id="1_y4d0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2rnh"]
+size = Vector2(57, 475)
+
+[node name="Column" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-6.500001, 17.875008)
+scale = Vector2(0.935, 0.935)
+texture = ExtResource("1_y4d0u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-14.5, -0.5)
+shape = SubResource("RectangleShape2D_p2rnh")

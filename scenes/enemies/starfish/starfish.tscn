@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c6bv0wnp7rcrp" path="res://asset/enemy/starfish/starfish_02.png" id="13_0shsf"]
 [ext_resource type="Texture2D" uid="uid://ddty2ho1bvtsq" path="res://asset/enemy/starfish/starfish_03.png" id="14_w635i"]
 [ext_resource type="Script" uid="uid://btjb1u1sh5j0r" path="res://scenes/enemies/Walk.gd" id="15_4hbbl"]
-[ext_resource type="Script" uid="uid://bya40y5dqymyb" path="res://scenes/enemies/dead.gd" id="16_gmc80"]
+[ext_resource type="Script" uid="uid://cxm1bbuqrbxdw" path="res://scenes/enemies/dead1.gd" id="16_t00wx"]
 [ext_resource type="Script" uid="uid://df4dkquwky0gp" path="res://scenes/enemies/hurt.gd" id="17_l27mi"]
 [ext_resource type="Script" uid="uid://055ybebvgq2r" path="res://scenes/enemies/starfish/attack.gd" id="18_wmhok"]
 [ext_resource type="Texture2D" uid="uid://b3npxepukgtpy" path="res://asset/ui/under_healthbar.png" id="19_t00wx"]
@@ -186,7 +186,7 @@ collision_mask = 2
 script = ExtResource("15_4hbbl")
 
 [node name="Dead" type="Node" parent="States"]
-script = ExtResource("16_gmc80")
+script = ExtResource("16_t00wx")
 
 [node name="Hurt" type="Node" parent="States"]
 script = ExtResource("17_l27mi")

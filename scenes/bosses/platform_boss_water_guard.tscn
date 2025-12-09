@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://72ullgkrurgm"]
+[gd_scene load_steps=22 format=3 uid="uid://72ullgkrurgm"]
 
 [ext_resource type="Texture2D" uid="uid://b813tsbvdfb81" path="res://asset/level_3_water_palace/background/platform_boss_water_guard_01 (1).png" id="1_1xex7"]
+[ext_resource type="PackedScene" uid="uid://ocavr6vbm2kn" path="res://scenes/enemies/pearl_altar/pearl_altar.tscn" id="2_llfg8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dksfx"]
 size = Vector2(1938.2979, 44.537247)
@@ -188,3 +189,40 @@ one_way_collision = true
 position = Vector2(374.46808, 157.44681)
 shape = SubResource("SegmentShape2D_ib4ck")
 one_way_collision = true
+
+[node name="PearlAltar" parent="StaticBody2D" instance=ExtResource("2_llfg8")]
+position = Vector2(17.021276, 65.95745)
+
+[node name="SpawnEnemyMarkder2D" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnEnemyMarkder2D"]
+position = Vector2(-572.3404, -321.2766)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnEnemyMarkder2D"]
+position = Vector2(85.106384, -323.40424)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnEnemyMarkder2D"]
+position = Vector2(470.21277, -317.02127)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnEnemyMarkder2D"]
+position = Vector2(-508.51062, -80.85106)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnEnemyMarkder2D"]
+position = Vector2(400, 172.34042)
+
+[node name="Marker2D6" type="Marker2D" parent="SpawnEnemyMarkder2D"]
+position = Vector2(-251.06384, 65.95745)
+
+[node name="Marker2D7" type="Marker2D" parent="SpawnEnemyMarkder2D"]
+position = Vector2(-429.78723, 434.04254)
+
+[node name="Marker2D8" type="Marker2D" parent="SpawnEnemyMarkder2D"]
+position = Vector2(423.40427, 440.4255)
+
+[node name="SpawnPearlFairyMarker2D" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPearlFairyMarker2D"]
+position = Vector2(759.57446, 146.8085)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPearlFairyMarker2D"]
+position = Vector2(-797.8723, 291.48938)

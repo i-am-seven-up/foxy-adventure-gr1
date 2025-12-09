@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw8xqj4y5nbux"]
+
+[ext_resource type="Script" path="res://scenes/bosses/boss3/water_laser.gd" id="1_water_laser"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_laser"]
+size = Vector2(1200, 12)
+
+[node name="WaterLaser" type="Node2D"]
+script = ExtResource("1_water_laser")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 1200, 0)
+width = 12.0
+default_color = Color(0.5, 0.8, 1, 0.5)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(600, 0)
+shape = SubResource("RectangleShape2D_laser")

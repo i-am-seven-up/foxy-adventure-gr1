@@ -46,14 +46,13 @@
 [ext_resource type="PackedScene" uid="uid://b64dtt1sqigic" path="res://levels/objects/platforms/cloud_platform_01.tscn" id="41_avipa"]
 [ext_resource type="Script" uid="uid://bss631ltk5rcm" path="res://scripts/hit_area_2d.gd" id="43_a7slf"]
 [ext_resource type="PackedScene" uid="uid://dubb5b1vjmsxd" path="res://levels/objects/door/door.tscn" id="44_imecc"]
-[ext_resource type="PackedScene" uid="uid://dme30hj53kiyq" path="res://levels/tutorial/signpost.tscn" id="45_m12hn"]
-[ext_resource type="PackedScene" uid="uid://dr6cgamag4fva" path="res://levels/tutorial/signpost_details/tutorial_popup.tscn" id="46_ncpwn"]
 [ext_resource type="AudioStream" uid="uid://c4k72d36sq6fd" path="res://asset/sounds/MagnificentIslandExpedition_FULL_SONG_MusicGPT.mp3" id="48_8dbd0"]
 [ext_resource type="AudioStream" uid="uid://bphupht8j5lpn" path="res://asset/sounds/Sea Waves - Sound Effect - Sound Effects.mp3" id="48_cjww2"]
 [ext_resource type="AudioStream" uid="uid://dtl6nhxvi2mxk" path="res://asset/sounds/Winter Morning Ambience Sound Effect  Copyright Free Nature Sounds - Audio Wind.mp3" id="49_r8xm3"]
 [ext_resource type="PackedScene" uid="uid://dt1wkv6f2kmyv" path="res://scenes/enemies/pear/pear.tscn" id="50_cjww2"]
 [ext_resource type="PackedScene" uid="uid://btj7ilbg28lwi" path="res://ui/PlayerHUD.tscn" id="51_cjww2"]
 [ext_resource type="PackedScene" uid="uid://buo3e54qkst7m" path="res://levels/objects/teleport/teleport.tscn" id="53_70u64"]
+[ext_resource type="FontFile" uid="uid://jh40hrd2xw4m" path="res://asset/fonts/PixelOperator8.ttf" id="53_e0w0y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1h871"]
 animations = [{
@@ -181,6 +180,8 @@ size = Vector2(17222, 1610)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7slf"]
 size = Vector2(20, 596)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0w0y"]
+
 [node name="Map1" type="Node2D"]
 position = Vector2(12, 0)
 script = ExtResource("1_vf8qv")
@@ -295,16 +296,6 @@ position = Vector2(9360, -297)
 
 [node name="KeyboardPlatform1" parent="Enemies" instance=ExtResource("10_e0w0y")]
 position = Vector2(2247, -11.000002)
-scale = Vector2(0.7, 0.7)
-key_text = "F"
-
-[node name="KeyboardPlatform2" parent="Enemies" instance=ExtResource("10_e0w0y")]
-position = Vector2(6356, -263)
-scale = Vector2(0.7, 0.7)
-key_text = "F"
-
-[node name="KeyboardPlatform3" parent="Enemies" instance=ExtResource("10_e0w0y")]
-position = Vector2(12679, -24.000004)
 scale = Vector2(0.7, 0.7)
 key_text = "F"
 
@@ -633,47 +624,6 @@ shape = SubResource("RectangleShape2D_imecc")
 [node name="Door" parent="." instance=ExtResource("44_imecc")]
 position = Vector2(-219, 69)
 
-[node name="ClimbTutorial" parent="." instance=ExtResource("45_m12hn")]
-position = Vector2(728, 28)
-popup_scene = ExtResource("46_ncpwn")
-popup_text_lines = Array[String](["When Foxy is on a wall, he can climb, and his falling speed is reduced during this state."])
-popup_keys = Array[String]([">"])
-popup_video_path = "res://asset/videos/climb_tutorial.ogv"
-
-[node name="HackTutorial" parent="." instance=ExtResource("45_m12hn")]
-position = Vector2(12381, 27)
-popup_scene = ExtResource("46_ncpwn")
-popup_text_lines = Array[String](["Wasting time on attacking enemies? Use hack mode to quickly test through the level. (Good players won't do that)"])
-popup_keys = Array[String]([">"])
-popup_video_path = "res://asset/videos/hack_tutorial.ogv"
-
-[node name="Area2D" parent="." instance=ExtResource("45_m12hn")]
-position = Vector2(4453, 30)
-popup_scene = ExtResource("46_ncpwn")
-popup_text_lines = Array[String](["Press 'Shift' button to Dash"])
-popup_keys = Array[String]([">"])
-popup_video_path = "res://asset/videos/dash_tutorial.ogv"
-
-[node name="Area2D2" parent="." instance=ExtResource("45_m12hn")]
-position = Vector2(6090, 27)
-popup_scene = ExtResource("46_ncpwn")
-popup_text_lines = Array[String](["Double press 'left' or 'right' to run faster."])
-popup_keys = Array[String]([">"])
-popup_video_path = "res://asset/videos/run_fast_tutorial.ogv"
-
-[node name="Area2D7" parent="." instance=ExtResource("45_m12hn")]
-position = Vector2(7720, -196)
-popup_scene = ExtResource("46_ncpwn")
-popup_text_lines = Array[String](["When Foxy is out of jumps, holding Space activates a hover state that slows his fall."])
-popup_keys = Array[String]([">"])
-popup_video_path = "res://asset/videos/hover_tutorial.ogv"
-
-[node name="Area2D4" parent="." instance=ExtResource("45_m12hn")]
-position = Vector2(10496, -36)
-popup_scene = ExtResource("46_ncpwn")
-popup_text_lines = Array[String](["Press \"Space\" when run fast to dash diagonal"])
-popup_video_path = "res://asset/videos/dash_diagonal_tutorial.ogv"
-
 [node name="Music2" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("48_cjww2")
@@ -726,3 +676,26 @@ scale = Vector2(0.5, 0.5)
 target_stage = "uid://x5qrj66qebnm"
 target_door = "LeftDoor"
 is_cross_scene = true
+
+[node name="LeftBoundary" type="StaticBody2D" parent="."]
+position = Vector2(-522, -113)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBoundary"]
+position = Vector2(50, 4000)
+shape = SubResource("RectangleShape2D_e0w0y")
+
+[node name="Label8" type="Label" parent="."]
+offset_left = -410.0
+offset_top = -160.0
+offset_right = -27.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("53_e0w0y")
+text = "
+When you want to see tutorial again, press the \"?\" button in the corner of the screen"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

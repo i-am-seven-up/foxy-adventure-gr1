@@ -9,20 +9,23 @@ func _enter() -> void:
 
 func _update(_delta: float) -> void:
 	#Control dash
-	if control_dash():
-		return
-	#Toggle Susanoo spirit
-	if control_susanoo():
-		return
-	# Room skill
-	if control_room():
-		return
-	# Activate Water Paw
-	if control_water_paw():
-		return
-	#Control run by double-tap
-	if control_run():
-		return
+	if not obj.is_giant_mode:
+		if control_dash():
+			return
+		#Toggle Susanoo spirit
+		if control_susanoo():
+			return
+		# Room skill
+		if control_room():
+			return
+		# Activate Water Paw
+		if control_water_paw():
+			return
+		#Control run by double-tap
+		if control_run():
+			return
+		if control_giant_mode():
+			return
 
 	control_jump()
 	#Control moving

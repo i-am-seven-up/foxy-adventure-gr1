@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://p1noemh0cl3y"]
+[gd_scene load_steps=50 format=4 uid="uid://p1noemh0cl3y"]
 
 [ext_resource type="Script" uid="uid://6708u6d7r8dy" path="res://levels/tutorial/map_0.gd" id="1_7hlcu"]
 [ext_resource type="PackedScene" uid="uid://oplmtt8e4gwb" path="res://scenes/character/npcs/crystal-mauler.tscn" id="2_7hlcu"]
@@ -36,8 +36,6 @@
 [ext_resource type="Script" uid="uid://bss631ltk5rcm" path="res://scripts/hit_area_2d.gd" id="35_ukr74"]
 [ext_resource type="PackedScene" uid="uid://dr1kwjksl4cp5" path="res://levels/tutorial/keyboard_key.tscn" id="36_21dun"]
 [ext_resource type="PackedScene" uid="uid://7smbtsc8cshm" path="res://levels/tutorial/enemy_house.tscn" id="36_ytypm"]
-[ext_resource type="PackedScene" uid="uid://dme30hj53kiyq" path="res://levels/tutorial/signpost.tscn" id="37_7hlcu"]
-[ext_resource type="PackedScene" uid="uid://dr6cgamag4fva" path="res://levels/tutorial/signpost_details/tutorial_popup.tscn" id="38_popup"]
 [ext_resource type="Script" uid="uid://clw8rars82ebp" path="res://levels/tutorial/enemy_spawner.gd" id="39_spawner"]
 [ext_resource type="Script" uid="uid://drheh2mmiw3id" path="res://levels/tutorial/tutorial_manager.gd" id="40_tutor"]
 [ext_resource type="FontFile" uid="uid://jh40hrd2xw4m" path="res://asset/fonts/PixelOperator8.ttf" id="41_lybv0"]
@@ -175,12 +173,12 @@ camera_bottom_limit_y = -200.0
 comic_pages_paths = Array[String](["res://asset/comics/start_game/start_game_1.png", "res://asset/comics/start_game/start_game_2.png", "res://asset/comics/start_game/start_game_3.png", "res://asset/comics/start_game/start_game_4.png", "res://asset/comics/start_game/start_game_5.png", "res://asset/comics/start_game/start_game_6.png", "res://asset/comics/start_game/start_game_7.png", "res://asset/comics/start_game/start_game_8.png"])
 
 [node name="Crystal-mauler" parent="." instance=ExtResource("2_7hlcu")]
-position = Vector2(545, 73)
+position = Vector2(1277, 72.00001)
 scale = Vector2(1.3, 1.3)
 
 [node name="Player" parent="." instance=ExtResource("3_ayhlk")]
 position = Vector2(-196, 48)
-max_jump_count = 1000
+max_jump_count = 2
 attack_damage = 1000
 max_health = 10000
 
@@ -386,36 +384,44 @@ shape = SubResource("RectangleShape2D_imecc")
 [node name="KeyBoardKeyHints" type="Node2D" parent="."]
 
 [node name="Node" parent="KeyBoardKeyHints" instance=ExtResource("36_21dun")]
-position = Vector2(-71, -121)
+position = Vector2(74, -115)
 key_text = "A"
 
 [node name="Node4" parent="KeyBoardKeyHints" instance=ExtResource("36_21dun")]
-position = Vector2(-8, -121)
+position = Vector2(137, -115)
 key_text = "D"
 
+[node name="Node7" parent="KeyBoardKeyHints" instance=ExtResource("36_21dun")]
+position = Vector2(698, -143)
+key_text = "W"
+
+[node name="Node8" parent="KeyBoardKeyHints" instance=ExtResource("36_21dun")]
+position = Vector2(765, -143)
+key_text = "↑"
+
 [node name="Node2" parent="KeyBoardKeyHints" instance=ExtResource("36_21dun")]
-position = Vector2(68, -57)
+position = Vector2(731, -86)
 key_text = "Space"
 custom_scale = Vector2(0.3, 0.07)
 
 [node name="Node3" parent="KeyBoardKeyHints" instance=ExtResource("36_21dun")]
-position = Vector2(138, -118)
-key_text = "<"
+position = Vector2(283, -112)
+key_text = "←"
 
 [node name="Node5" parent="KeyBoardKeyHints" instance=ExtResource("36_21dun")]
-position = Vector2(200, -118)
-key_text = ">"
+position = Vector2(345, -112)
+key_text = "→"
 
 [node name="Node6" parent="KeyBoardKeyHints" instance=ExtResource("36_21dun")]
-position = Vector2(545, -56)
+position = Vector2(1189, -79)
 scale = Vector2(0.8, 0.8)
 key_text = "F"
 
 [node name="EnemyHouse" parent="." instance=ExtResource("36_ytypm")]
-position = Vector2(1342, -51)
+position = Vector2(1709, -52)
 
 [node name="EnemyExitPoint" type="Marker2D" parent="."]
-position = Vector2(1776, 61)
+position = Vector2(2221, 61)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -428,83 +434,126 @@ script = ExtResource("40_tutor")
 
 [node name="Signposts" type="Node2D" parent="."]
 
-[node name="Area2D" parent="Signposts" instance=ExtResource("37_7hlcu")]
-position = Vector2(318, 28)
-popup_scene = ExtResource("38_popup")
-popup_text_lines = Array[String](["Press F button for interacting with npc"])
-popup_keys = Array[String](["F"])
-popup_video_path = "res://asset/videos/interact_button_tutorial.ogv"
-
-[node name="Area2D2" parent="Signposts" instance=ExtResource("37_7hlcu")]
-position = Vector2(1106, 28)
-popup_scene = ExtResource("38_popup")
-popup_text_lines = Array[String](["Press 'C' button to attack"])
-popup_keys = Array[String](["C"])
-popup_video_path = "res://asset/videos/attack_tutorial.ogv"
-
 [node name="Label" type="Label" parent="."]
-offset_left = 449.0
-offset_top = -65.0
-offset_right = 519.0
-offset_bottom = -42.0
+offset_left = 1093.0
+offset_top = -88.0
+offset_right = 1163.0
+offset_bottom = -65.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("41_lybv0")
 text = "Press"
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 1130.0
-offset_top = -202.0
-offset_right = 1200.0
-offset_bottom = -179.0
+offset_left = 1522.0
+offset_top = -212.0
+offset_right = 1592.0
+offset_bottom = -189.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("41_lybv0")
 text = "Press"
 
 [node name="Label5" type="Label" parent="."]
-offset_left = 1718.0
-offset_top = -67.0
-offset_right = 1788.0
-offset_bottom = -44.0
+offset_left = 2074.0
+offset_top = -55.0
+offset_right = 2144.0
+offset_bottom = -32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("41_lybv0")
 text = "Press"
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 1270.0
-offset_top = -209.0
-offset_right = 1555.0
-offset_bottom = -174.0
+offset_left = 1662.0
+offset_top = -219.0
+offset_right = 1947.0
+offset_bottom = -184.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("41_lybv0")
 text = "to attack and destroy enemies's house"
 autowrap_mode = 2
 
 [node name="Label6" type="Label" parent="."]
-offset_left = 1860.0
-offset_top = -77.0
-offset_right = 2145.0
-offset_bottom = -42.0
+offset_left = 2216.0
+offset_top = -65.0
+offset_right = 2501.0
+offset_bottom = -30.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("41_lybv0")
 text = "to teleport to the next stage"
 autowrap_mode = 2
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 576.0
-offset_top = -73.0
-offset_right = 852.0
-offset_bottom = -19.0
+offset_left = 1220.0
+offset_top = -96.0
+offset_right = 1496.0
+offset_bottom = -42.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("41_lybv0")
 text = "to receive blade from Crystal Mauler
 "
 autowrap_mode = 2
 
+[node name="Label7" type="Label" parent="."]
+offset_left = 46.0
+offset_top = -189.0
+offset_right = 396.0
+offset_bottom = -135.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("41_lybv0")
+text = "Use the keys above to move
+(Turn off Unikey)
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label9" type="Label" parent="."]
+offset_left = -357.0
+offset_top = -87.0
+offset_right = -7.0
+offset_bottom = -33.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("41_lybv0")
+text = "Hey buddy, remember to wear headphone"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label8" type="Label" parent="."]
+offset_left = 565.0
+offset_top = -213.0
+offset_right = 915.0
+offset_bottom = -159.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("41_lybv0")
+text = "Use the keys above to jump
+(Foxy can double jump)
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Node" parent="." instance=ExtResource("36_21dun")]
-position = Vector2(1235, -191)
+position = Vector2(1627, -201)
 key_text = "C"
 
 [node name="Door" parent="." instance=ExtResource("42_vaqrb")]
-position = Vector2(1774, 70)
+position = Vector2(2221, 69)
 target_stage = "uid://65dl3olpohwm"
 is_cross_scene = true
 
 [node name="Node2" parent="." instance=ExtResource("36_21dun")]
-position = Vector2(1824, -60)
+position = Vector2(2180, -48)
 key_text = "F"
 
 [node name="Music2" type="AudioStreamPlayer" parent="."]

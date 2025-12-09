@@ -167,8 +167,8 @@ texture = ExtResource("7_hgx5j")
 flip_v = true
 
 [node name="LeavesParticle" type="GPUParticles2D" parent="World"]
-position = Vector2(450, 321)
-scale = Vector2(2, 2)
+position = Vector2(654, 383)
+scale = Vector2(4, 2)
 amount = 50
 texture = ExtResource("10_wcg3s")
 lifetime = 5.0
@@ -267,6 +267,7 @@ vertical_alignment = 1
 [node name="CoinAndKeyContainer" parent="CanvasLayer/CanvasLayer" instance=ExtResource("13_wcg3s")]
 
 [node name="Sound" type="Node2D" parent="."]
+position = Vector2(687, 573)
 
 [node name="Craking" type="AudioStreamPlayer2D" parent="Sound"]
 stream = ExtResource("16_x24gd")

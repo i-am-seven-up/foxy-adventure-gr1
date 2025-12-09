@@ -1,5 +1,5 @@
 extends Node
-class_name TutorialManager
+class_name TutorialMa
 
 @export var signposts_path: NodePath = NodePath("SignPosts")
 @export var enemy_house_path: NodePath = NodePath("EnemyHouse")

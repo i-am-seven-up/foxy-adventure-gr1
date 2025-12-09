@@ -6,18 +6,27 @@ extends Node2D
 
 @export var fade_duration := 0.25
 @export var active_time := 1.0
+
+var _is_playing := false  # Track if eruption is currently playing
+
 func _ready() -> void:
 	print("SELF =", self)
 	print("CHILDREN =", get_children())
 	print("FIND Sprite2D =", get_node_or_null("Sprite2D"))
 
 func play():
+	# Prevent interruption if already playing
+	if _is_playing:
+		print("[WaterEruption] Already playing, skipping")
+		return
+
+	_is_playing = true
 	_reset_state()
 	await _fade_out(sprite, fade_duration)
 
 	anim.visible = true
 	anim.modulate.a = 1.0
-	anim.play()
+	anim.play("default")
 	hit.set_deferred("monitoring", true)
 	hit.set_deferred("monitorable", true)
 
@@ -28,6 +37,8 @@ func play():
 	anim.visible = false
 	hit.set_deferred("monitoring", false)
 	hit.set_deferred("monitorable", false)
+
+	_is_playing = false  # Reset flag when done
 
 
 

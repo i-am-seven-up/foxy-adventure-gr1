@@ -128,6 +128,9 @@ func _ready() -> void:
 	hit_area_2d.damage = spike_damage
 	hit_collision_default_pos = hit_collision_shape_2d.position
 	
+	# Đảm bảo tắt contact damage của body
+	hit_collision_shape_2d.set_deferred("disabled", true)
+	
 	emit_signal("health_changed", health, max_health)
 	
 	if phase_2_intro and not phase_2_intro.finished.is_connected(_on_phase2_intro_finished):

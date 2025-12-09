@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://dh2f6po3rm0p7"]
+[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://dh2f6po3rm0p7"]
 
 [ext_resource type="Texture2D" uid="uid://b8r2k78gro5s6" path="res://asset/foxy/foxy/fox_hat/fox_climb.png" id="1_rvlm7"]
 [ext_resource type="Texture2D" uid="uid://m4di78taixns" path="res://asset/foxy/foxy/fox_hat/fox_defeat_1.png" id="2_xmjh0"]
@@ -14,9 +14,21 @@
 [ext_resource type="Texture2D" uid="uid://b7ko4rnci3koo" path="res://asset/foxy/foxy/fox_hat/fox_jump_1.png" id="12_ckh64"]
 [ext_resource type="Texture2D" uid="uid://6gko14qsmmw4" path="res://asset/foxy/foxy/fox_hat/fox_jump_2.png" id="13_tv3gn"]
 [ext_resource type="Texture2D" uid="uid://cseha0dkj5lfj" path="res://asset/foxy/foxy/fox_hat/fox_walk_1.png" id="14_6cblp"]
+[ext_resource type="Texture2D" uid="uid://c5u6te5pt0ywj" path="res://asset/foxy/foxy/giant_foxy/big1 (1).png" id="14_lrc1a"]
 [ext_resource type="Texture2D" uid="uid://3g5hdrfwcd2c" path="res://asset/foxy/foxy/fox_hat/fox_walk_2.png" id="15_4d7a2"]
+[ext_resource type="Texture2D" uid="uid://csevuhxerfc2y" path="res://asset/foxy/foxy/giant_foxy/big2 (1).png" id="15_evsfk"]
+[ext_resource type="Texture2D" uid="uid://e0dsgt67jor6" path="res://asset/foxy/foxy/giant_foxy/big3 (1).png" id="16_338vx"]
 [ext_resource type="Texture2D" uid="uid://cg0s41812vukj" path="res://asset/foxy/foxy/fox_hat/fox_walk_3.png" id="16_s5khn"]
 [ext_resource type="Texture2D" uid="uid://8u26ji11yaua" path="res://asset/foxy/foxy/fox_hat/fox_walk_4.png" id="17_2ucpl"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nakkr"]
+load_path = "res://.godot/imported/big3.png-477ec69fb1d7f440a45ce7262de2ed87.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qlnx3"]
+load_path = "res://.godot/imported/big2.png-3b800b5f3316b2f991ecc1b8a8cd09e8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4qvgp"]
+load_path = "res://.godot/imported/big1.png-edc349c0a2bf31022bb76f6ffe11289f.ctex"
 
 [resource]
 animations = [{
@@ -92,6 +104,34 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_lrc1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_evsfk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_338vx")
+}],
+"loop": false,
+"name": &"transform_giant",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_nakkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_qlnx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_4qvgp")
+}],
+"loop": false,
+"name": &"transform_normal",
 "speed": 5.0
 }, {
 "frames": [{

@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://cg3cxiohppmel"]
+
+[ext_resource type="Script" uid="uid://dvifss8akervx" path="res://levels/tutorial/signpost_details/tutorial_popup1.gd" id="1_l5kdw"]
+[ext_resource type="Texture2D" uid="uid://bm66ag0j7y3qi" path="res://asset/ui/popup.png" id="2_l5kdw"]
+[ext_resource type="FontFile" uid="uid://bf742t4mxgd7l" path="res://asset/fonts/big_font.fnt" id="3_v6iwr"]
+[ext_resource type="FontFile" uid="uid://jh40hrd2xw4m" path="res://asset/fonts/PixelOperator8.ttf" id="4_vwd58"]
+[ext_resource type="Texture2D" uid="uid://cx1m1wxkbipxh" path="res://asset/ui/close_button.png" id="5_qnr1o"]
+[ext_resource type="VideoStream" uid="uid://dpgtiiiov30e2" path="res://asset/videos/interact_button_tutorial.ogv" id="6_uirra"]
+[ext_resource type="Texture2D" uid="uid://dyitct72bmpf2" path="res://asset/tutorial/arrow.png" id="7_l5kdw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rbs2k"]
+
+[node name="TutorialPopup1" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l5kdw")
+
+[node name="OverlayColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.352941)
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0.0117647, 0.0352941, 0.85098)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(160, 96)
+layout_mode = 0
+offset_left = 268.0
+offset_top = 109.0
+offset_right = 859.0
+offset_bottom = 529.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_l5kdw")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Label7" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 401.0
+offset_right = 466.0
+offset_bottom = 455.0
+theme_override_colors/font_color = Color(1, 1, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_vwd58")
+text = "
+Press any key to close"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 19.0
+offset_right = 295.0
+offset_bottom = 42.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("3_v6iwr")
+text = "TUTORIAL"
+label_settings = SubResource("LabelSettings_rbs2k")
+
+[node name="Description" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 316.0
+offset_right = 570.0
+offset_bottom = 383.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("4_vwd58")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CloseTextureButton" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = -15.0
+offset_right = 590.0
+scale = Vector2(2, 2)
+toggle_mode = true
+texture_normal = ExtResource("5_qnr1o")
+texture_pressed = ExtResource("5_qnr1o")
+texture_hover = ExtResource("5_qnr1o")
+texture_disabled = ExtResource("5_qnr1o")
+texture_focused = ExtResource("5_qnr1o")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 60.0
+offset_right = 498.0
+offset_bottom = 308.0
+stream = ExtResource("6_uirra")
+volume_db = -80.0
+expand = true
+loop = true
+
+[node name="RightButton" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 702.99994
+offset_top = 161.0
+offset_right = 1727.0
+offset_bottom = 1185.0
+rotation = 1.5707964
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("7_l5kdw")
+
+[node name="LeftButton" type="TextureButton" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = -112.00001
+offset_top = 261.0
+offset_right = 912.0
+offset_bottom = 1285.0
+rotation = 4.712389
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("7_l5kdw")
+
+[connection signal="gui_input" from="OverlayColorRect" to="." method="_on_overlay_color_rect_gui_input"]
+[connection signal="pressed" from="NinePatchRect/CloseTextureButton" to="." method="_on_close_texture_button_pressed"]

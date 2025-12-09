@@ -93,17 +93,25 @@ func _update(delta: float) -> void:
 	# --------------------------------------------------
 	# OVERRIDING ABILITIES
 	# --------------------------------------------------
-	if control_dash():
-		return
-	if control_susanoo():
-		return
-	if control_room():
-		return
-	if control_water_paw():
-		return
-	if control_hover():
-		return
-
+	if not obj.is_giant_mode:
+		if control_dash():
+			return
+		#Toggle Susanoo spirit
+		if control_susanoo():
+			return
+		# Room skill
+		if control_room():
+			return
+		# Activate Water Paw
+		if control_water_paw():
+			return
+		#Control run by double-tap
+		if control_run():
+			return
+		if control_giant_mode():
+			return
+		if control_hover():
+			return
 
 	# --------------------------------------------------
 	# MOVEMENT + AIR CONTROL
@@ -119,11 +127,12 @@ func _update(delta: float) -> void:
 	# --------------------------------------------------
 	# WALL SLIDE / CLIMB
 	# --------------------------------------------------
-	if obj.can_wall_slide():
-		var input_dir = Input.get_axis("left", "right")
-		if obj.is_on_left_wall() or obj.is_on_right_wall():
-			change_state(fsm.states.climb)
-			return
+	if not obj.is_giant_mode:
+		if obj.can_wall_slide():
+			var input_dir = Input.get_axis("left", "right")
+			if obj.is_on_left_wall() or obj.is_on_right_wall():
+				change_state(fsm.states.climb)
+				return
 
 
 	# --------------------------------------------------

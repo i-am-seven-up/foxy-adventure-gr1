@@ -12,14 +12,8 @@ func _update(_delta: float) -> void:
 	if player == null:
 		return
 
-	var dist_x := get_horizontal_distance_to_player()
-
-	# Nếu đang trong tầm atk1 -> đánh luôn
-	if dist_x <= obj.atk1_range:
-		change_state(fsm.states.atk_1)  # đảm bảo node state tên "Atk1" để FSM map đúng
-		return
-
-	# Chưa tới tầm đánh -> quyết định hướng di chuyển
+	# Removed attack handling from idle state - boss will only attack from walk state
+	# Choose mode di chuyển phù hợp (chase hoặc đi về mép để jump/fall)
 	decide_move_mode_towards_player()
 
 	# Phase 1: đi bộ, Phase 2: surf

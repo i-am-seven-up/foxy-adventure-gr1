@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://deauakn2u0vau"]
+
+[ext_resource type="Script" path="res://scenes/bosses/boss3/upward_platform.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://b5fy41hv0lq7q" path="res://asset/level_3_water_palace/platforms/moving_platform_water.png" id="1_35r6w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmfl0"]
+size = Vector2(94, 24)
+
+[node name="UpwardPlatform" type="Node2D" groups=["UpwardPlatform"]]
+script = ExtResource("1_script")
+hide_until_waves_cleared = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(0.115234375, 0.115234375)
+texture = ExtResource("1_35r6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_vmfl0")
+
+[node name="RayCast2D" type="RayCast2D" parent="StaticBody2D"]
+enabled = true
+target_position = Vector2(0, -50)
+collision_mask = 2

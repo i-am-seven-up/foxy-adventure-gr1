@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv3lat67dsein"]
+[gd_scene load_steps=10 format=3 uid="uid://bv3lat67dsein"]
 
 [ext_resource type="Texture2D" uid="uid://c7demcv6olxaw" path="res://asset/level_3_water_palace/water_goddess/skills/ice_fly_v2.png" id="1_ff6q3"]
 [ext_resource type="Script" uid="uid://dx0xvuwsd5ctp" path="res://scenes/bosses/boss3/water_eruption.gd" id="1_tarqb"]
 [ext_resource type="Texture2D" uid="uid://tiqn63ki162w" path="res://asset/level_3_water_palace/water_goddess/skills/ice_fly_v2_01.png" id="2_rtl27"]
 [ext_resource type="Texture2D" uid="uid://b3faja7mok77k" path="res://asset/level_3_water_palace/water_goddess/skills/ice_fly_v2_02.png" id="3_tarqb"]
 [ext_resource type="Texture2D" uid="uid://djtc6iecausoj" path="res://asset/level_3_water_palace/water_goddess/skills/ice_circle_02.png" id="4_gjccl"]
+[ext_resource type="Texture2D" uid="uid://dvumjiagtqooo" path="res://asset/level_3_water_palace/water_goddess/skills/ice_pillar_01.png" id="5_jgwws"]
 [ext_resource type="Script" uid="uid://bss631ltk5rcm" path="res://scripts/hit_area_2d.gd" id="6_gjccl"]
+[ext_resource type="Texture2D" uid="uid://b2br1k132girl" path="res://asset/level_3_water_palace/water_goddess/skills/ice_pillar_02.png" id="6_w1c4g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jgwws"]
 animations = [{
@@ -22,6 +24,17 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jgwws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w1c4g")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [node name="WaterEruption" type="Node2D" groups=["WaterEruption"]]
@@ -33,7 +46,7 @@ visible = false
 position = Vector2(0, -32)
 scale = Vector2(0.183, 0.1815)
 sprite_frames = SubResource("SpriteFrames_jgwws")
-frame_progress = 0.707665
+animation = &"new_animation"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

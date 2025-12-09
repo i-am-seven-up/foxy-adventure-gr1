@@ -1,10 +1,16 @@
 class_name EnemyCharacter
 extends BaseCharacter
 
-@export var health_bar_hide_delay: float = 1.5 
+@export var health_bar_hide_delay: float = 1.5
 
 @export var coin_drop_count: int = 0
 @export var coin_scene: PackedScene = preload("res://scenes/collectibles/coin/coin.tscn")
+
+## EXTENSION: Detection range override for special levels (like boss rooms)
+## Set to -1 for default behavior (use scene's raycast ranges)
+## Set to 0 for infinite range (always see player in room)
+## Set to positive value for custom range
+@export var detection_range_override: float = -1.0
 
 var _health_bar: TextureProgressBar
 var _health_bar_timer: float = 0.0
@@ -16,6 +22,10 @@ var down_ray_cast: RayCast2D
 # detect player area
 var detect_player_area: Area2D
 var found_player: Player = null
+
+# EXTENSION: Infinite detection tracking
+var _infinite_detection_enabled: bool = false
+var _player_reference: Player = null
 
 var knockback_direction: Vector2
 
@@ -29,6 +39,7 @@ func _ready() -> void:
 	_init_detect_player_area()
 	_init_hurt_area()
 	_init_health_bar()
+	_init_detection_range_override()
 	super._ready()
 	pass
 
@@ -149,6 +160,10 @@ func _physics_process(delta: float) -> void:
 			t.tween_property(self, "modulate:a", 0.0, 0.25)
 			t.finished.connect(Callable(self, "queue_free"))
 			return
+
+	# EXTENSION: Check infinite detection override
+	_update_infinite_detection()
+
 	# normal behavior
 	super._physics_process(delta)
 	_update_health_bar_visibility(delta)
@@ -181,3 +196,105 @@ func drop_coins() -> void:
 		)
 		var landing_pos := global_position + landing_offset
 		coin.fly_to(landing_pos)
+
+
+# ===========================
+# EXTENSION: Detection Range Override System
+# ===========================
+
+## Initialize detection range override based on export variable
+func _init_detection_range_override() -> void:
+	if detection_range_override == 0.0:
+		# Infinite detection - always see player
+		_infinite_detection_enabled = true
+		_player_reference = get_tree().get_first_node_in_group("Player") as Player
+		print("[Enemy Extension] %s: Infinite detection enabled" % name)
+	elif detection_range_override > 0.0:
+		# Custom range - extend raycasts
+		_apply_custom_detection_range(detection_range_override)
+		print("[Enemy Extension] %s: Custom detection range: %d" % [name, detection_range_override])
+	# else: detection_range_override == -1.0, use default behavior (do nothing)
+
+
+## Apply custom detection range to raycasts and detection areas
+func _apply_custom_detection_range(range: float) -> void:
+	# Extend DetectFrontRayCast2D if exists
+	if has_node("Direction/DetectFrontRayCast2D"):
+		var ray = get_node("Direction/DetectFrontRayCast2D") as RayCast2D
+		if ray:
+			ray.target_position.x = range if ray.target_position.x > 0 else -range
+			print("[Enemy Extension] Extended DetectFrontRayCast2D to %d" % range)
+
+	if has_node("Direction/DetectFrontRayCast2D2"):
+		var ray = get_node("Direction/DetectFrontRayCast2D2") as RayCast2D
+		if ray:
+			ray.target_position.x = range if ray.target_position.x > 0 else -range
+
+	# Extend DetectBackRayCast2D if exists
+	if has_node("Direction/DetectBackRayCast2D"):
+		var ray = get_node("Direction/DetectBackRayCast2D") as RayCast2D
+		if ray:
+			ray.target_position.x = range if ray.target_position.x > 0 else -range
+			print("[Enemy Extension] Extended DetectBackRayCast2D to %d" % range)
+
+	if has_node("Direction/DetectBackRayCast2D2"):
+		var ray = get_node("Direction/DetectBackRayCast2D2") as RayCast2D
+		if ray:
+			ray.target_position.x = range if ray.target_position.x > 0 else -range
+
+	# EXTENSION: Handle Area2D-based detection (like Pearl Fairy)
+	if detect_player_area != null:
+		var collision_shape = detect_player_area.get_node_or_null("CollisionShape2D")
+		if collision_shape and collision_shape.shape:
+			var shape = collision_shape.shape
+
+			# Handle CircleShape2D (Pearl Fairy uses this)
+			if shape is CircleShape2D:
+				shape.radius = range
+				print("[Enemy Extension] Extended DetectPlayerArea2D (Circle) radius to %d" % range)
+
+			# Handle RectangleShape2D
+			elif shape is RectangleShape2D:
+				shape.size = Vector2(range * 2, shape.size.y)
+				print("[Enemy Extension] Extended DetectPlayerArea2D (Rectangle) to %d" % range)
+
+			# Handle CapsuleShape2D
+			elif shape is CapsuleShape2D:
+				# Extend the height of the capsule
+				shape.height = range * 2
+				print("[Enemy Extension] Extended DetectPlayerArea2D (Capsule) to %d" % range)
+
+
+## Update infinite detection - simulate always seeing player
+func _update_infinite_detection() -> void:
+	if not _infinite_detection_enabled:
+		return
+
+	if _player_reference == null or not is_instance_valid(_player_reference):
+		_player_reference = get_tree().get_first_node_in_group("Player") as Player
+		return
+
+	# Simulate player always in sight
+	if found_player == null:
+		found_player = _player_reference
+		_on_player_in_sight(_player_reference.global_position)
+
+
+## PUBLIC API: Enable infinite detection at runtime (for boss rooms)
+func enable_infinite_detection() -> void:
+	_infinite_detection_enabled = true
+	_player_reference = get_tree().get_first_node_in_group("Player") as Player
+	print("[Enemy Extension] %s: Infinite detection enabled at runtime" % name)
+
+
+## PUBLIC API: Set custom detection range at runtime
+func set_detection_range(range: float) -> void:
+	if range == 0.0:
+		enable_infinite_detection()
+	elif range > 0.0:
+		_infinite_detection_enabled = false
+		_apply_custom_detection_range(range)
+	else:
+		# Reset to default - would need to store original ranges to implement properly
+		_infinite_detection_enabled = false
+		print("[Enemy Extension] %s: Reset to default detection" % name)

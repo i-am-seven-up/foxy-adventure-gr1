@@ -1,0 +1,94 @@
+[gd_scene load_steps=17 format=3 uid="uid://boap4tordvfks"]
+
+[ext_resource type="Texture2D" uid="uid://ci24hxe1rrxvv" path="res://asset/level_3_water_palace/water_goddess/skills/ice_ball_12.png" id="1_nv1k6"]
+[ext_resource type="Texture2D" uid="uid://bp82mh2qwedj2" path="res://asset/level_3_water_palace/water_goddess/skills/ice_ball_13.png" id="2_0wqxb"]
+[ext_resource type="Texture2D" uid="uid://deemhw0d25lpr" path="res://asset/level_3_water_palace/water_goddess/skills/ice_ball_02.png" id="3_kalqh"]
+[ext_resource type="Texture2D" uid="uid://dyrk5t4sk1fnw" path="res://asset/level_3_water_palace/water_goddess/skills/ice_ball_03.png" id="4_ited6"]
+[ext_resource type="Texture2D" uid="uid://cxcn5y66bjdca" path="res://asset/level_3_water_palace/water_goddess/skills/ice_ball_04.png" id="5_pshh0"]
+[ext_resource type="Texture2D" uid="uid://bsygwiie2v2os" path="res://asset/level_3_water_palace/water_goddess/skills/ice_ball_05.png" id="6_lsjmr"]
+[ext_resource type="Texture2D" uid="uid://caebfcna0k05" path="res://asset/level_3_water_palace/water_goddess/skills/ice_ball_06.png" id="7_rj0x1"]
+[ext_resource type="Texture2D" uid="uid://dxnbv8vsvpajt" path="res://asset/level_3_water_palace/water_goddess/skills/ice_ball_07.png" id="8_54pp1"]
+[ext_resource type="Texture2D" uid="uid://ojkl355g00hq" path="res://asset/level_3_water_palace/water_goddess/skills/ice_ball_08.png" id="9_nlh2h"]
+[ext_resource type="Texture2D" uid="uid://dpnk55t1wu574" path="res://asset/level_3_water_palace/water_goddess/skills/ice_ball_09.png" id="10_f2ki0"]
+[ext_resource type="Texture2D" uid="uid://4d0jmqog07x1" path="res://asset/level_3_water_palace/water_goddess/skills/ice_ball_10.png" id="11_o1er0"]
+[ext_resource type="Texture2D" uid="uid://co18xpnd87084" path="res://asset/level_3_water_palace/water_goddess/skills/ice_ball_11.png" id="12_v2p7x"]
+[ext_resource type="Script" uid="uid://b5vlq5e21dx67" path="res://scripts/hurt_area_2d.gd" id="13_0wqxb"]
+[ext_resource type="Script" uid="uid://jhlbcu3dx2hg" path="res://scenes/bosses/boss3/health_ball.gd" id="13_health_ball"]
+[ext_resource type="Shader" uid="uid://dwdcbl0ygqftj" path="res://scenes/enemies/shaders/king_crab_blink.gdshader" id="14_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_health"]
+shader = ExtResource("14_shader")
+shader_parameter/flash_amount = 0.0
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p2cww"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nv1k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0wqxb")
+}],
+"loop": false,
+"name": &"breaked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kalqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ited6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pshh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lsjmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rj0x1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_54pp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nlh2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f2ki0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_o1er0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v2p7x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 13.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kalqh"]
+radius = 14.0
+
+[node name="HealthBall" type="Node2D"]
+script = ExtResource("13_health_ball")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_health")
+position = Vector2(0, 3.8146973e-06)
+scale = Vector2(0.14093138, 0.1409314)
+sprite_frames = SubResource("SpriteFrames_p2cww")
+animation = &"idle"
+
+[node name="HurtArea2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("13_0wqxb")
+metadata/_custom_type_script = "uid://b5vlq5e21dx67"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtArea2D"]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_kalqh")

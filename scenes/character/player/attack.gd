@@ -25,7 +25,10 @@ func _enter():
 	else:
 		direction_node.position.x = original_offset.x - forward_offset
 
-	timer = 0.3
+	if obj.is_giant_mode:
+		timer = 0.5
+	else:
+		timer = 0.3
 
 
 func _update(delta: float):

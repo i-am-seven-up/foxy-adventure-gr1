@@ -1,6 +1,7 @@
-[gd_scene load_steps=196 format=3 uid="uid://sciyw0j5f5yo"]
+[gd_scene load_steps=202 format=3 uid="uid://sciyw0j5f5yo"]
 
 [ext_resource type="Script" uid="uid://62c87tch1sxa" path="res://scenes/bosses/water_prietest/water_prietest.gd" id="1_llnvn"]
+[ext_resource type="Shader" uid="uid://dwdcbl0ygqftj" path="res://scenes/enemies/shaders/king_crab_blink.gdshader" id="2_3donb"]
 [ext_resource type="Texture2D" uid="uid://ql4kgokw80wq" path="res://asset/water_prietest/atk_1/1_atk_1.png" id="2_isiw1"]
 [ext_resource type="Texture2D" uid="uid://blwdd0gcgryio" path="res://asset/water_prietest/atk_1/1_atk_2.png" id="3_3h4hw"]
 [ext_resource type="Texture2D" uid="uid://cqrxrsxns43bi" path="res://asset/water_prietest/atk_1/1_atk_3.png" id="4_tyesj"]
@@ -187,9 +188,17 @@
 [ext_resource type="Script" uid="uid://b8usx670g1vsm" path="res://scenes/bosses/water_prietest/phase_2_windup.gd" id="185_bboxk"]
 [ext_resource type="Script" uid="uid://dgvne3nt5k0ia" path="res://scenes/bosses/water_prietest/surf.gd" id="186_pyckh"]
 [ext_resource type="Script" uid="uid://belugcidxb8jf" path="res://scenes/bosses/water_prietest/walk.gd" id="187_gbqh0"]
+[ext_resource type="AudioStream" uid="uid://d0d203cd5p73l" path="res://asset/sounds/water_prietess_sound/boss_music.mp3" id="188_i0py4"]
+[ext_resource type="Script" uid="uid://dbxaxhs0hiq7a" path="res://scenes/bosses/water_prietest/cast_into_phase_2.gd" id="189_ktdfs"]
+[ext_resource type="AudioStream" uid="uid://vrfc845cqvtl" path="res://asset/sounds/water_prietess_sound/slash.mp3" id="190_p2we0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nk125"]
 size = Vector2(19, 36)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p2we0"]
+shader = ExtResource("2_3donb")
+shader_parameter/flash_amount = 0.0
+shader_parameter/flash_color = Color(1, 0.2, 0.2, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ed6l8"]
 animations = [{
@@ -768,14 +777,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kprj2"]
-size = Vector2(14, 36)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktdfs"]
+size = Vector2(13, 34.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_samf3"]
 size = Vector2(19, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fc4ph"]
-size = Vector2(28, 2)
+size = Vector2(28, 17.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wh6i0"]
 size = Vector2(36, 22)
@@ -783,8 +792,12 @@ size = Vector2(36, 22)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isiw1"]
 size = Vector2(25, 18)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbh7b"]
-size = Vector2(22, 41)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gbqh0"]
+radius = 13.500002
+height = 46.999996
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i0py4"]
+radius = 19.006578
 
 [node name="WaterPrietest" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -799,10 +812,13 @@ shape = SubResource("RectangleShape2D_nk125")
 [node name="Direction" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+material = SubResource("ShaderMaterial_p2we0")
 position = Vector2(0, -50)
 sprite_frames = SubResource("SpriteFrames_ed6l8")
-animation = &"dead"
+animation = &"atk_3"
 autoplay = "idle"
+frame = 26
+frame_progress = 1.0
 
 [node name="HitArea2D" type="Area2D" parent="Direction"]
 collision_layer = 0
@@ -811,9 +827,9 @@ script = ExtResource("152_altnt")
 metadata/_custom_type_script = "uid://bss631ltk5rcm"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/HitArea2D"]
-position = Vector2(1, -5)
-shape = SubResource("RectangleShape2D_kprj2")
-debug_color = Color(0.8230637, 0.34966028, 0.51627034, 0.41960785)
+position = Vector2(0.5, -4.25)
+shape = SubResource("RectangleShape2D_ktdfs")
+debug_color = Color(0.5585858, 0.5607403, 0.019441742, 0.41960785)
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 collision_layer = 16
@@ -833,7 +849,7 @@ script = ExtResource("152_altnt")
 metadata/_custom_type_script = "uid://bss631ltk5rcm"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/Atk1HitArea2D"]
-position = Vector2(44, -11)
+position = Vector2(44, -5.25)
 shape = SubResource("RectangleShape2D_fc4ph")
 debug_color = Color(0.8627451, 0.03137255, 0.12941177, 0.41960785)
 
@@ -866,9 +882,18 @@ script = ExtResource("152_altnt")
 metadata/_custom_type_script = "uid://bss631ltk5rcm"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/Atk3HitArea2D"]
-position = Vector2(63, -7)
-shape = SubResource("RectangleShape2D_vbh7b")
+position = Vector2(19, -32)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_gbqh0")
 debug_color = Color(0, 0.13333334, 0.7372549, 0.41960785)
+
+[node name="AtkSuperHitArea2D" type="Area2D" parent="Direction"]
+script = ExtResource("152_altnt")
+metadata/_custom_type_script = "uid://bss631ltk5rcm"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/AtkSuperHitArea2D"]
+position = Vector2(57.5, -55)
+shape = SubResource("CircleShape2D_i0py4")
 
 [node name="States" type="Node" parent="."]
 
@@ -919,3 +944,17 @@ script = ExtResource("186_pyckh")
 
 [node name="Walk" type="Node" parent="States"]
 script = ExtResource("187_gbqh0")
+
+[node name="Cast_Into_Phase_2" type="Node" parent="States"]
+script = ExtResource("189_ktdfs")
+
+[node name="Sound" type="Node2D" parent="."]
+
+[node name="BossMusic" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource("188_i0py4")
+volume_db = 10.0
+parameters/looping = true
+
+[node name="Slash" type="AudioStreamPlayer2D" parent="Sound"]
+stream = ExtResource("190_p2we0")
+volume_db = 5.0

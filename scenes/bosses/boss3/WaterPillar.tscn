@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0lnjq4nvowt4"]
+
+[ext_resource type="Texture2D" uid="uid://dvumjiagtqooo" path="res://asset/level_3_water_palace/water_goddess/skills/ice_pillar_01.png" id="1_i7b8g"]
+[ext_resource type="Texture2D" uid="uid://b2br1k132girl" path="res://asset/level_3_water_palace/water_goddess/skills/ice_pillar_02.png" id="2_vm6dy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0r38q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_i7b8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vm6dy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="WaterPillar" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0r38q")
+frame_progress = 0.83835936

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=23 format=3 uid="uid://de50f6k6l0j1d"]
+[gd_resource type="SpriteFrames" load_steps=29 format=3 uid="uid://de50f6k6l0j1d"]
 
 [ext_resource type="Texture2D" uid="uid://f0k2ocqkmcc2" path="res://asset/foxy/foxy/fox_hat_blade/fox_jump_atk_1.png" id="1_8tu21"]
 [ext_resource type="Texture2D" uid="uid://dnt7n2db610ps" path="res://asset/foxy/foxy/fox_hat_blade/fox_atk_1.png" id="1_xtbvj"]
@@ -22,6 +22,18 @@
 [ext_resource type="Texture2D" uid="uid://cr8a68nw3dww1" path="res://asset/foxy/foxy/fox_hat_blade/fox_walk_2.png" id="14_113po"]
 [ext_resource type="Texture2D" uid="uid://d0jfmp24jrfcy" path="res://asset/foxy/foxy/fox_hat_blade/fox_walk_3.png" id="15_niul8"]
 [ext_resource type="Texture2D" uid="uid://ce35c6mn7dcok" path="res://asset/foxy/foxy/fox_hat_blade/fox_walk_4.png" id="16_51bsa"]
+[ext_resource type="Texture2D" uid="uid://c5u6te5pt0ywj" path="res://asset/foxy/foxy/giant_foxy/big1 (1).png" id="19_in4n6"]
+[ext_resource type="Texture2D" uid="uid://csevuhxerfc2y" path="res://asset/foxy/foxy/giant_foxy/big2 (1).png" id="20_0mbfd"]
+[ext_resource type="Texture2D" uid="uid://e0dsgt67jor6" path="res://asset/foxy/foxy/giant_foxy/big3 (1).png" id="21_qs6ll"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nakkr"]
+load_path = "res://.godot/imported/big3.png-477ec69fb1d7f440a45ce7262de2ed87.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qlnx3"]
+load_path = "res://.godot/imported/big2.png-3b800b5f3316b2f991ecc1b8a8cd09e8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4qvgp"]
+load_path = "res://.godot/imported/big1.png-edc349c0a2bf31022bb76f6ffe11289f.ctex"
 
 [resource]
 animations = [{
@@ -122,6 +134,34 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_in4n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0mbfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qs6ll")
+}],
+"loop": true,
+"name": &"transform_giant",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_nakkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_qlnx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_4qvgp")
+}],
+"loop": false,
+"name": &"transform_normal",
 "speed": 5.0
 }, {
 "frames": [{

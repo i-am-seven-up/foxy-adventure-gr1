@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://bh4ochdlw6djq"]
+
+[ext_resource type="Texture2D" uid="uid://cujqsdbiao23s" path="res://asset/level_3_water_palace/water_goddess/skills/water_bullet_idle_1.png" id="1_4gkum"]
+[ext_resource type="Script" uid="uid://c72tkboltkbl1" path="res://scenes/bosses/boss3/water_ball.gd" id="1_dnvde"]
+[ext_resource type="Texture2D" uid="uid://bwb7ycq60v1wf" path="res://asset/level_3_water_palace/water_goddess/skills/water_bullet_idle_2.png" id="2_h4nc0"]
+[ext_resource type="Texture2D" uid="uid://dn8empegjujn4" path="res://asset/level_3_water_palace/water_goddess/skills/water_bullet_idle_3.png" id="3_n01e4"]
+[ext_resource type="Texture2D" uid="uid://batnuddtvfde6" path="res://asset/level_3_water_palace/water_goddess/skills/water_bullet_idle_4.png" id="4_wulky"]
+[ext_resource type="Texture2D" uid="uid://sfae3ro81kda" path="res://asset/level_3_water_palace/water_goddess/skills/water_bullet_move_1.png" id="5_5guc8"]
+[ext_resource type="Texture2D" uid="uid://b1yq13rsqfptp" path="res://asset/level_3_water_palace/water_goddess/skills/water_bullet_move_2.png" id="6_jslva"]
+[ext_resource type="Texture2D" uid="uid://c42enfmfok7ni" path="res://asset/level_3_water_palace/water_goddess/skills/water_bullet_move_3.png" id="7_dnvde"]
+[ext_resource type="Texture2D" uid="uid://bhko00tuq1pax" path="res://asset/level_3_water_palace/water_goddess/skills/water_bullet_move_4.png" id="8_yy8ti"]
+[ext_resource type="Script" uid="uid://bss631ltk5rcm" path="res://scripts/hit_area_2d.gd" id="9_jslva"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5guc8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4gkum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h4nc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n01e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wulky")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_dnvde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yy8ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dnvde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yy8ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dnvde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yy8ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dnvde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yy8ti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dnvde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yy8ti")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5guc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jslva")
+}],
+"loop": true,
+"name": &"start_move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dnvde"]
+radius = 17.0
+
+[node name="WaterBall" type="Node2D"]
+script = ExtResource("1_dnvde")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-13, 2)
+scale = Vector2(0.08068848, 0.07836914)
+sprite_frames = SubResource("SpriteFrames_5guc8")
+animation = &"idle"
+frame_progress = 0.86071414
+
+[node name="HitArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("9_jslva")
+metadata/_custom_type_script = "uid://bss631ltk5rcm"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_dnvde")

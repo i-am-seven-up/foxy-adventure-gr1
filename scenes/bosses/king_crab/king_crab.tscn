@@ -1128,6 +1128,7 @@ metadata/_custom_type_script = "uid://bss631ltk5rcm"
 position = Vector2(-1, 5)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_3obn1")
+disabled = true
 debug_color = Color(0.614439, 0.40928, 0.889592, 0.42)
 
 [node name="ShootPoint" type="Marker2D" parent="Direction"]

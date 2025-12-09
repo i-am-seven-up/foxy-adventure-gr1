@@ -5,7 +5,9 @@ func take_damage(_damage_dir, damage: int) -> void:
 	obj.velocity.x = _damage_dir.x * 150
 	obj.take_damage(damage)
 	change_state(fsm.states.hurt)
-
+func take_damage_no_dir(damage: int) -> void:
+	obj.take_damage(damage)
+	change_state(fsm.states.hurt)
 func control_walk():
 	_should_turn_around()
 	obj.velocity.x = obj.direction * obj.movement_speed

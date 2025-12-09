@@ -1,12 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://dytm3c86oshmd"]
+[gd_scene load_steps=6 format=3 uid="uid://dytm3c86oshmd"]
 
-[ext_resource type="Script" uid="uid://cwokrdi6g2xij" path="res://screens/game_screen/hud.gd" id="1_4v5o6"]
-[ext_resource type="Texture2D" uid="uid://bak1dc8urb02c" path="res://assets/ui/settings_button.png" id="2_4v5o6"]
+[ext_resource type="Script" uid="uid://c0elwtg5mlf1i" path="res://screens/game_screen/hud.gd" id="1_4v5o6"]
+[ext_resource type="Texture2D" uid="uid://bak1dc8urb02c" path="res://asset/ui/settings_button.png" id="2_4v5o6"]
+[ext_resource type="Texture2D" uid="uid://ccsmabwuhsugk" path="res://asset/ui/tutorial_button.png" id="2_atg83"]
+
+[sub_resource type="SystemFont" id="SystemFont_4kysl"]
+font_weight = 700
+generate_mipmaps = true
+hinting = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_kxd7c"]
+font = SubResource("SystemFont_4kysl")
+font_size = 27
+font_color = Color(0.54509807, 0.49803922, 0.6745098, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
 
 [node name="HUD" type="MarginContainer"]
 anchors_preset = 10
 anchor_right = 1.0
+offset_right = -430.0
+offset_bottom = 52.0
 grow_horizontal = 2
+scale = Vector2(1.6, 1.6)
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -19,6 +35,19 @@ layout_mode = 2
 [node name="BoxContainer" type="BoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="TutorialTextureButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_atg83")
+
+[node name="Label" type="Label" parent="HBoxContainer/TutorialTextureButton"]
+layout_mode = 0
+offset_left = 9.499969
+offset_top = -4.9999995
+offset_right = 49.49997
+offset_bottom = 34.0
+text = "?"
+label_settings = SubResource("LabelSettings_kxd7c")
 
 [node name="SettingsTextureButton" type="TextureButton" parent="HBoxContainer"]
 layout_mode = 2

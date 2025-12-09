@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://b5vlq5e21dx67" path="res://scripts/hurt_area_2d.gd" id="8_iuaad"]
 [ext_resource type="Script" uid="uid://btjb1u1sh5j0r" path="res://scenes/enemies/Walk.gd" id="9_5qgwy"]
 [ext_resource type="Script" uid="uid://df4dkquwky0gp" path="res://scenes/enemies/hurt.gd" id="10_3dip8"]
-[ext_resource type="Script" uid="uid://bya40y5dqymyb" path="res://scenes/enemies/dead.gd" id="11_io5uk"]
+[ext_resource type="Script" uid="uid://cxm1bbuqrbxdw" path="res://scenes/enemies/dead1.gd" id="12_0xreg"]
 [ext_resource type="Texture2D" uid="uid://b3npxepukgtpy" path="res://asset/ui/under_healthbar.png" id="13_0xreg"]
 [ext_resource type="Texture2D" uid="uid://fqyx2bjflfhe" path="res://asset/ui/full_healthbar.png" id="14_qvk1a"]
 
@@ -118,7 +118,7 @@ script = ExtResource("9_5qgwy")
 script = ExtResource("10_3dip8")
 
 [node name="Dead" type="Node" parent="States"]
-script = ExtResource("11_io5uk")
+script = ExtResource("12_0xreg")
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 offset_left = -22.0

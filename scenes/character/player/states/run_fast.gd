@@ -22,14 +22,23 @@ func _update(delta: float) -> void:
 	if Input.is_action_just_pressed("attack"):
 		change_state(fsm.states.attack)
 		return
-	if control_susanoo():
-		return
-	# Activate Water Paw
-	if control_water_paw():
-		return
-	# Allow dash to override
-	if control_dash():
-		return
+	if not obj.is_giant_mode:
+		if control_dash():
+			return
+		#Toggle Susanoo spirit
+		if control_susanoo():
+			return
+		# Room skill
+		if control_room():
+			return
+		# Activate Water Paw
+		if control_water_paw():
+			return
+		#Control run by double-tap
+		if control_run():
+			return
+		if control_giant_mode():
+			return
 	# Nhấn Jump trong run_fast sẽ dash chéo lên theo hướng hiện tại
 	if Input.is_action_just_pressed("jump") and obj.can_dash():
 		change_state(fsm.states.dashdiagonal)

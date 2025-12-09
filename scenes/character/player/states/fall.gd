@@ -81,12 +81,25 @@ func _update(delta: float) -> void:
 	# --------------------------------------------------
 	# SKILLS
 	# --------------------------------------------------
-	if control_dash(): return
-	if control_susanoo(): return
-	if control_room(): return
-	if control_water_paw(): return
-	if control_hover(): return
-
+	if not obj.is_giant_mode:
+		if control_dash():
+			return
+		#Toggle Susanoo spirit
+		if control_susanoo():
+			return
+		# Room skill
+		if control_room():
+			return
+		# Activate Water Paw
+		if control_water_paw():
+			return
+		#Control run by double-tap
+		if control_run():
+			return
+		if control_giant_mode():
+			return
+		if control_hover():
+			return
 
 	# --------------------------------------------------
 	# MOVEMENT

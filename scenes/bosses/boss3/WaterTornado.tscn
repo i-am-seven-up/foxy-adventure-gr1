@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://b603jbuxufxg8"]
+
+[ext_resource type="Script" uid="uid://c7m505yh2j8os" path="res://scenes/bosses/boss3/water_tornado.gd" id="1_rxh2g"]
+[ext_resource type="Texture2D" uid="uid://n1bpjqrge2i0" path="res://asset/level_3_water_palace/water_goddess/skills/1-Photoroom5.png" id="1_tvadb"]
+[ext_resource type="Texture2D" uid="uid://5e6sasdf67ef" path="res://asset/level_3_water_palace/water_goddess/skills/1-Photoroom6.png" id="2_vcvt1"]
+[ext_resource type="Texture2D" uid="uid://bpwn6aahrhaex" path="res://asset/level_3_water_palace/water_goddess/skills/1-Photoroom7.png" id="3_3psfu"]
+[ext_resource type="Texture2D" uid="uid://pu58w8fcfonh" path="res://asset/level_3_water_palace/water_goddess/skills/1-Photoroom1.png" id="4_ube18"]
+[ext_resource type="Texture2D" uid="uid://ctpwxq64u2s6t" path="res://asset/level_3_water_palace/water_goddess/skills/1-Photoroom2.png" id="5_svle8"]
+[ext_resource type="Texture2D" uid="uid://d3rb2nsy7axlq" path="res://asset/level_3_water_palace/water_goddess/skills/1-Photoroom3.png" id="6_a1l4s"]
+[ext_resource type="Texture2D" uid="uid://byqlq1pmig613" path="res://asset/level_3_water_palace/water_goddess/skills/1-Photoroom4.png" id="7_q2nx6"]
+[ext_resource type="Script" uid="uid://bss631ltk5rcm" path="res://scripts/hit_area_2d.gd" id="8_awo46"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qfmex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tvadb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vcvt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3psfu")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ube18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_svle8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a1l4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q2nx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_tvadb")
+}],
+"loop": false,
+"name": &"prepare",
+"speed": 5.0
+}]
+
+[node name="WaterTornado" type="Node2D"]
+script = ExtResource("1_rxh2g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -51)
+scale = Vector2(0.14065552, 0.15301514)
+sprite_frames = SubResource("SpriteFrames_qfmex")
+animation = &"attack"
+frame_progress = 0.56750685
+
+[node name="HitArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("8_awo46")
+metadata/_custom_type_script = "uid://bss631ltk5rcm"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitArea2D"]
+position = Vector2(7.0000014, 12.463725)
+scale = Vector2(0.16012122, 0.15917438)
+polygon = PackedVector2Array(-49.0682, -795.3807, 179.91663, -800.51215, 42, -254, 114, -19, -187, -13, -93, -179, -327.1212, -795.3807)

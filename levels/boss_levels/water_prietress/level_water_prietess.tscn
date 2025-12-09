@@ -1,0 +1,405 @@
+[gd_scene load_steps=31 format=3 uid="uid://kv02hvhfsd8k"]
+
+[ext_resource type="Script" uid="uid://nfys250tpsyv" path="res://levels/boss_levels/water_prietress/level_water_prietess.gd" id="1_uutcu"]
+[ext_resource type="Script" uid="uid://dl74muxrjkc5p" path="res://levels/boss_levels/water_prietress/boss_platform_controller.gd" id="2_7sno5"]
+[ext_resource type="PackedScene" uid="uid://d15uiwk2diixs" path="res://scenes/character/player/player.tscn" id="2_wc5ch"]
+[ext_resource type="Texture2D" uid="uid://o357kuf0dh8l" path="res://asset/level_3_water_palace/background/pillar_layer_2.png" id="3_25jq8"]
+[ext_resource type="Texture2D" uid="uid://b5fy41hv0lq7q" path="res://asset/level_3_water_palace/platforms/moving_platform_water.png" id="3_qntum"]
+[ext_resource type="PackedScene" uid="uid://sciyw0j5f5yo" path="res://scenes/bosses/water_prietest/water_prietest.tscn" id="3_y7w5y"]
+[ext_resource type="Texture2D" uid="uid://xlv1dv6exq3" path="res://asset/level_3_water_palace/background/platform_boss_water_guard.png" id="4_qntum"]
+[ext_resource type="Texture2D" uid="uid://d1ido7w7l526h" path="res://asset/level_3_water_palace/background/layer_3.png" id="4_ura8g"]
+[ext_resource type="Texture2D" uid="uid://c8w4kmcjs5wmu" path="res://asset/level_3_water_palace/background/layer_2.png" id="5_25jq8"]
+[ext_resource type="PackedScene" uid="uid://cw41ooeg3pxq1" path="res://levels/objects/checkpoint/checkpoint.tscn" id="5_enfxh"]
+[ext_resource type="PackedScene" uid="uid://cg88ymtkt485w" path="res://levels/objects/door/door_map3.tscn" id="5_wnerh"]
+[ext_resource type="Texture2D" uid="uid://ds0nmx20m3qxs" path="res://asset/level_3_water_palace/background/layer_2 (2).png" id="6_a2wmj"]
+[ext_resource type="Texture2D" uid="uid://buj4r0ifcl0q6" path="res://asset/level_3_water_palace/tileset/floating_platform.png" id="6_qntum"]
+[ext_resource type="PackedScene" uid="uid://dcyxh7eep8web" path="res://scenes/objects/chest.tscn" id="10_tqigs"]
+[ext_resource type="Texture2D" uid="uid://qodbg1j2plxv" path="res://asset/ui/boss_healthbar.png" id="10_uutcu"]
+[ext_resource type="FontFile" uid="uid://x4u0fnuaebe3" path="res://asset/fonts/ThaleahFat.ttf" id="11_icah2"]
+[ext_resource type="PackedScene" uid="uid://btj7ilbg28lwi" path="res://ui/PlayerHUD.tscn" id="12_tqigs"]
+[ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://screens/game_screen/hud.tscn" id="13_7sno5"]
+[ext_resource type="PackedScene" uid="uid://cr1c3tm5n3sy0" path="res://screens/game_screen/CoinAndKeyContainer.tscn" id="14_y1l7a"]
+[ext_resource type="Script" path="res://levels/boss_levels/water_prietress/boss_hud.gd" id="16_qntum"]
+[ext_resource type="AudioStream" uid="uid://d3fi3k7bfsfo4" path="res://asset/sounds/water_prietess/level_ambient.mp3" id="17_7sno5"]
+[ext_resource type="Script" uid="uid://beek7o2t13qa5" path="res://scenes/bosses/water_prietest/jump_marker_2d.gd" id="18_jump_marker"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnerh"]
+size = Vector2(953.5, 141.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4si3a"]
+size = Vector2(1241, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qntum"]
+size = Vector2(1240, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(156.5, 47)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nokj"]
+atlas = ExtResource("10_uutcu")
+region = Rect2(106, 355, 1087, 33)
+margin = Rect2(30, 55, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enfxh"]
+atlas = ExtResource("10_uutcu")
+region = Rect2(74, 48, 1151, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qntum"]
+atlas = ExtResource("10_uutcu")
+region = Rect2(106, 227, 1087, 33)
+margin = Rect2(30, 55, 40, 80)
+
+[node name="LevelWaterPrietess" type="Node2D"]
+script = ExtResource("1_uutcu")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="RoomBoundPointA" type="Marker2D" parent="World"]
+position = Vector2(208, 618)
+
+[node name="RoomBoundPointB" type="Marker2D" parent="World"]
+position = Vector2(1027, 138)
+
+[node name="BossPlatformController" type="Node2D" parent="World" node_paths=PackedStringArray("rect_platform", "platforms", "left_platform", "right_platform", "room_bound_point_a", "room_bound_point_b")]
+script = ExtResource("2_7sno5")
+rect_platform = NodePath("RectPlatform")
+platforms = [NodePath("FloatingPlatform1"), NodePath("FloatingPlatform2"), NodePath("FloatingPlatform3"), NodePath("FloatingPlatform4"), NodePath("FloatingPlatform5")]
+left_platform = NodePath("LeftPlatform")
+right_platform = NodePath("RightPlatform")
+room_bound_point_a = NodePath("../RoomBoundPointA")
+room_bound_point_b = NodePath("../RoomBoundPointB")
+
+[node name="RectPlatform" type="Node2D" parent="World/BossPlatformController"]
+position = Vector2(-261, -1220)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/BossPlatformController/RectPlatform"]
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/RectPlatform/StaticBody2D"]
+position = Vector2(868.4998, 1889)
+scale = Vector2(1.1337894, 0.6191407)
+texture = ExtResource("3_qntum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/RectPlatform/StaticBody2D"]
+position = Vector2(868.25, 1909.25)
+shape = SubResource("RectangleShape2D_wnerh")
+
+[node name="LeftPlatform" type="Node2D" parent="World/BossPlatformController"]
+position = Vector2(258, -21)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/BossPlatformController/LeftPlatform"]
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/LeftPlatform/StaticBody2D"]
+position = Vector2(-836, 756)
+texture = ExtResource("4_qntum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/LeftPlatform/StaticBody2D"]
+position = Vector2(-833.5, 648)
+shape = SubResource("RectangleShape2D_4si3a")
+
+[node name="Door" parent="World/BossPlatformController/LeftPlatform" instance=ExtResource("5_wnerh")]
+position = Vector2(-1424, 637)
+
+[node name="Checkpoint" parent="World/BossPlatformController/LeftPlatform" instance=ExtResource("5_enfxh")]
+position = Vector2(-300, 622)
+
+[node name="RightPlatform" type="Node2D" parent="World/BossPlatformController"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/BossPlatformController/RightPlatform"]
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/RightPlatform/StaticBody2D"]
+position = Vector2(1776, 744)
+texture = ExtResource("4_qntum")
+region_enabled = true
+region_rect = Rect2(15, 3, 1253, 792)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/RightPlatform/StaticBody2D"]
+position = Vector2(1776, 636)
+shape = SubResource("RectangleShape2D_qntum")
+
+[node name="Door" parent="World/BossPlatformController/RightPlatform" instance=ExtResource("5_wnerh")]
+position = Vector2(2366, 625)
+
+[node name="FloatingPlatform1" type="Node2D" parent="World/BossPlatformController"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/BossPlatformController/FloatingPlatform1"]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/FloatingPlatform1/StaticBody2D"]
+position = Vector2(-148.25, -64.5)
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/FloatingPlatform1"]
+modulate = Color(0.7, 0.9, 1, 1)
+position = Vector2(-148.75, -65)
+scale = Vector2(0.35185188, 0.2857143)
+texture = ExtResource("6_qntum")
+region_enabled = true
+region_rect = Rect2(26, 801, 459, 182)
+
+[node name="JumpMarker" type="Marker2D" parent="World/BossPlatformController/FloatingPlatform1"]
+position = Vector2(-151, -85)
+script = ExtResource("18_jump_marker")
+
+[node name="Area2D" type="Area2D" parent="World/BossPlatformController/FloatingPlatform1/JumpMarker"]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/FloatingPlatform1/JumpMarker/Area2D"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/FloatingPlatform1/JumpMarker"]
+modulate = Color(0, 1, 0, 0.5)
+scale = Vector2(0.2, 0.2)
+
+[node name="FloatingPlatform2" type="Node2D" parent="World/BossPlatformController"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/BossPlatformController/FloatingPlatform2"]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/FloatingPlatform2/StaticBody2D"]
+position = Vector2(-148.25, -64.5)
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/FloatingPlatform2"]
+modulate = Color(0.7, 0.9, 1, 1)
+position = Vector2(-148.75, -65)
+scale = Vector2(0.35185188, 0.2857143)
+texture = ExtResource("6_qntum")
+region_enabled = true
+region_rect = Rect2(26, 801, 459, 182)
+
+[node name="JumpMarker" type="Marker2D" parent="World/BossPlatformController/FloatingPlatform2"]
+position = Vector2(-151, -85)
+script = ExtResource("18_jump_marker")
+
+[node name="Area2D" type="Area2D" parent="World/BossPlatformController/FloatingPlatform2/JumpMarker"]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/FloatingPlatform2/JumpMarker/Area2D"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/FloatingPlatform2/JumpMarker"]
+modulate = Color(0, 1, 0, 0.5)
+scale = Vector2(0.2, 0.2)
+
+[node name="FloatingPlatform3" type="Node2D" parent="World/BossPlatformController"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/BossPlatformController/FloatingPlatform3"]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/FloatingPlatform3/StaticBody2D"]
+position = Vector2(-148.25, -64.5)
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/FloatingPlatform3"]
+modulate = Color(0.7, 0.9, 1, 1)
+position = Vector2(-148.75, -65)
+scale = Vector2(0.35185188, 0.2857143)
+texture = ExtResource("6_qntum")
+region_enabled = true
+region_rect = Rect2(26, 801, 459, 182)
+
+[node name="JumpMarker" type="Marker2D" parent="World/BossPlatformController/FloatingPlatform3"]
+position = Vector2(-151, -85)
+script = ExtResource("18_jump_marker")
+
+[node name="Area2D" type="Area2D" parent="World/BossPlatformController/FloatingPlatform3/JumpMarker"]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/FloatingPlatform3/JumpMarker/Area2D"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/FloatingPlatform3/JumpMarker"]
+modulate = Color(0, 1, 0, 0.5)
+scale = Vector2(0.2, 0.2)
+
+[node name="FloatingPlatform4" type="Node2D" parent="World/BossPlatformController"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/BossPlatformController/FloatingPlatform4"]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/FloatingPlatform4/StaticBody2D"]
+position = Vector2(-148.25, -64.5)
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/FloatingPlatform4"]
+modulate = Color(0.7, 0.9, 1, 1)
+position = Vector2(-148.75, -65)
+scale = Vector2(0.35185188, 0.2857143)
+texture = ExtResource("6_qntum")
+region_enabled = true
+region_rect = Rect2(26, 801, 459, 182)
+
+[node name="JumpMarker" type="Marker2D" parent="World/BossPlatformController/FloatingPlatform4"]
+position = Vector2(-151, -85)
+script = ExtResource("18_jump_marker")
+
+[node name="Area2D" type="Area2D" parent="World/BossPlatformController/FloatingPlatform4/JumpMarker"]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/FloatingPlatform4/JumpMarker/Area2D"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/FloatingPlatform4/JumpMarker"]
+modulate = Color(0, 1, 0, 0.5)
+scale = Vector2(0.2, 0.2)
+
+[node name="FloatingPlatform5" type="Node2D" parent="World/BossPlatformController"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World/BossPlatformController/FloatingPlatform5"]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/FloatingPlatform5/StaticBody2D"]
+position = Vector2(-148.25, -64.5)
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/FloatingPlatform5"]
+modulate = Color(0.7, 0.9, 1, 1)
+position = Vector2(-148.75, -65)
+scale = Vector2(0.35185188, 0.2857143)
+texture = ExtResource("6_qntum")
+region_enabled = true
+region_rect = Rect2(26, 801, 459, 182)
+
+[node name="JumpMarker" type="Marker2D" parent="World/BossPlatformController/FloatingPlatform5"]
+position = Vector2(-151, -85)
+script = ExtResource("18_jump_marker")
+
+[node name="Area2D" type="Area2D" parent="World/BossPlatformController/FloatingPlatform5/JumpMarker"]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/BossPlatformController/FloatingPlatform5/JumpMarker/Area2D"]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/BossPlatformController/FloatingPlatform5/JumpMarker"]
+modulate = Color(0, 1, 0, 0.5)
+scale = Vector2(0.2, 0.2)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="World"]
+
+[node name="ParallaxLayerFar" type="ParallaxLayer" parent="World/ParallaxBackground"]
+motion_scale = Vector2(0.001, 1)
+motion_mirroring = Vector2(1850, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="World/ParallaxBackground/ParallaxLayerFar"]
+position = Vector2(558, 795)
+scale = Vector2(1.8105469, 1.6738281)
+texture = ExtResource("4_ura8g")
+
+[node name="Sprite2DMirror" type="Sprite2D" parent="World/ParallaxBackground/ParallaxLayerFar"]
+position = Vector2(560.00006, 473)
+scale = Vector2(1.8105469, 1.6738281)
+texture = ExtResource("4_ura8g")
+flip_v = true
+
+[node name="ParallaxLayerPillar" type="ParallaxLayer" parent="World/ParallaxBackground"]
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(750, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="World/ParallaxBackground/ParallaxLayerPillar"]
+position = Vector2(365.00003, 436)
+scale = Vector2(0.4765625, 0.6220703)
+texture = ExtResource("3_25jq8")
+
+[node name="ParallaxLayerMid" type="ParallaxLayer" parent="World/ParallaxBackground"]
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(1000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="World/ParallaxBackground/ParallaxLayerMid"]
+position = Vector2(531, 504)
+texture = ExtResource("5_25jq8")
+
+[node name="ParallaxLayerFront" type="ParallaxLayer" parent="World/ParallaxBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="World/ParallaxBackground/ParallaxLayerFront"]
+position = Vector2(487, 251)
+texture = ExtResource("6_a2wmj")
+
+[node name="Sprite2DMirror" type="Sprite2D" parent="World/ParallaxBackground/ParallaxLayerFront"]
+position = Vector2(488, 1274)
+texture = ExtResource("6_a2wmj")
+flip_v = true
+
+[node name="Player" parent="World" instance=ExtResource("2_wc5ch")]
+position = Vector2(-1164, 591)
+has_blade = true
+
+[node name="WaterPrietest" parent="World" node_paths=PackedStringArray("bound_point_a", "bound_point_b") instance=ExtResource("3_y7w5y")]
+position = Vector2(421, 485)
+bound_point_a = NodePath("../RoomBoundPointA")
+bound_point_b = NodePath("../RoomBoundPointB")
+
+[node name="Chest" parent="World" instance=ExtResource("10_tqigs")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BossHUD" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("16_qntum")
+
+[node name="BossHealthBar" type="TextureProgressBar" parent="CanvasLayer/BossHUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -290.0
+offset_top = -75.0
+offset_right = 861.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture_under = SubResource("AtlasTexture_8nokj")
+texture_over = SubResource("AtlasTexture_enfxh")
+texture_progress = SubResource("AtlasTexture_qntum")
+metadata/_edit_group_ = true
+
+[node name="BossHealthLabel" type="Label" parent="CanvasLayer/BossHUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -77.5
+offset_top = -88.0
+offset_right = 77.5
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.046000957, 0.2838379, 0.9999997, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0.773859, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_icah2")
+theme_override_font_sizes/font_size = 24
+text = "WATER PRIETESS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerHud" parent="CanvasLayer" instance=ExtResource("12_tqigs")]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("13_7sno5")]
+
+[node name="CoinAndKeyContainer" parent="CanvasLayer" instance=ExtResource("14_y1l7a")]
+
+[node name="Sound" type="Node2D" parent="."]
+
+[node name="Ambient" type="AudioStreamPlayer2D" parent="Sound"]
+position = Vector2(555, 385)
+stream = ExtResource("17_7sno5")
+volume_db = 10.0
+bus = &"SFX"
+parameters/looping = true

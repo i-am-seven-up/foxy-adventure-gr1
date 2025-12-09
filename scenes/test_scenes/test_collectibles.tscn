@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=4 uid="uid://bwax64l00u5cc"]
+[gd_scene load_steps=7 format=4 uid="uid://bwax64l00u5cc"]
 
 [ext_resource type="TileSet" uid="uid://d3c8dnj104u5w" path="res://scenes/test_scenes/tilesetv0.2.tres" id="1_wflxi"]
 [ext_resource type="PackedScene" uid="uid://d15uiwk2diixs" path="res://scenes/character/player/player.tscn" id="2_wflxi"]
 [ext_resource type="PackedScene" uid="uid://cr1c3tm5n3sy0" path="res://screens/game_screen/CoinAndKeyContainer.tscn" id="3_wflxi"]
+[ext_resource type="PackedScene" uid="uid://dgwlv5lvkntgn" path="res://scenes/enemies/golden_carp/golden_carp.tscn" id="4_h12w5"]
+[ext_resource type="PackedScene" uid="uid://oplmtt8e4gwb" path="res://scenes/character/npcs/crystal-mauler.tscn" id="5_a5ngp"]
+[ext_resource type="PackedScene" uid="uid://c700eni2s0ngm" path="res://scenes/collectibles/waterpawgem/water_paw_gem.tscn" id="6_bt4f4"]
 
 [node name="TestCollectibles" type="Node2D"]
 
@@ -15,3 +18,12 @@ tile_set = ExtResource("1_wflxi")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CoinAndKeyContainer" parent="CanvasLayer" instance=ExtResource("3_wflxi")]
+
+[node name="GoldenCarp" parent="." instance=ExtResource("4_h12w5")]
+position = Vector2(437.99994, 99.99999)
+
+[node name="Crystal-mauler" parent="." instance=ExtResource("5_a5ngp")]
+position = Vector2(-312, 223)
+
+[node name="WaterPawGem" parent="." instance=ExtResource("6_bt4f4")]
+position = Vector2(169, 205)

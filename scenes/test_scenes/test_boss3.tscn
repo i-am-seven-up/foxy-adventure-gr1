@@ -1,16 +1,59 @@
-[gd_scene load_steps=10 format=4 uid="uid://bhwnd0dvsqev8"]
+[gd_scene load_steps=30 format=4 uid="uid://bhwnd0dvsqev8"]
 
+[ext_resource type="Script" uid="uid://4ch8ctjqh6tg" path="res://scenes/test_scenes/level_boss_3.gd" id="1_aeh5d"]
 [ext_resource type="TileSet" uid="uid://d3c8dnj104u5w" path="res://scenes/test_scenes/tilesetv0.2.tres" id="1_aystw"]
 [ext_resource type="Texture2D" uid="uid://d1ido7w7l526h" path="res://asset/level_3_water_palace/background/layer_3.png" id="1_p0w1l"]
 [ext_resource type="Texture2D" uid="uid://dkp2h6vxltgjn" path="res://asset/level_3_water_palace/background/boss_layer_2.png" id="2_1myvi"]
+[ext_resource type="Texture2D" uid="uid://tofm1rqb0fy1" path="res://asset/level_3_water_palace/background/full bg.jpg" id="2_b5x6u"]
 [ext_resource type="PackedScene" uid="uid://d15uiwk2diixs" path="res://scenes/character/player/player.tscn" id="2_imhqq"]
 [ext_resource type="PackedScene" uid="uid://drem1inlnoymq" path="res://scenes/bosses/boss3/Boss3.tscn" id="3_gtfhx"]
-[ext_resource type="PackedScene" uid="uid://oplmtt8e4gwb" path="res://scenes/character/npcs/crystal-mauler.tscn" id="4_1jrlb"]
+[ext_resource type="Texture2D" uid="uid://byehnf2rvnybh" path="res://asset/level_3_water_palace/background/Gemini_Generated_Image_8hytlc8hytlc8hyt.png" id="3_keb00"]
 [ext_resource type="PackedScene" uid="uid://bv3lat67dsein" path="res://scenes/bosses/boss3/WaterEruption.tscn" id="7_1myvi"]
 [ext_resource type="PackedScene" uid="uid://clgtrl0k7dopq" path="res://scenes/bosses/boss3/WaterEruption2.tscn" id="8_sdf1u"]
 [ext_resource type="Script" uid="uid://pbub875k1ti6" path="res://scenes/test_scenes/marker_2d.gd" id="9_r8tgu"]
+[ext_resource type="Script" uid="uid://d27a6ocyke8m0" path="res://scenes/test_scenes/boss3_hud.gd" id="11_wtdap"]
+[ext_resource type="Texture2D" uid="uid://d1c6cxmgbcehx" path="res://asset/level_3_water_palace/water_goddess/states/boss_healthbar1.png" id="12_aeh5d"]
+[ext_resource type="PackedScene" uid="uid://btj7ilbg28lwi" path="res://ui/PlayerHUD.tscn" id="13_2pftl"]
+[ext_resource type="PackedScene" uid="uid://dytm3c86oshmd" path="res://screens/game_screen/hud.tscn" id="14_keb00"]
+[ext_resource type="PackedScene" uid="uid://cr1c3tm5n3sy0" path="res://screens/game_screen/CoinAndKeyContainer.tscn" id="15_br80k"]
+[ext_resource type="Texture2D" uid="uid://ctmhu3cgra0po" path="res://asset/level_3_water_palace/background/Gemini_Generated_Image_6sqsvq6sqsvq6sqs.png" id="17_wtdap"]
+[ext_resource type="PackedScene" uid="uid://bvavyowgpxn0m" path="res://scenes/bosses/boss3/Column.tscn" id="18_2pftl"]
+[ext_resource type="Texture2D" uid="uid://dr8r80x4tyavg" path="res://asset/level_3_water_palace/background/floor.png" id="20_br80k"]
+[ext_resource type="Texture2D" uid="uid://cg4ji188xcky2" path="res://asset/level_3_water_palace/background/dirt_floor.png" id="20_spsnj"]
+[ext_resource type="PackedScene" uid="uid://caayffphhg6bw" path="res://scenes/bosses/boss3/ColumnSpike.tscn" id="21_y5yu7"]
+[ext_resource type="PackedScene" uid="uid://4jkpch4ypfqs" path="res://scenes/bosses/boss3/Boss3CoralSpike.tscn" id="22_b5x6u"]
+[ext_resource type="PackedScene" uid="uid://deauakn2u0vau" path="res://scenes/bosses/boss3/UpwardPlatform.tscn" id="22_g0ari"]
+[ext_resource type="Script" uid="uid://cuny6i8se13vl" path="res://scenes/bosses/boss3/phase_3_camera.gd" id="23_phase3cam"]
+[ext_resource type="PackedScene" uid="uid://bdjyxenddcpp7" path="res://scenes/bosses/boss3/Bubble.tscn" id="24_vggod"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv7ei"]
+atlas = ExtResource("12_aeh5d")
+region = Rect2(0, 426.64, 1278.795, 170.26)
+margin = Rect2(-224.9, -70.37, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeh5d"]
+atlas = ExtResource("12_aeh5d")
+region = Rect2(226.098, 290.827, 864.844, 38.65265)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_br80k"]
+size = Vector2(1295.0529, 54.007847)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spsnj"]
+size = Vector2(993.234, 62.78346)
 
 [node name="TestBoss3" type="Node2D"]
+script = ExtResource("1_aeh5d")
+
+[node name="FullBg" type="Sprite2D" parent="."]
+modulate = Color(0.7581918, 0.7581918, 0.7581917, 1)
+position = Vector2(301.50003, 68)
+scale = Vector2(0.37618458, 0.4117188)
+texture = ExtResource("2_b5x6u")
+
+[node name="Upper_Floor" type="Sprite2D" parent="."]
+position = Vector2(301.631, -216.606)
+scale = Vector2(0.28827715, 0.3592173)
+texture = ExtResource("3_keb00")
 
 [node name="Layer3" type="Sprite2D" parent="."]
 modulate = Color(0.601223, 0.601223, 0.601223, 1)
@@ -25,76 +68,135 @@ scale = Vector2(0.838379, 0.818848)
 texture = ExtResource("2_1myvi")
 
 [node name="Player" parent="." instance=ExtResource("2_imhqq")]
-position = Vector2(-74, -5)
+position = Vector2(40, -76)
+has_blade = true
 
 [node name="Boss3" parent="." instance=ExtResource("3_gtfhx")]
 position = Vector2(329, -135)
+boss3_max_health = 1000
+player_path = NodePath("../Player")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD9/wAABAAEAAAAAAD8/wAABAANAAAAAAD//wAABAAMAAgAAAD+/wAABAALAAgAAAACAAAABAAFAAgAAAABAAAABAAFAAgAAAAAAAAABAAGAAgAAAAFAAAABAAHAAgAAAAEAAAABAACAAAAAAADAAAABAAEAAAAAAAHAAAABAAMAAgAAAAGAAAABAAKAAgAAAAJAAAABAACAAYAAAAIAAAABAAJAAgAAAALAAAABAADAAYAAAAKAAAABAAGAAgAAAALAAEABAALAA0AAAAKAAEABAAKAA0AAAAJAAEABAAGAAsAAAAIAAEABAALAA0AAAAHAAEABAAHAAsAAAAGAAEABAAKAA0AAAAFAAEABAAGAAsAAAAEAAEABAAHAAsAAAADAAEABAADAAcAAAACAAEABAALAA0AAAABAAEABAALAA0AAAAAAAEABAAHAAsAAAD//wEABAAGAAsAAAD+/wEABAACAAUAAAD9/wEABAAFAAsAAAD8/wEABAAJAA0AAAD7/wEABAAGAAcAAAD7/wAABAAAAAQAAAD7////BAAIAAwAAAD7//7/BAAIAAsAAAD7//3/BAAAAAkAAAD7//z/BAAAAAsAAAD7//v/BAAAAAIAAAD7//r/BAAIAAsAAAD7//n/BAAGAAIAAAD7//j/BAAAAAMAAAD7//f/BAAGAAEAAAD7//b/BAAAAAgAAAD7//X/BAAGAAEAAAD7//T/BAAGAAQAAAD8//T/BAANAAoAAAD8//P/BAANAAwAAAD7//P/BAAGAAQAAAD8////BAANAAkAAAD8//7/BAADAAoAAAD8//3/BAADAAkAAAD8//z/BAAFAAQAAAD8//v/BAAFAAMAAAD8//r/BAANAAwAAAD8//n/BAANAAoAAAD8//j/BAAHAAMAAAD8//f/BAAHAAEAAAD8//b/BAAHAAEAAAD8//X/BAAHAAQAAAAPAAEABAACAAUAAAAPAAAABAAEAAgAAAAOAAEABAADAAcAAAAOAAAABAABAAAAAAANAAEABAADAAcAAAANAAAABAAGAAgAAAAMAAEABAAEAAUAAAAMAAAABAACAAAAAAAVAAEABAAEAAsAAAAUAAEABAAEAAUAAAATAAEABAADAAcAAAATAAAABAADAAYAAAASAAEABAAMAA0AAAASAAAABAADAAAAAAARAAEABAABAAUAAAARAAAABAAKAAgAAAAQAAEABAAHAAsAAAAQAAAABAADAAYAAAAXAPT/BAAFAAIAAAAXAPP/BAAFAAIAAAAWAPT/BAAIAAsAAAAWAPP/BAAIAAoAAAAXAAEABAANAA0AAAAXAAAABAADAAkAAAAXAP//BAADAAgAAAAXAP7/BAADAAkAAAAXAP3/BAADAAsAAAAXAPz/BAADAAoAAAAXAPv/BAANAAwAAAAXAPr/BAANAAwAAAAXAPn/BAANAAsAAAAXAPj/BAADAAgAAAAXAPf/BAADAAgAAAAXAPb/BAAFAAEAAAAXAPX/BAANAAwAAAAWAAEABAABAAUAAAAWAAAABAACAAoAAAAWAP//BAAGAAMAAAAWAP7/BAAAAAkAAAAWAP3/BAAGAAIAAAAWAPz/BAAIAAwAAAAWAPv/BAAGAAEAAAAWAPr/BAAAAAQAAAAWAPn/BAAGAAEAAAAWAPj/BAAAAAQAAAAWAPf/BAAIAAsAAAAWAPb/BAAGAAIAAAAWAPX/BAAGAAIAAAAVAAAABAAKAAgAAAAUAAAABAABAAAAAAD7//L/BAAGAAEAAAD7//H/BAAAAAIAAAD7//D/BAAIAAgAAAD8//D/BAAEAAgAAAD8//H/BAALAAUAAAD8//L/BAAFAAMAAAD9//D/BAACAAYAAAD+//D/BAAEAAgAAAD///D/BAABAAAAAAAAAPD/BAAHAAgAAAABAPD/BAADAAYAAAACAPD/BAAHAAgAAAADAPD/BAAEAAgAAAAEAPD/BAAEAAgAAAAFAPD/BAAGAAgAAAAGAPD/BAAJAAgAAAAHAPD/BAAEAAAAAAAIAPD/BAAEAAgAAAAJAPD/BAAGAAgAAAAKAPD/BAAEAAAAAAALAPD/BAAEAAgAAAAMAPD/BAAHAAgAAAANAPD/BAALAAgAAAAOAPD/BAACAAYAAAAPAPD/BAABAAAAAAAQAPD/BAAKAAgAAAARAPD/BAADAAAAAAASAPD/BAAJAAgAAAATAPD/BAAFAAgAAAAUAPD/BAADAAYAAAAVAPD/BAACAAYAAAAWAPD/BAADAAAAAAAXAPD/BAAFAAAAAAAXAPH/BAADAAkAAAAXAPL/BAADAAoAAAAWAPH/BAAMAAMAAAAWAPL/BAAIAAsAAAD9//H/BAAHAAsAAAD+//H/BAACAAcAAAD///H/BAAKAA0AAAAAAPH/BAAHAAsAAAABAPH/BAAHAAsAAAACAPH/BAAEAAsAAAADAPH/BAADAAcAAAAEAPH/BAADAAUAAAAFAPH/BAADAAUAAAAGAPH/BAAHAAsAAAAHAPH/BAACAAUAAAAIAPH/BAAMAA0AAAAJAPH/BAADAAUAAAAKAPH/BAAEAAsAAAALAPH/BAAHAAsAAAAMAPH/BAACAAUAAAANAPH/BAAJAA0AAAAOAPH/BAAJAA0AAAAPAPH/BAAFAAsAAAAQAPH/BAADAAUAAAARAPH/BAAHAAsAAAASAPH/BAAGAAsAAAATAPH/BAADAAcAAAAUAPH/BAABAAUAAAAVAPH/BAAGAAsAAAD///n/BAAIAA0AAAAAAPn/BAAEAAsAAAABAPn/BAADAAcAAAACAPn/BAAFAAUAAAACAPj/BAAHAAYAAAABAPj/BAAEAAAAAAAAAPj/BAADAAYAAAD///j/BAAGAAYAAAA=")
+tile_map_data = PackedByteArray("AAD9/wAABAAEAAAAAAD8/wAABAAJAAgAAAD//wAABAAMAAgAAAD+/wAABAALAAgAAAACAAAABAAFAAgAAAABAAAABAAFAAgAAAAAAAAABAAGAAgAAAAFAAAABAAHAAgAAAAEAAAABAACAAAAAAADAAAABAAEAAAAAAAHAAAABAAMAAgAAAAGAAAABAAKAAgAAAAJAAAABAACAAYAAAAIAAAABAAJAAgAAAALAAAABAADAAYAAAAKAAAABAAGAAgAAAALAAEABAALAA0AAAAKAAEABAAKAA0AAAAJAAEABAAGAAsAAAAIAAEABAALAA0AAAAHAAEABAAHAAsAAAAGAAEABAAKAA0AAAAFAAEABAAGAAsAAAAEAAEABAAHAAsAAAADAAEABAADAAcAAAACAAEABAALAA0AAAABAAEABAALAA0AAAAAAAEABAAHAAsAAAD//wEABAAGAAsAAAD+/wEABAACAAUAAAD9/wEABAAFAAsAAAD8/wEABAAJAA0AAAD7/wEABAAGAAcAAAD7/wAABAAGAAAAAAAPAAEABAACAAUAAAAPAAAABAAEAAgAAAAOAAEABAADAAcAAAAOAAAABAABAAAAAAANAAEABAADAAcAAAANAAAABAAGAAgAAAAMAAEABAAEAAUAAAAMAAAABAACAAAAAAAVAAEABAAEAAsAAAAUAAEABAAEAAUAAAATAAEABAADAAcAAAATAAAABAADAAYAAAASAAEABAAMAA0AAAASAAAABAADAAAAAAARAAEABAABAAUAAAARAAAABAAKAAgAAAAQAAEABAAHAAsAAAAQAAAABAADAAYAAAAXAAEABAANAA0AAAAXAAAABAAFAAAAAAAWAAEABAABAAUAAAAWAAAABAABAAAAAAAVAAAABAAKAAgAAAAUAAAABAABAAAAAAD///n/BAAIAA0AAAAAAPn/BAAEAAsAAAABAPn/BAADAAcAAAACAPn/BAAFAAUAAAACAPj/BAAHAAYAAAABAPj/BAAEAAAAAAAAAPj/BAADAAYAAAD///j/BAAGAAYAAAA=")
+enabled = false
 tile_set = ExtResource("1_aystw")
 
-[node name="Crystal-mauler" parent="." instance=ExtResource("4_1jrlb")]
-position = Vector2(9, -248)
-
 [node name="Skills" type="Node2D" parent="."]
+position = Vector2(0, 7)
 
 [node name="WaterEruptions" type="Node2D" parent="Skills"]
-position = Vector2(0, 12)
+position = Vector2(0, 16)
 
 [node name="WaterEruption" parent="Skills/WaterEruptions" instance=ExtResource("7_1myvi")]
-position = Vector2(-5, -8)
+position = Vector2(-7, -12)
 fade_duration = 1.5
 
 [node name="WaterEruption2" parent="Skills/WaterEruptions" instance=ExtResource("7_1myvi")]
-position = Vector2(633, -8)
+position = Vector2(610, -11)
 fade_duration = 1.5
 
 [node name="WaterEruption3" parent="Skills/WaterEruptions" instance=ExtResource("7_1myvi")]
-position = Vector2(495, -13)
+position = Vector2(486, -10)
 fade_duration = 1.5
 
 [node name="WaterEruption4" parent="Skills/WaterEruptions" instance=ExtResource("7_1myvi")]
-position = Vector2(358, -12)
+position = Vector2(359, -10)
 fade_duration = 1.5
 
 [node name="WaterEruption5" parent="Skills/WaterEruptions" instance=ExtResource("7_1myvi")]
-position = Vector2(241, -9)
+position = Vector2(235, -10)
 fade_duration = 1.5
 
 [node name="WaterEruption6" parent="Skills/WaterEruptions" instance=ExtResource("7_1myvi")]
-position = Vector2(132, -9)
+position = Vector2(111, -10)
+fade_duration = 1.5
+
+[node name="WaterEruptionsAll" type="Node2D" parent="Skills" groups=["WaterEruptionsAll"]]
+position = Vector2(0, 16)
+
+[node name="WaterEruption7" parent="Skills/WaterEruptionsAll" instance=ExtResource("8_sdf1u")]
+position = Vector2(-63, -15)
+fade_duration = 1.5
+
+[node name="WaterEruption" parent="Skills/WaterEruptionsAll" instance=ExtResource("7_1myvi")]
+position = Vector2(-6, -10)
+fade_duration = 1.5
+
+[node name="WaterEruption8" parent="Skills/WaterEruptionsAll" instance=ExtResource("8_sdf1u")]
+position = Vector2(49, -10)
+fade_duration = 1.5
+
+[node name="WaterEruption6" parent="Skills/WaterEruptionsAll" instance=ExtResource("7_1myvi")]
+position = Vector2(111, -10)
+fade_duration = 1.5
+
+[node name="WaterEruption9" parent="Skills/WaterEruptionsAll" instance=ExtResource("8_sdf1u")]
+position = Vector2(173, -10)
+fade_duration = 1.5
+
+[node name="WaterEruption5" parent="Skills/WaterEruptionsAll" instance=ExtResource("7_1myvi")]
+position = Vector2(235, -10)
+fade_duration = 1.5
+
+[node name="WaterEruption10" parent="Skills/WaterEruptionsAll" instance=ExtResource("8_sdf1u")]
+position = Vector2(296, -10)
+fade_duration = 1.5
+
+[node name="WaterEruption4" parent="Skills/WaterEruptionsAll" instance=ExtResource("7_1myvi")]
+position = Vector2(359, -10)
+fade_duration = 1.5
+
+[node name="WaterEruption11" parent="Skills/WaterEruptionsAll" instance=ExtResource("8_sdf1u")]
+position = Vector2(423, -10)
+fade_duration = 1.5
+
+[node name="WaterEruption3" parent="Skills/WaterEruptionsAll" instance=ExtResource("7_1myvi")]
+position = Vector2(486, -10)
+fade_duration = 1.5
+
+[node name="WaterEruption12" parent="Skills/WaterEruptionsAll" instance=ExtResource("8_sdf1u")]
+position = Vector2(550, -10)
+fade_duration = 1.5
+
+[node name="WaterEruption2" parent="Skills/WaterEruptionsAll" instance=ExtResource("7_1myvi")]
+position = Vector2(609, -10)
+fade_duration = 1.5
+
+[node name="WaterEruption13" parent="Skills/WaterEruptionsAll" instance=ExtResource("8_sdf1u")]
+position = Vector2(670, -10)
 fade_duration = 1.5
 
 [node name="WaterEruption2s" type="Node2D" parent="Skills"]
 position = Vector2(0, 16)
 
 [node name="WaterEruption" parent="Skills/WaterEruption2s" instance=ExtResource("8_sdf1u")]
-position = Vector2(-74, -8)
+position = Vector2(-62, -12)
 
 [node name="WaterEruption7" parent="Skills/WaterEruption2s" instance=ExtResource("8_sdf1u")]
-position = Vector2(60, -9)
+position = Vector2(49, -10)
 
 [node name="WaterEruption2" parent="Skills/WaterEruption2s" instance=ExtResource("8_sdf1u")]
-position = Vector2(186, -10)
+position = Vector2(173, -10)
 
 [node name="WaterEruption3" parent="Skills/WaterEruption2s" instance=ExtResource("8_sdf1u")]
-position = Vector2(298, -10)
+position = Vector2(296, -10)
 
 [node name="WaterEruption4" parent="Skills/WaterEruption2s" instance=ExtResource("8_sdf1u")]
-position = Vector2(429, -11)
+position = Vector2(423, -10)
 
 [node name="WaterEruption5" parent="Skills/WaterEruption2s" instance=ExtResource("8_sdf1u")]
-position = Vector2(563, -8)
+position = Vector2(550, -10)
 
 [node name="WaterEruption6" parent="Skills/WaterEruption2s" instance=ExtResource("8_sdf1u")]
-position = Vector2(689, -10)
+position = Vector2(669, -10)
 
 [node name="BossAnchors" type="Node2D" parent="."]
+position = Vector2(0, -22)
 
 [node name="Anchor0" type="Marker2D" parent="BossAnchors"]
 position = Vector2(0, -134)
 script = ExtResource("9_r8tgu")
+index = 0
 
 [node name="Anchor1" type="Marker2D" parent="BossAnchors"]
 position = Vector2(331, -133)
@@ -115,3 +217,227 @@ index = 3
 position = Vector2(477, -91)
 script = ExtResource("9_r8tgu")
 index = 4
+
+[node name="Anchor5" type="Marker2D" parent="BossAnchors"]
+position = Vector2(319, -296)
+script = ExtResource("9_r8tgu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BossHUD" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+script = ExtResource("11_wtdap")
+
+[node name="BossHealthBar" type="TextureProgressBar" parent="CanvasLayer/BossHUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -239.0
+offset_top = -50.0
+offset_right = 1039.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+value = 100.0
+texture_under = SubResource("AtlasTexture_hv7ei")
+texture_progress = SubResource("AtlasTexture_aeh5d")
+
+[node name="BossHealthLabel" type="Label" parent="CanvasLayer/BossHUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -159.0
+offset_top = -102.0
+offset_right = 138.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(5.442186, 11.068209, 13.0310545, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0.0009906151, 9.176205, 10.474886, 1)
+theme_override_font_sizes/font_size = 21
+text = "The Water Goddess"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerHud" parent="CanvasLayer" instance=ExtResource("13_2pftl")]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("14_keb00")]
+
+[node name="CoinAndKeyContainer" parent="CanvasLayer" instance=ExtResource("15_br80k")]
+
+[node name="WaterballMarkers" type="Node2D" parent="."]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+visible = false
+self_modulate = Color(0.585062, 0.585062, 0.5850621, 1)
+
+[node name="Lower" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(308, 293)
+scale = Vector2(0.3343023, 0.35001627)
+texture = ExtResource("17_wtdap")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(751, -75)
+scale = Vector2(0.7044199, 0.7044199)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(-637.40393, -61.043137)
+scale = Vector2(1.0426471, 1.4609476)
+texture = ExtResource("20_br80k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(-636.16943, 168.93332)
+shape = SubResource("RectangleShape2D_br80k")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(301, 508.00006)
+scale = Vector2(0.7963883, 0.7963881)
+
+[node name="DirtFloor" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(0, 28.880371)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("20_spsnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1.1205673e-05, 41.436985)
+scale = Vector2(0.9999998, 0.99999964)
+shape = SubResource("RectangleShape2D_spsnj")
+
+[node name="Column6" parent="." instance=ExtResource("18_2pftl")]
+position = Vector2(736, 714)
+
+[node name="Column4" parent="." instance=ExtResource("18_2pftl")]
+position = Vector2(737, 245)
+
+[node name="Column2" parent="." instance=ExtResource("18_2pftl")]
+position = Vector2(736, -223)
+
+[node name="Column5" parent="." instance=ExtResource("18_2pftl")]
+position = Vector2(-105, 716)
+
+[node name="Column3" parent="." instance=ExtResource("18_2pftl")]
+position = Vector2(-104, 247)
+
+[node name="ColumnSpike" parent="." groups=["ColumnSpike"] instance=ExtResource("21_y5yu7")]
+visible = false
+position = Vector2(744, 262)
+monitoring = false
+monitorable = false
+
+[node name="ColumnSpike2" parent="." groups=["ColumnSpike"] instance=ExtResource("21_y5yu7")]
+visible = false
+position = Vector2(-98, 264)
+monitoring = false
+monitorable = false
+
+[node name="CoralSpikes" type="Node2D" parent="."]
+process_mode = 4
+visible = false
+position = Vector2(-95, -215.83)
+
+[node name="Boss3CoralSpike" parent="CoralSpikes" instance=ExtResource("22_b5x6u")]
+position = Vector2(40, 349.83002)
+
+[node name="Boss3CoralSpike2" parent="CoralSpikes" instance=ExtResource("22_b5x6u")]
+position = Vector2(105, 349.83002)
+
+[node name="Boss3CoralSpike3" parent="CoralSpikes" instance=ExtResource("22_b5x6u")]
+position = Vector2(172, 349.83002)
+
+[node name="Boss3CoralSpike4" parent="CoralSpikes" instance=ExtResource("22_b5x6u")]
+position = Vector2(238, 348.83002)
+
+[node name="Boss3CoralSpike5" parent="CoralSpikes" instance=ExtResource("22_b5x6u")]
+position = Vector2(303, 348.83002)
+
+[node name="Boss3CoralSpike6" parent="CoralSpikes" instance=ExtResource("22_b5x6u")]
+position = Vector2(368, 348.83002)
+
+[node name="Boss3CoralSpike7" parent="CoralSpikes" instance=ExtResource("22_b5x6u")]
+position = Vector2(433, 348.83002)
+
+[node name="Boss3CoralSpike8" parent="CoralSpikes" instance=ExtResource("22_b5x6u")]
+position = Vector2(498, 348.83002)
+
+[node name="Boss3CoralSpike9" parent="CoralSpikes" instance=ExtResource("22_b5x6u")]
+position = Vector2(562, 348.83002)
+
+[node name="Boss3CoralSpike10" parent="CoralSpikes" instance=ExtResource("22_b5x6u")]
+position = Vector2(627, 348.83002)
+
+[node name="Boss3CoralSpike11" parent="CoralSpikes" instance=ExtResource("22_b5x6u")]
+position = Vector2(692, 348.83002)
+
+[node name="Boss3CoralSpike12" parent="CoralSpikes" instance=ExtResource("22_b5x6u")]
+position = Vector2(751, 348.83002)
+
+[node name="Column" parent="." instance=ExtResource("18_2pftl")]
+position = Vector2(-103, -221)
+
+[node name="Platforms" type="Node2D" parent="."]
+position = Vector2(0, -765)
+
+[node name="UpwardPlatform" parent="Platforms" instance=ExtResource("22_g0ari")]
+position = Vector2(-2, 660.845)
+
+[node name="UpwardPlatform2" parent="Platforms" instance=ExtResource("22_g0ari")]
+position = Vector2(317, 722)
+
+[node name="UpwardPlatform3" parent="Platforms" instance=ExtResource("22_g0ari")]
+position = Vector2(467, 774)
+
+[node name="UpwardPlatform4" parent="Platforms" instance=ExtResource("22_g0ari")]
+position = Vector2(155, 768)
+
+[node name="UpwardPlatform5" parent="Platforms" instance=ExtResource("22_g0ari")]
+position = Vector2(604, 663.845)
+
+[node name="Bubble" parent="Platforms" instance=ExtResource("24_vggod")]
+position = Vector2(51, 1136.845)
+
+[node name="Bubble2" parent="Platforms" instance=ExtResource("24_vggod")]
+position = Vector2(203, 1040.845)
+
+[node name="Bubble3" parent="Platforms" instance=ExtResource("24_vggod")]
+position = Vector2(401, 1042.845)
+
+[node name="Bubble4" parent="Platforms" instance=ExtResource("24_vggod")]
+position = Vector2(512, 933)
+
+[node name="Bubble5" parent="Platforms" instance=ExtResource("24_vggod")]
+position = Vector2(132, 925)
+
+[node name="Bubble6" parent="Platforms" instance=ExtResource("24_vggod")]
+position = Vector2(319, 850)
+
+[node name="Bubble7" parent="Platforms" instance=ExtResource("24_vggod")]
+position = Vector2(554, 1128.845)
+
+[node name="Bubble9" parent="Platforms" instance=ExtResource("24_vggod")]
+position = Vector2(315, 1145.845)
+
+[node name="Phase3Camera" type="Camera2D" parent="." groups=["Phase3Camera"]]
+enabled = false
+script = ExtResource("23_phase3cam")
+center_offset = Vector2(-1, -150)
+camera_left_limit = 300.0
+camera_right_limit = 300.0
+camera_top_limit = -330.0
+camera_zoom_level = 1.3
+
+[node name="Creeps" type="Node2D" parent="."]

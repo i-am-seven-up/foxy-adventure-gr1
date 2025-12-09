@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdjyxenddcpp7"]
+
+[ext_resource type="Script" path="res://scenes/bosses/boss3/bubble.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cincmtu37bgnm" path="res://asset/level_3_water_palace/platforms/bubble_pad_1.png" id="1_u6hc4"]
+[ext_resource type="Texture2D" uid="uid://bt4hbmdxwikq3" path="res://asset/level_3_water_palace/platforms/bubble_pad_2.png" id="2_xwvft"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_11vn7"]
+radius = 19.235384
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b2hmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u6hc4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xwvft")
+}],
+"loop": true,
+"name": &"explode",
+"speed": 5.0
+}]
+
+[node name="Bubble" type="StaticBody2D" groups=["BubblePlatform"]]
+script = ExtResource("1_script")
+hide_until_waves_cleared = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_11vn7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.9999999, 1.9999995)
+scale = Vector2(0.0900879, 0.0900879)
+sprite_frames = SubResource("SpriteFrames_b2hmv")

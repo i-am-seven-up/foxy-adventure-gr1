@@ -116,6 +116,11 @@ func _update(delta: float) -> void:
 	# Khi đang hover: KHÔNG cho dash/attack/climb
 	# (không gọi control_dash/control_attack)
 
+	# Tự động thoát hover khi chạm đất
+	if obj.is_on_floor():
+		_request_exit(fsm.states.idle)
+		return
+
 	# Rời hover: bắt đầu tween thu nhỏ và CHỜ hoàn tất rồi mới đổi state
 	if Input.is_action_just_released("jump"):
 		_request_exit(fsm.states.fall)
@@ -133,11 +138,7 @@ func _update(delta: float) -> void:
 		obj.velocity.x = move_toward(obj.velocity.x, 0, current_deccel * delta)
 
 	# Rơi chậm về tốc độ mục tiêu
-	if obj.is_on_floor():
-		# Đứng yên theo trục Y khi chạm đất nhưng vẫn giữ Hover
-		obj.velocity.y = 0.0
-	else:
-		obj.velocity.y = move_toward(obj.velocity.y, hover_fall_speed, hover_accel * delta)
+	obj.velocity.y = move_toward(obj.velocity.y, hover_fall_speed, hover_accel * delta)
 
 	# Sway nhẹ bằng position + tilt; và hiệu ứng thân trên kéo dẫn
 	if obj.animated_sprite != null:

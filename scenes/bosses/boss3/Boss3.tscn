@@ -1,11 +1,18 @@
-[gd_scene load_steps=24 format=3 uid="uid://drem1inlnoymq"]
+[gd_scene load_steps=60 format=3 uid="uid://drem1inlnoymq"]
 
 [ext_resource type="Script" uid="uid://b5ht8frfquhry" path="res://scenes/bosses/boss3/boss_3.gd" id="1_dj6mc"]
+[ext_resource type="Shader" uid="uid://dwdcbl0ygqftj" path="res://scenes/enemies/shaders/king_crab_blink.gdshader" id="2_3t3rw"]
+[ext_resource type="Texture2D" uid="uid://cll42pu7paifw" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_onetyaonetyaonet1-Photoroom.png" id="2_igc3k"]
 [ext_resource type="Texture2D" uid="uid://cbsu7keqwph4k" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_attack_05.png" id="2_vcpcy"]
+[ext_resource type="Texture2D" uid="uid://67pksmvb8xmx" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_onetyaonetyaonet2-Photoroom.png" id="3_0opad"]
 [ext_resource type="Texture2D" uid="uid://bpqx2m7kje4lb" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_attack_04.png" id="3_2yyk8"]
+[ext_resource type="Texture2D" uid="uid://bevhovnvcxq2i" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_onetyaonetyaonet3-Photoroom.png" id="4_1sgbt"]
 [ext_resource type="Texture2D" uid="uid://dle6loxyp83cx" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_attack_03.png" id="4_q16wh"]
 [ext_resource type="Texture2D" uid="uid://bbg6ljyim5vq" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_attack_02.png" id="5_jwwe7"]
+[ext_resource type="Texture2D" uid="uid://cvryogal52vjk" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_onetyaonetyaonet4-Photoroom.png" id="5_siibr"]
 [ext_resource type="Texture2D" uid="uid://duvne638w5466" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_attack_01.png" id="6_imosy"]
+[ext_resource type="Texture2D" uid="uid://bx5xlrqlkxlsa" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_onetyaonetyaonet5-Photoroom.png" id="6_peagu"]
+[ext_resource type="Texture2D" uid="uid://b856xwiddf23s" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_onetyaonetyaonet6-Photoroom.png" id="7_ecrbq"]
 [ext_resource type="Texture2D" uid="uid://ffyyou27xpvw" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_fire_1.png" id="7_fa86v"]
 [ext_resource type="Texture2D" uid="uid://bvwv5g7mvedl0" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_idle_01.png" id="8_jwwe7"]
 [ext_resource type="Texture2D" uid="uid://denm2bj1aepdw" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_fire_2.png" id="8_w12rv"]
@@ -17,12 +24,67 @@
 [ext_resource type="Texture2D" uid="uid://eeifeg3g6740" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_prepare_skill01_3.png" id="14_hsgt3"]
 [ext_resource type="Texture2D" uid="uid://b2y56tlnv66c5" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_prepare_skill01_4.png" id="15_dmnor"]
 [ext_resource type="Texture2D" uid="uid://rj76tywdau3r" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_idle_02.tres" id="17_fa86v"]
+[ext_resource type="Texture2D" uid="uid://dtunndk7og8yn" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_108mwi108mwi108m-Photoroom.png" id="17_fleln"]
+[ext_resource type="Texture2D" uid="uid://cng4ukj1ybh8e" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_ks8ka3ks8ka3ks8k-Photoroom.png" id="18_ojejk"]
 [ext_resource type="Texture2D" uid="uid://b8wrx822kv63v" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_idle_07.tres" id="18_w12rv"]
 [ext_resource type="Texture2D" uid="uid://drn7knywxqna8" path="res://asset/level_3_water_palace/water_goddess/states/water_goddess_idle_08.tres" id="19_qi10k"]
+[ext_resource type="Texture2D" uid="uid://qpi63wr8xrej" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_flhn3kflhn3kflhn-Photoroom.png" id="19_rc171"]
+[ext_resource type="Texture2D" uid="uid://dmolbpssthsef" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom1.png" id="20_dmnor"]
+[ext_resource type="Texture2D" uid="uid://b7a4ju1h1avc1" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_67tp6967tp6967tp-Photoroom.png" id="20_k032u"]
 [ext_resource type="Script" uid="uid://dsynr3clvqlf1" path="res://scenes/bosses/boss3/boss3_phase_1.gd" id="20_w12rv"]
+[ext_resource type="Texture2D" uid="uid://6tq84dm8uy5r" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_5cp33u5cp33u5cp3-Photoroom.png" id="21_4uyr4"]
 [ext_resource type="Script" uid="uid://dy6ms2a1nbppg" path="res://scenes/bosses/boss3/boss3_phase_2.gd" id="21_qi10k"]
+[ext_resource type="Texture2D" uid="uid://rmw7j14aeafu" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom2.png" id="21_vssye"]
+[ext_resource type="Texture2D" uid="uid://dfhc5vch3p57j" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom3.png" id="22_3qy7u"]
+[ext_resource type="Texture2D" uid="uid://cpgghlg73rwkj" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_171ork171ork171o-Photoroom.png" id="22_7jv5o"]
+[ext_resource type="Texture2D" uid="uid://dllx30jhl5s50" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom4.png" id="23_1sypj"]
+[ext_resource type="Texture2D" uid="uid://ckkh4jgca0b0s" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_rn0slqrn0slqrn0s-Photoroom.png" id="23_ra5y6"]
+[ext_resource type="Texture2D" uid="uid://c47vfngq0fin8" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom5.png" id="24_bqtqd"]
+[ext_resource type="Texture2D" uid="uid://d0aelu2lfwp70" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom6.png" id="25_yw8du"]
+[ext_resource type="Texture2D" uid="uid://n6nm3dqvye27" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom8.png" id="26_wgb5x"]
+[ext_resource type="Texture2D" uid="uid://b2t4t8m2vkxf8" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom10.png" id="27_nb13n"]
+[ext_resource type="Texture2D" uid="uid://mouhngrngj4j" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom9.png" id="28_3t3rw"]
+[ext_resource type="Texture2D" uid="uid://todn1osjjrul" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom11.png" id="29_egjne"]
+[ext_resource type="Texture2D" uid="uid://b5effkvaoe0sn" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom12.png" id="30_jehqq"]
+[ext_resource type="Texture2D" uid="uid://bx8ntngdqmcw1" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom13.png" id="31_uliq1"]
+[ext_resource type="Texture2D" uid="uid://dcpdatr228ecv" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom14.png" id="32_jyyxr"]
+[ext_resource type="Texture2D" uid="uid://cuobovhw12n0t" path="res://asset/level_3_water_palace/water_goddess/states/Gemini_Generated_Image_3p6pyr3p6pyr3p6p-Photoroom15.png" id="33_uuddr"]
+[ext_resource type="Script" uid="uid://b5vlq5e21dx67" path="res://scripts/hurt_area_2d.gd" id="34_nb13n"]
+[ext_resource type="Script" uid="uid://hqaqiglr5ftd" path="res://scenes/bosses/boss3/boss3_phase_3.gd" id="38_egjne"]
+[ext_resource type="Texture2D" uid="uid://dhb4gr8bxmdsr" path="res://asset/level_3_water_palace/water_goddess/states/boss-removebg-preview.png" id="43_ojejk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xf2r0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_52xfl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_igc3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0opad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1sgbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_siibr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_peagu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ecrbq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_egjne"]
+shader = ExtResource("2_3t3rw")
+shader_parameter/flash_amount = 0.0
+shader_parameter/flash_color = Color(1, 0.2, 0.2, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m2cr4"]
 animations = [{
@@ -42,7 +104,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_imosy")
 }],
-"loop": true,
+"loop": false,
 "name": &"atk_1",
 "speed": 5.0
 }, {
@@ -62,7 +124,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_db1te")
 }],
-"loop": true,
+"loop": false,
 "name": &"atk_2",
 "speed": 5.0
 }, {
@@ -79,7 +141,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("15_dmnor")
 }],
-"loop": true,
+"loop": false,
 "name": &"atk_3",
 "speed": 5.0
 }, {
@@ -101,10 +163,119 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_ykl0u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_dmnor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_vssye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3qy7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1sypj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_bqtqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_yw8du")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_bqtqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_yw8du")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_bqtqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1sypj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wgb5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_nb13n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3t3rw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_egjne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_jehqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_uliq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_uliq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jyyxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jyyxr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_uuddr")
+}],
+"loop": false,
+"name": &"appears",
+"speed": 7.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rc171"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_fleln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ojejk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rc171")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_k032u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_4uyr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7jv5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ra5y6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k032u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_ojejk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Boss3" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 collision_layer = 256
 script = ExtResource("1_dj6mc")
+boss3_max_health = 500
 metadata/_custom_type_script = "uid://bowmvuxm14ds4"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -112,12 +283,47 @@ shape = SubResource("CapsuleShape2D_xf2r0")
 
 [node name="Direction" type="Node2D" parent="."]
 
+[node name="BlingBling" type="AnimatedSprite2D" parent="Direction"]
+position = Vector2(-12.000027, -18)
+scale = Vector2(0.3890625, 0.3890625)
+sprite_frames = SubResource("SpriteFrames_52xfl")
+frame_progress = 0.9856686
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+material = SubResource("ShaderMaterial_egjne")
 position = Vector2(0, 2)
 scale = Vector2(0.438672, 0.436531)
 sprite_frames = SubResource("SpriteFrames_m2cr4")
-animation = &"atk_3"
+animation = &"atk_2"
 autoplay = "idle"
+
+[node name="AnimatedSprite2DAppears" type="AnimatedSprite2D" parent="Direction"]
+position = Vector2(13.999992, 34)
+scale = Vector2(0.628125, 0.5573066)
+sprite_frames = SubResource("SpriteFrames_ykl0u")
+animation = &"appears"
+flip_h = true
+
+[node name="HurtArea2D" type="Area2D" parent="Direction"]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("34_nb13n")
+metadata/_custom_type_script = "uid://b5vlq5e21dx67"
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Direction/HurtArea2D"]
+polygon = PackedVector2Array(4, -10, 22, -120, 54, -14, 52, 162, -110, 164, -120, 106, -54, 38, -38, -82, -30, -120, 22, -120)
+
+[node name="AnimatedSprite2DDead" type="AnimatedSprite2D" parent="Direction"]
+material = SubResource("ShaderMaterial_egjne")
+position = Vector2(2.0000038, 5.999998)
+scale = Vector2(0.3539063, 0.3539063)
+sprite_frames = SubResource("SpriteFrames_rc171")
+
+[node name="AnimatedSprite2DPhase3" type="AnimatedSprite2D" parent="Direction"]
+material = SubResource("ShaderMaterial_egjne")
+position = Vector2(2, 4)
+scale = Vector2(0.94, 0.94)
+sprite_frames = SubResource("SpriteFrames_k032u")
 
 [node name="States" type="Node" parent="."]
 
@@ -128,3 +334,6 @@ metadata/_custom_type_script = "uid://1yeaxl8cdu5k"
 [node name="Phase2" type="Node" parent="States"]
 script = ExtResource("21_qi10k")
 metadata/_custom_type_script = "uid://1yeaxl8cdu5k"
+
+[node name="Phase3" type="Node" parent="States"]
+script = ExtResource("38_egjne")

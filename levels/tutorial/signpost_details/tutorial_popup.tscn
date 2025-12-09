@@ -21,14 +21,14 @@ script = ExtResource("5_script")
 
 [node name="OverlayColorRect" type="ColorRect" parent="."]
 self_modulate = Color(1, 1, 1, 0.352941)
-layout_mode = 2
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0.0117647, 0.0352941, 0.85098)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 custom_minimum_size = Vector2(160, 96)
-layout_mode = 2
+layout_mode = 0
 offset_left = 268.0
 offset_top = 109.0
 offset_right = 859.0
@@ -43,12 +43,29 @@ patch_margin_bottom = 32
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
+[node name="Label7" type="Label" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 403.0
+offset_right = 470.0
+offset_bottom = 457.0
+theme_override_colors/font_color = Color(1, 1, 0.24705882, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_ysqa0")
+text = "
+Press any key to close"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Label" type="Label" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 246.0
-offset_top = 20.0
-offset_right = 353.0
-offset_bottom = 43.0
+offset_left = 187.0
+offset_top = 17.0
+offset_right = 294.0
+offset_bottom = 40.0
+scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("2_7x5of")
 text = "TUTORIAL"
 label_settings = SubResource("LabelSettings_rbs2k")
@@ -65,10 +82,11 @@ autowrap_mode = 2
 
 [node name="CloseTextureButton" type="TextureButton" parent="NinePatchRect"]
 layout_mode = 0
-offset_left = 574.0
-offset_top = -2.0
-offset_right = 588.0
-offset_bottom = 13.0
+offset_left = 566.0
+offset_top = -17.0
+offset_right = 580.0
+offset_bottom = -2.0
+scale = Vector2(3, 3)
 toggle_mode = true
 texture_normal = ExtResource("3_o313o")
 texture_pressed = ExtResource("3_o313o")
@@ -83,10 +101,9 @@ offset_top = 66.0
 offset_right = 498.0
 offset_bottom = 314.0
 stream = ExtResource("4_o313o")
-autoplay = false
-loop = true
-expand = true
 volume_db = -80.0
+expand = true
+loop = true
 
 [node name="KeysBox" type="HBoxContainer" parent="NinePatchRect"]
 layout_mode = 0

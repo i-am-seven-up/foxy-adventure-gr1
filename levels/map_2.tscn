@@ -498,10 +498,10 @@ offset_bottom = 66.0
 [node name="PlayerHUD" parent="UI" instance=ExtResource("8_playerhud")]
 
 [node name="HUD" parent="UI" instance=ExtResource("11_sqrxr")]
-offset_left = -8.0
-offset_top = 14.0
-offset_right = -8.0
-offset_bottom = 66.0
+offset_left = 4.999999
+offset_top = -7.999998
+offset_right = -425.0
+offset_bottom = 44.0
 
 [node name="Gobin" parent="." instance=ExtResource("9_qaift")]
 position = Vector2(3123, 91)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d15uiwk2diixs"]
+[gd_scene load_steps=68 format=3 uid="uid://d15uiwk2diixs"]
 
 [ext_resource type="Script" uid="uid://cx68hbcjicw8a" path="res://scenes/character/player/player.gd" id="1_puv7k"]
 [ext_resource type="SpriteFrames" uid="uid://dh2f6po3rm0p7" path="res://scenes/character/foxy.tres" id="2_v051h"]
@@ -7,16 +7,44 @@
 [ext_resource type="Shader" uid="uid://cjpl0hseqana0" path="res://scenes/character/player/shaders/dash_warp.gdshader" id="5_dash_shader"]
 [ext_resource type="Texture2D" uid="uid://bpvutatg2g08q" path="res://asset/foxy/foxy/fox_hat_blade/fox_hover.png" id="6_qnn1i"]
 [ext_resource type="Script" uid="uid://bss631ltk5rcm" path="res://scripts/hit_area_2d.gd" id="7_t4wjd"]
+[ext_resource type="Texture2D" uid="uid://c3sw5y71owhwi" path="res://asset/foxy/foxy/giant_foxy/attack_giant_foxy (1)2.png" id="8_sgp10"]
+[ext_resource type="Texture2D" uid="uid://bmi5l2qtfrl4p" path="res://asset/foxy/foxy/giant_foxy/attack_giant_foxy (1)3.png" id="9_sr8vk"]
+[ext_resource type="Texture2D" uid="uid://d3p8ey73pne32" path="res://asset/foxy/foxy/giant_foxy/attack_giant_foxy (1)4.png" id="10_7utyo"]
 [ext_resource type="Script" uid="uid://b5vlq5e21dx67" path="res://scripts/hurt_area_2d.gd" id="10_68dt2"]
 [ext_resource type="Script" uid="uid://cxkb34oxplk7s" path="res://scenes/character/player/hurt.gd" id="10_in2if"]
 [ext_resource type="Script" uid="uid://fowo3c4ajsr7" path="res://scenes/character/player/dead.gd" id="11_m5h5h"]
+[ext_resource type="Texture2D" uid="uid://o1feli5l4id4" path="res://asset/foxy/foxy/giant_foxy/attack_giant_foxy (1)5.png" id="11_w3kqy"]
+[ext_resource type="Texture2D" uid="uid://c8pc1ra10m2md" path="res://asset/foxy/foxy/giant_foxy/hurt 5.png" id="12_ddgkb"]
+[ext_resource type="Texture2D" uid="uid://ktsbd45ncy00" path="res://asset/foxy/foxy/giant_foxy/hurt 1.png" id="13_gbquk"]
+[ext_resource type="Texture2D" uid="uid://bfmu6md4xu1e5" path="res://asset/foxy/foxy/giant_foxy/hurt 2.png" id="14_0ieq8"]
 [ext_resource type="Script" uid="uid://dugosv23vlsd1" path="res://scenes/character/player/climb.gd" id="14_yuskr"]
+[ext_resource type="Texture2D" uid="uid://dnoljb68s4ecm" path="res://asset/foxy/foxy/giant_foxy/hurt 3.png" id="15_7w01e"]
+[ext_resource type="Texture2D" uid="uid://85ti4gufeo16" path="res://asset/foxy/foxy/giant_foxy/hurt 4.png" id="16_aiium"]
+[ext_resource type="Texture2D" uid="uid://sf0tgtwv006v" path="res://asset/foxy/foxy/giant_foxy/idle 1.png" id="17_xup88"]
+[ext_resource type="Texture2D" uid="uid://d1bc3tdw71fq5" path="res://asset/foxy/foxy/giant_foxy/idle 2.png" id="18_3pj2o"]
 [ext_resource type="Script" uid="uid://b3l6e30n7sx3p" path="res://scenes/character/player/attack.gd" id="18_qnn1i"]
+[ext_resource type="Texture2D" uid="uid://c74hq4yeyqdym" path="res://asset/foxy/foxy/giant_foxy/jump_sprite_sheet (1)2.png" id="19_ibcdq"]
 [ext_resource type="Script" uid="uid://bwe7irvywtcdf" path="res://scenes/character/player/states/hover.gd" id="20_gfavw"]
+[ext_resource type="Texture2D" uid="uid://dyavah5odfapi" path="res://asset/foxy/foxy/giant_foxy/jump_sprite_sheet (1)3.png" id="20_jb6b0"]
 [ext_resource type="Script" uid="uid://t4rt3tqet0ea" path="res://scenes/character/player/camera_follow.gd" id="21_camfollow"]
+[ext_resource type="Texture2D" uid="uid://b3io18rugiqqa" path="res://asset/foxy/foxy/giant_foxy/jump_sprite_sheet (1)4.png" id="21_drpkd"]
+[ext_resource type="Texture2D" uid="uid://co2l3ctj7iv2t" path="res://asset/foxy/foxy/giant_foxy/jump_sprite_sheet (1)5.png" id="22_mfcmi"]
+[ext_resource type="Texture2D" uid="uid://64ypfon7rt0w" path="res://asset/foxy/foxy/giant_foxy/jump_sprite_sheet (1)6.png" id="23_8k82d"]
+[ext_resource type="Texture2D" uid="uid://b6chppmwbix4y" path="res://asset/foxy/foxy/giant_foxy/jump_sprite_sheet (1)7.png" id="24_1poe2"]
 [ext_resource type="AudioStream" uid="uid://irnmtldt0n5y" path="res://asset/sounds/jump.mp3" id="24_45mu1"]
 [ext_resource type="AudioStream" uid="uid://dtrphc4vgwfhl" path="res://asset/sounds/slash.mp3" id="25_65puw"]
+[ext_resource type="Texture2D" uid="uid://b6ls6ou55nox6" path="res://asset/foxy/foxy/giant_foxy/jump_sprite_sheet (1)8.png" id="25_sl8t7"]
 [ext_resource type="AudioStream" uid="uid://c7v6mh4l1j3rg" path="res://asset/sounds/dash.mp3" id="26_k7wq7"]
+[ext_resource type="Texture2D" uid="uid://cjts8w3sqi7jx" path="res://asset/foxy/foxy/giant_foxy/jump_sprite_sheet (1)9.png" id="26_tjeaw"]
+[ext_resource type="Texture2D" uid="uid://b6m8jjowdc7xh" path="res://asset/foxy/foxy/giant_foxy/sprite_sheet_foxy_giant_run (1)2.png" id="27_kr5fp"]
+[ext_resource type="Texture2D" uid="uid://e0dsgt67jor6" path="res://asset/foxy/foxy/giant_foxy/big3 (1).png" id="27_w3kqy"]
+[ext_resource type="Texture2D" uid="uid://csevuhxerfc2y" path="res://asset/foxy/foxy/giant_foxy/big2 (1).png" id="28_ddgkb"]
+[ext_resource type="Texture2D" uid="uid://c3hok6ppiaqic" path="res://asset/foxy/foxy/giant_foxy/sprite_sheet_foxy_giant_run (1)3.png" id="28_wrv5s"]
+[ext_resource type="Texture2D" uid="uid://gjoypc1iokg2" path="res://asset/foxy/foxy/giant_foxy/sprite_sheet_foxy_giant_run (1)4.png" id="29_5aqwy"]
+[ext_resource type="Texture2D" uid="uid://c5u6te5pt0ywj" path="res://asset/foxy/foxy/giant_foxy/big1 (1).png" id="29_gbquk"]
+[ext_resource type="Script" uid="uid://b5fd8jdgea5dd" path="res://scenes/character/player/giant.gd" id="29_rkxg8"]
+[ext_resource type="Texture2D" uid="uid://csqs8k6xfg0d1" path="res://asset/foxy/foxy/giant_foxy/sprite_sheet_foxy_giant_run (1)5.png" id="30_fvuo4"]
+[ext_resource type="Texture2D" uid="uid://b1pw4yyw4c5bx" path="res://asset/foxy/foxy/giant_foxy/sprite_sheet_foxy_giant_run (1)6.png" id="31_qiyco"]
 [ext_resource type="Script" uid="uid://dp3lba7mnpcyn" path="res://scenes/character/player/states/idle.gd" id="39_art4l"]
 [ext_resource type="Script" uid="uid://bn74l4ngryo6x" path="res://scenes/character/player/states/run.gd" id="40_fjxoa"]
 [ext_resource type="Script" uid="uid://di3w8xw7t025o" path="res://scenes/character/player/states/jump.gd" id="41_gswnw"]
@@ -27,7 +55,7 @@
 [ext_resource type="Script" uid="uid://bdb4rp0xqby5i" path="res://scenes/character/player/states/susanoo.gd" id="46_susanoo"]
 [ext_resource type="Script" uid="uid://dpwira2jef5n4" path="res://scenes/character/player/states/water_paw.gd" id="47_waterpaw"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lcjji"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkxg8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b1yw4"]
 radius = 29.76
@@ -51,6 +79,161 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4qvgp"]
+load_path = "res://.godot/imported/big1.png-edc349c0a2bf31022bb76f6ffe11289f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qlnx3"]
+load_path = "res://.godot/imported/big2.png-3b800b5f3316b2f991ecc1b8a8cd09e8.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nakkr"]
+load_path = "res://.godot/imported/big3.png-477ec69fb1d7f440a45ce7262de2ed87.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ibcdq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_sgp10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sr8vk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7utyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_w3kqy")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ddgkb")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_tjeaw")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_gbquk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0ieq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7w01e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_aiium")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ddgkb")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_xup88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_3pj2o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_ibcdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jb6b0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_drpkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_mfcmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_8k82d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1poe2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_sl8t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_tjeaw")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_4qvgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_qlnx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_nakkr")
+}],
+"loop": false,
+"name": &"transform_giant",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_w3kqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ddgkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_gbquk")
+}],
+"loop": false,
+"name": &"transform_normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_kr5fp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_wrv5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_5aqwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_fvuo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_qiyco")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lcjji"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gfavw"]
 size = Vector2(35.8333, 33)
 
@@ -69,17 +252,27 @@ collision_layer = 2
 script = ExtResource("1_puv7k")
 dash_chain_cooldown = 1.0
 run_speed_multiplier = 2.1
+giant_duration = 10
 movement_speed = 120.0
 max_health = 5000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
-shape = SubResource("CapsuleShape2D_lcjji")
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_rkxg8")
 
 [node name="HoverCollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1, -6)
 shape = SubResource("CircleShape2D_b1yw4")
 disabled = true
+
+[node name="Timer" type="Node" parent="."]
+
+[node name="GiantDuration" type="Timer" parent="Timer"]
+one_shot = true
+
+[node name="GiantCoolDown" type="Timer" parent="Timer"]
+one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["Camera"]]
 position = Vector2(0, -55)
@@ -93,18 +286,19 @@ overshoot_px = 60.0
 position = Vector2(0, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+visible = false
 light_mask = 2
 material = SubResource("ShaderMaterial_dash")
 position = Vector2(0, -13)
 sprite_frames = ExtResource("2_v051h")
-animation = &"walk"
+animation = &"transform_normal"
 
 [node name="HatAnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 visible = false
 light_mask = 2
 material = SubResource("ShaderMaterial_dash")
 sprite_frames = ExtResource("3_i0j1t")
-animation = &"hover"
+animation = &"transform_giant"
 
 [node name="BladeAnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
 visible = false
@@ -112,13 +306,20 @@ light_mask = 2
 material = SubResource("ShaderMaterial_dash")
 position = Vector2(0, -13)
 sprite_frames = ExtResource("4_68dt2")
-animation = &"attack"
+animation = &"transform_giant"
 
 [node name="HoverAnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+visible = false
 light_mask = 2
 scale = Vector2(0.07, 0.07)
 sprite_frames = SubResource("SpriteFrames_gfavw")
 animation = &"hover"
+
+[node name="GiantAnimatedSprite2D" type="AnimatedSprite2D" parent="Direction"]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_ibcdq")
+animation = &"transform_normal"
+autoplay = "walk"
 
 [node name="HurtArea2D" type="Area2D" parent="Direction"]
 self_modulate = Color(1, 0.407843, 0.266667, 1)
@@ -132,6 +333,7 @@ position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_lcjji")
 
 [node name="HoverHurtArea2D" type="Area2D" parent="Direction"]
+visible = false
 self_modulate = Color(1, 0.407843, 0.266667, 1)
 collision_layer = 4
 collision_mask = 0
@@ -155,6 +357,7 @@ position = Vector2(17.9167, -15.5)
 shape = SubResource("RectangleShape2D_gfavw")
 
 [node name="PawHitArea2D" type="Area2D" parent="Direction"]
+visible = false
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("7_t4wjd")
@@ -165,6 +368,7 @@ shape = SubResource("RectangleShape2D_psaxl")
 disabled = true
 
 [node name="FallHurtArea2D" type="Area2D" parent="Direction"]
+visible = false
 collision_layer = 128
 collision_mask = 0
 script = ExtResource("10_68dt2")
@@ -176,6 +380,7 @@ shape = SubResource("RectangleShape2D_t4wjd")
 debug_color = Color(0.0608557, 0.0185072, 0.0127914, 0.42)
 
 [node name="MagnetArea2D" type="Area2D" parent="Direction"]
+visible = false
 collision_layer = 512
 collision_mask = 1024
 
@@ -226,6 +431,9 @@ script = ExtResource("46_susanoo")
 [node name="WaterPaw" type="Node" parent="States"]
 script = ExtResource("47_waterpaw")
 
+[node name="Giant" type="Node" parent="States"]
+script = ExtResource("29_rkxg8")
+
 [node name="Attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("25_65puw")
 volume_db = 4.553
@@ -240,6 +448,8 @@ bus = &"SFX"
 stream = ExtResource("24_45mu1")
 bus = &"SFX"
 
+[connection signal="timeout" from="Timer/GiantDuration" to="." method="_on_giant_duration_timeout"]
+[connection signal="timeout" from="Timer/GiantCoolDown" to="." method="_on_giant_cool_down_timeout"]
 [connection signal="hurt" from="Direction/HurtArea2D" to="." method="_on_hurt_area_2d_hurt"]
 [connection signal="hurt" from="Direction/HoverHurtArea2D" to="." method="_on_hurt_area_2d_hurt"]
 [connection signal="hitted" from="Direction/HitArea2D" to="." method="_on_hit_area_2d_hitted"]

@@ -90,7 +90,8 @@ func disable_collision_while_teleporting()->void:
 	
 func enable_collision_after_teleporting()->void:
 	obj.hurt_collision_shape_2d.disabled=false
-	obj.hit_collision_shape_2d.disabled=false
+	# Không bật lại hit_collision để tránh contact damage
+	# obj.hit_collision_shape_2d.disabled=false
 	
 func can_attack1() -> bool:
 	if not obj.seen_player or obj.claw_busy: return false
@@ -333,7 +334,7 @@ func spawn_shockwave() -> void:
 		explosion.global_position = spawn_pos
 	
 func move_hit_collision_at_idle_attack()->void:
-	obj.hit_collision_shape_2d.position.x += 11
+	obj.hit_collision_shape_2d.position.x += 0
 	
 func reset_hit_collision_position()->void:
 	obj.hit_collision_shape_2d.position.x = obj.hit_collision_default_pos.x
