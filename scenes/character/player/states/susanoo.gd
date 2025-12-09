@@ -46,16 +46,6 @@ func _enter() -> void:
 	var dir := obj.direction
 	spirit.global_position = obj.global_position + Vector2(-60 * dir, -8)
 
-	if cooldown_timer == null:
-		cooldown_timer = Timer.new()
-		cooldown_timer.one_shot = true
-		cooldown_timer.timeout.connect(_on_cooldown_timeout)
-		add_child(cooldown_timer)
-	on_cooldown = true
-	cooldown_timer.wait_time = cooldown_time
-	cooldown_timer.start()
-	susanoo_cooldown_started.emit(cooldown_time)
-
 	# Return control to idle after toggling
 	change_state(fsm.states.idle)
 

@@ -7,9 +7,15 @@ signal mana_changed(current_mana, max_mana)
 signal dash_cooldown_started(duration)
 signal dash_cooldown_updated(time_left)
 signal dash_cooldown_finished()
+signal susanoo_cooldown_started(duration)
+signal susanoo_cooldown_updated(time_left)
+signal susanoo_cooldown_finished()
 signal room_cooldown_started(duration)
 signal room_cooldown_updated(time_left)
 signal room_cooldown_finished()
+signal giant_cooldown_started(duration)
+signal giant_cooldown_updated(time_left)
+signal giant_cooldown_finished()
 var is_invulnerable: bool = false
 var invincible_zone: bool = false
 var _base_movement_speed: float = 0.0
@@ -45,6 +51,12 @@ var dash_cooldown_timer: Timer = null
 @export var room_cooldown_time: float = 20.0
 var room_on_cooldown: bool = false
 var room_cooldown_timer: Timer = null
+
+var sus_on_cooldown: bool = false
+var sus_cooldown_timer: Timer = null
+
+var giant_on_cooldown: bool = false
+var giant_cooldown_timer: Timer = null
 
 @export var run_speed_multiplier: float = 1.35
 @export var run_double_tap_window_ms: int = 250
@@ -169,8 +181,12 @@ func _process(_delta: float) -> void:
 		print("Giant time left: ", $Timer/GiantDuration.time_left)
 	if dash_on_cooldown and dash_cooldown_timer != null:
 		dash_cooldown_updated.emit(dash_cooldown_timer.time_left)
+	if sus_on_cooldown and sus_cooldown_timer != null:
+		susanoo_cooldown_updated.emit(sus_cooldown_timer.time_left)
 	if room_on_cooldown and room_cooldown_timer != null:
 		room_cooldown_updated.emit(room_cooldown_timer.time_left)
+	if giant_on_cooldown and giant_cooldown_timer != null:
+		giant_cooldown_updated.emit(giant_cooldown_timer.time_left)
 
 func _apply_safe_zone_mods() -> void:
 	if is_giant_mode:
@@ -341,6 +357,17 @@ func _on_dash_cooldown_timeout() -> void:
 	dash_chain_count = 0
 	dash_cooldown_finished.emit()
 
+func start_susanoo_cooldown() -> void:
+	sus_on_cooldown = true
+	if sus_cooldown_timer == null:
+		sus_cooldown_timer = Timer.new()
+		sus_cooldown_timer.one_shot = true
+		sus_cooldown_timer.timeout.connect(_on_susanoo_cooldown_timeout)
+		add_child(sus_cooldown_timer)
+	sus_cooldown_timer.wait_time = 20.0  # Fixed to 20 seconds
+	sus_cooldown_timer.start()
+	susanoo_cooldown_started.emit(20.0)
+
 func start_room_cooldown() -> void:
 	room_on_cooldown = true
 	if room_cooldown_timer == null:
@@ -348,9 +375,24 @@ func start_room_cooldown() -> void:
 		room_cooldown_timer.one_shot = true
 		room_cooldown_timer.timeout.connect(_on_room_cooldown_timeout)
 		add_child(room_cooldown_timer)
-	room_cooldown_timer.wait_time = room_cooldown_time
+	room_cooldown_timer.wait_time = 20.0  # Fixed to 20 seconds
 	room_cooldown_timer.start()
-	room_cooldown_started.emit(room_cooldown_time)
+	room_cooldown_started.emit(20.0)
+
+func start_giant_cooldown() -> void:
+	giant_on_cooldown = true
+	if giant_cooldown_timer == null:
+		giant_cooldown_timer = Timer.new()
+		giant_cooldown_timer.one_shot = true
+		giant_cooldown_timer.timeout.connect(_on_giant_cooldown_timeout)
+		add_child(giant_cooldown_timer)
+	giant_cooldown_timer.wait_time = giant_cool_down
+	giant_cooldown_timer.start()
+	giant_cooldown_started.emit(giant_cool_down)
+
+func _on_susanoo_cooldown_timeout() -> void:
+	sus_on_cooldown = false
+	susanoo_cooldown_finished.emit()
 
 func _on_room_cooldown_timeout() -> void:
 	room_on_cooldown = false
@@ -545,12 +587,14 @@ func inactive_giant_form():
 	hit_shape.size = _orig_hit_shape_size
 	hit_collision.position = _orig_hit_pos
 	can_use_giant = false
-	$Timer/GiantCoolDown.start(giant_cool_down)
+	start_giant_cooldown()
 
 func _on_giant_duration_timeout() -> void:
 	inactive_giant_form()
 
 
-func _on_giant_cool_down_timeout() -> void:
+func _on_giant_cooldown_timeout() -> void:
 	can_use_giant = true
+	giant_on_cooldown = false
+	giant_cooldown_finished.emit()
 	

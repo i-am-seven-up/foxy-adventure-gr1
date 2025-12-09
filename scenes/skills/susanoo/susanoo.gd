@@ -356,6 +356,8 @@ func play_disappear_and_free() -> void:
 
 func _on_lifetime_timeout() -> void:
 	susanoo_ended.emit()
+	if player:
+		player.start_susanoo_cooldown()
 	play_disappear_and_free()
 	# Bật/tắt defense theo level
 	if _defense_area:

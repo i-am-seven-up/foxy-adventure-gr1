@@ -22,13 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://8u26ji11yaua" path="res://asset/foxy/foxy/fox_hat/fox_walk_4.png" id="17_2ucpl"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nakkr"]
-load_path = "res://.godot/imported/big3.png-477ec69fb1d7f440a45ce7262de2ed87.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qlnx3"]
-load_path = "res://.godot/imported/big2.png-3b800b5f3316b2f991ecc1b8a8cd09e8.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4qvgp"]
-load_path = "res://.godot/imported/big1.png-edc349c0a2bf31022bb76f6ffe11289f.ctex"
 
 [resource]
 animations = [{

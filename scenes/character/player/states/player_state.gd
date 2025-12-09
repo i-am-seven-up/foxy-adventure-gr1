@@ -145,7 +145,6 @@ func control_room() -> bool:
 			if inst is Node2D:
 				(inst as Node2D).global_position = obj.global_position
 			obj.add_child(inst)
-			obj.start_room_cooldown()
 			return true
 	return false
 	

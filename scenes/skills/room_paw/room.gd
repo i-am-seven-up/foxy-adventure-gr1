@@ -222,6 +222,7 @@ func _cleanup() -> void:
 		if player_display_item:
 			(player_display_item as CanvasItem).self_modulate = player_display_modulate_saved
 			player_flicker_phase = 0.0
+		player.start_room_cooldown()
 	queue_free()
 
 func _on_body_entered(body: Node) -> void:

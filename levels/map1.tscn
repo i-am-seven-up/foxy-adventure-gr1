@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://65dl3olpohwm"]
+[gd_scene load_steps=66 format=4 uid="uid://65dl3olpohwm"]
 
 [ext_resource type="Script" uid="uid://bxmolop1vx1cu" path="res://levels/map_1.gd" id="1_vf8qv"]
 [ext_resource type="Texture2D" uid="uid://dcrnqve71d36p" path="res://asset/island/background/additional_sky.png" id="2_2oa3t"]
@@ -53,6 +53,9 @@
 [ext_resource type="PackedScene" uid="uid://btj7ilbg28lwi" path="res://ui/PlayerHUD.tscn" id="51_cjww2"]
 [ext_resource type="PackedScene" uid="uid://buo3e54qkst7m" path="res://levels/objects/teleport/teleport.tscn" id="53_70u64"]
 [ext_resource type="FontFile" uid="uid://jh40hrd2xw4m" path="res://asset/fonts/PixelOperator8.ttf" id="53_e0w0y"]
+[ext_resource type="PackedScene" uid="uid://bmqdyggq31jj2" path="res://scenes/collectibles/firegem/fire_gem.tscn" id="54_py74h"]
+[ext_resource type="PackedScene" uid="uid://bx2xcf02m4m0r" path="res://scenes/collectibles/waterroomgem/water_room_gem.tscn" id="55_hdm65"]
+[ext_resource type="PackedScene" uid="uid://c700eni2s0ngm" path="res://scenes/collectibles/waterpawgem/water_paw_gem.tscn" id="56_6jest"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1h871"]
 animations = [{
@@ -699,3 +702,12 @@ When you want to see tutorial again, press the \"?\" button in the corner of the
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="FireGem" parent="." instance=ExtResource("54_py74h")]
+position = Vector2(-139, 48)
+
+[node name="WaterRoomGem" parent="." instance=ExtResource("55_hdm65")]
+position = Vector2(-94, 47)
+
+[node name="WaterPawGem" parent="." instance=ExtResource("56_6jest")]
+position = Vector2(-46, 47)

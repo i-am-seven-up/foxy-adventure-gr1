@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dufomu7dd3vmb"]
+[gd_scene load_steps=11 format=3 uid="uid://dufomu7dd3vmb"]
 
-[ext_resource type="Texture2D" uid="uid://cogn2ybxfjyxn" path="res://asset/ui/dash_avatar.png" id="1_6u1dw"]
-[ext_resource type="Texture2D" uid="uid://b5jl2grdr8fit" path="res://asset/ui/player/dash_avatar_cooldown.png" id="2_s4dqu"]
-[ext_resource type="Texture2D" uid="uid://byp6j1grjep5d" path="res://asset/ui/player/susanoo_avatar.png" id="3_7xlfb"]
-[ext_resource type="Texture2D" uid="uid://couqnad3x4esx" path="res://asset/ui/player/room_avatar.png" id="4_dhk6e"]
-[ext_resource type="Texture2D" uid="uid://bvoyj8n7tqs0m" path="res://asset/ui/player/susanoo_avatar_cooldown.png" id="4_orcyv"]
-[ext_resource type="Texture2D" uid="uid://cjwtqm5vdew0j" path="res://asset/ui/player/room_avatar_cooldown.png" id="5_0j5hr"]
+[ext_resource type="Texture2D" uid="uid://cttdl6a4xto6t" path="res://asset/ui/player/dash_avatar1.png" id="2_46tuk"]
+[ext_resource type="Texture2D" uid="uid://2s8dkuop4sqi" path="res://asset/ui/player/dash_avatar1 (1).png" id="3_65txv"]
+[ext_resource type="Texture2D" uid="uid://dnqaqj0su1l0b" path="res://asset/ui/player/room_avatar1.png" id="4_2xhob"]
+[ext_resource type="FontFile" uid="uid://jh40hrd2xw4m" path="res://asset/fonts/PixelOperator8.ttf" id="4_65txv"]
+[ext_resource type="Texture2D" uid="uid://eamr15pas2lm" path="res://asset/ui/player/room_avatar1 (1).png" id="5_2cfu4"]
 [ext_resource type="Script" uid="uid://bh8drva7m8n2u" path="res://ui/skill_bar.gd" id="5_script"]
+[ext_resource type="Texture2D" uid="uid://bv7tyyseapdis" path="res://asset/ui/player/susanoo_avatar1.png" id="6_dhk6e"]
+[ext_resource type="Texture2D" uid="uid://b6snm2lb4borl" path="res://asset/ui/player/giant_avatar1.png" id="6_fjwn0"]
+[ext_resource type="Texture2D" uid="uid://cphh3hpa2g0ka" path="res://asset/ui/player/giant_avatar1 (1).png" id="7_ub6w8"]
+[ext_resource type="Texture2D" uid="uid://btk5dgncj12a1" path="res://asset/ui/player/susanoo_avatar1_cooldown.png" id="9_lid57"]
 
 [node name="SkillBar" type="Control"]
 layout_mode = 3
@@ -14,6 +17,7 @@ anchors_preset = 0
 offset_top = -63.0
 offset_bottom = -63.0
 script = ExtResource("5_script")
+metadata/_edit_vertical_guides_ = [13.0]
 
 [node name="Dash" type="Control" parent="."]
 anchors_preset = 0
@@ -24,43 +28,61 @@ offset_bottom = 334.0
 
 [node name="Icon" type="TextureRect" parent="Dash"]
 layout_mode = 0
-offset_right = 100.0
-offset_bottom = 80.0
-texture = ExtResource("1_6u1dw")
+offset_left = -8.0
+offset_top = -3.0
+offset_right = 92.0
+offset_bottom = 77.0
+texture = ExtResource("2_46tuk")
 expand_mode = 1
 stretch_mode = 6
 
 [node name="Overlay" type="TextureRect" parent="Dash"]
 layout_mode = 0
-offset_right = 100.0
-offset_bottom = 80.0
-texture = ExtResource("2_s4dqu")
+offset_left = -8.0
+offset_top = -3.0
+offset_right = 92.0
+offset_bottom = 77.0
+texture = ExtResource("3_65txv")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="CoolDownLabel" type="Label" parent="Dash"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 22.0
-offset_right = 78.0
-offset_bottom = 56.0
-theme_override_font_sizes/font_size = 24
-text = "2.1"
-
 [node name="ButtonLabel" type="Label" parent="Dash"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 62.0
-offset_right = 60.0
-offset_bottom = 88.0
-theme_override_font_sizes/font_size = 18
+offset_left = 4.0
+offset_top = 66.0
+offset_right = 78.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_65txv")
+theme_override_font_sizes/font_size = 12
 text = "Shift"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CoolDownLabel" type="Label" parent="Dash"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 25.0
+offset_right = 78.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_65txv")
+theme_override_font_sizes/font_size = 12
+text = "2.1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Room" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 6.0
+offset_left = 0.99999905
 offset_top = 478.99997
-offset_right = 46.0
+offset_right = 41.0
 offset_bottom = 519.0
 scale = Vector2(0.97, 0.97)
 
@@ -68,7 +90,7 @@ scale = Vector2(0.97, 0.97)
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 80.0
-texture = ExtResource("4_dhk6e")
+texture = ExtResource("4_2xhob")
 expand_mode = 1
 stretch_mode = 6
 
@@ -76,35 +98,103 @@ stretch_mode = 6
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 80.0
-texture = ExtResource("5_0j5hr")
+texture = ExtResource("5_2cfu4")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="CoolDownLabel" type="Label" parent="Room"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 22.0
-offset_right = 88.0
-offset_bottom = 56.0
-theme_override_font_sizes/font_size = 24
-text = "20
-"
-horizontal_alignment = 1
-
 [node name="ButtonLabel" type="Label" parent="Room"]
 layout_mode = 0
-offset_left = 43.0
-offset_top = 62.0
-offset_right = 83.0
-offset_bottom = 93.0
-theme_override_font_sizes/font_size = 22
+offset_left = 14.43299
+offset_top = 72.95879
+offset_right = 88.43299
+offset_bottom = 95.95879
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_65txv")
+theme_override_font_sizes/font_size = 12
 text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CoolDownLabel" type="Label" parent="Room"]
+layout_mode = 0
+offset_left = 14.43299
+offset_top = 31.958794
+offset_right = 88.43299
+offset_bottom = 54.958794
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_65txv")
+theme_override_font_sizes/font_size = 12
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Giant" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 572.0
+offset_right = 43.0
+offset_bottom = 612.0
+scale = Vector2(0.97, 0.97)
+
+[node name="Icon" type="TextureRect" parent="Giant"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 80.0
+texture = ExtResource("6_fjwn0")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Overlay" type="TextureRect" parent="Giant"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 80.0
+texture = ExtResource("7_ub6w8")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ButtonLabel" type="Label" parent="Giant"]
+layout_mode = 0
+offset_left = 11.340208
+offset_top = 70.896904
+offset_right = 85.34021
+offset_bottom = 93.896904
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_65txv")
+theme_override_font_sizes/font_size = 12
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CoolDownLabel" type="Label" parent="Giant"]
+layout_mode = 0
+offset_left = 11.340208
+offset_top = 29.896908
+offset_right = 85.34021
+offset_bottom = 52.896908
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_65txv")
+theme_override_font_sizes/font_size = 12
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Susanoo" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 4.0000005
+offset_left = 3.0000005
 offset_top = 375.00003
-offset_right = 44.0
+offset_right = 43.0
 offset_bottom = 415.00003
 scale = Vector2(2.49, 2.49)
 
@@ -112,7 +202,7 @@ scale = Vector2(2.49, 2.49)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("3_7xlfb")
+texture = ExtResource("6_dhk6e")
 expand_mode = 1
 stretch_mode = 6
 
@@ -120,25 +210,38 @@ stretch_mode = 6
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("4_orcyv")
+texture = ExtResource("9_lid57")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="SusanooCoolDownLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 406.0
-offset_right = 89.0
-offset_bottom = 442.0
-theme_override_font_sizes/font_size = 26
-text = "20"
-horizontal_alignment = 1
-
 [node name="SusanooButtonLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 441.0
-offset_right = 84.0
+offset_left = 13.0
+offset_top = 454.0
+offset_right = 87.0
 offset_bottom = 477.0
-theme_override_font_sizes/font_size = 26
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_65txv")
+theme_override_font_sizes/font_size = 12
 text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SusanooCoolDownLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 413.0
+offset_right = 89.0
+offset_bottom = 436.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_65txv")
+theme_override_font_sizes/font_size = 12
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
